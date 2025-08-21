@@ -1,17 +1,16 @@
-
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const ProductCard = ({ name, price, image }: { name: string, price: string, image: string }) => (
-    <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden group">
+    <div className="bg-[#1c1c1e] overflow-hidden group">
         <div className="relative">
-            <img src={image} alt={name} className="w-full h-64 object-cover" />
+            <img src={image} alt={name} className="w-full h-80 object-cover" />
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300"></div>
         </div>
         <div className="p-6">
-            <h3 className="font-teko text-3xl text-white uppercase">{name}</h3>
-            <p className="text-2xl font-bold text-red-500">{price}</p>
-            <button className="mt-4 w-full bg-red-600 text-white font-bold py-2 px-4 text-md uppercase tracking-wider rounded-md hover:bg-red-700 transition-colors duration-300">
+            <h3 className="text-3xl font-bold text-white uppercase">{name}</h3>
+            <p className="text-2xl font-bold text-accent">{price}</p>
+            <button className="mt-4 w-full bg-accent text-black font-bold py-2 px-4 text-md uppercase tracking-wider rounded-sm hover:bg-accent-dark transition-colors duration-300">
                 Add to Cart
             </button>
         </div>
@@ -32,9 +31,9 @@ const ShopPage = (): React.ReactNode => {
     ];
 
     return (
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-32">
             <div className="text-center mb-12">
-                <h1 className="font-teko text-7xl font-bold uppercase tracking-wider text-white">{t('shop.title')}</h1>
+                <h1 className="text-7xl font-extrabold uppercase tracking-wider text-white">{t('shop.title')}</h1>
                 <p className="text-xl text-gray-400">{t('shop.subtitle')}</p>
             </div>
 
@@ -44,7 +43,7 @@ const ShopPage = (): React.ReactNode => {
                         key={product.nameKey}
                         name={t(product.nameKey)}
                         price={t(product.priceKey)}
-                        image={`https://picsum.photos/400/300?random=${product.imageId}`}
+                        image={`https://picsum.photos/400/500?random=${product.imageId}`}
                     />
                 ))}
             </div>

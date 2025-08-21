@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { languages, LanguageCode } from '../i18n';
@@ -28,23 +27,23 @@ const LanguageSwitcher = (): React.ReactNode => {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 rounded-md hover:bg-gray-700 transition-colors"
+        className="flex items-center space-x-2 px-3 py-2 rounded-md hover:bg-gray-800 transition-colors"
         aria-haspopup="true"
         aria-expanded={isOpen}
       >
-        <GlobeIcon className="h-5 w-5" />
-        <span className="font-sans text-sm font-medium uppercase">{language}</span>
-        <ChevronDownIcon className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+        <GlobeIcon className="h-5 w-5 text-gray-400" />
+        <span className="font-sans text-sm font-medium uppercase text-white">{language}</span>
+        <ChevronDownIcon className={`h-4 w-4 transition-transform text-gray-400 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-40 bg-gray-800 rounded-md shadow-lg z-50 ring-1 ring-black ring-opacity-5">
+        <div className="absolute right-0 mt-2 w-40 bg-gray-900 rounded-md shadow-lg z-50 ring-1 ring-black ring-opacity-5">
           <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
             {languages.map(lang => (
               <button
                 key={lang.code}
                 onClick={() => handleLanguageChange(lang.code)}
-                className="w-full text-left flex items-center px-4 py-2 text-sm text-gray-200 hover:bg-gray-700 hover:text-white"
+                className="w-full text-left flex items-center px-4 py-2 text-sm text-gray-200 hover:bg-gray-800 hover:text-white"
                 role="menuitem"
               >
                 {lang.name}

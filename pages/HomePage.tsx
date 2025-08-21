@@ -1,25 +1,37 @@
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { CheckCircleIcon } from '../components/IconComponents';
+import { UsersIcon, BoltIcon, SparklesIcon, ArrowRightIcon } from '../components/IconComponents';
 import { useLanguage } from '../contexts/LanguageContext';
 
-
-const FeatureCard = ({ icon, title, children }: { icon: React.ReactNode, title: string, children: React.ReactNode }) => (
-  <div className="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white mb-4">
+const ValueCard = ({ icon, title, children }: { icon: React.ReactNode, title: string, children: React.ReactNode }) => (
+  <div className="text-center p-4">
+    <div className="flex items-center justify-center h-20 w-20 rounded-full bg-[#1c1c1e] text-accent mb-6 mx-auto">
       {icon}
     </div>
-    <h3 className="font-teko text-3xl text-white mb-2">{title}</h3>
-    <p className="text-gray-400">{children}</p>
+    <h3 className="text-2xl font-bold text-white mb-3 uppercase">{title}</h3>
+    <p className="text-gray-400 leading-relaxed">{children}</p>
   </div>
 );
 
+const ClassCard = ({ title, text, image }: { title: string, text: string, image: string }) => (
+    <div className="bg-[#1c1c1e] overflow-hidden group">
+        <div className="relative h-96">
+            <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+            <div className="absolute bottom-0 left-0 p-8">
+                <h3 className="text-4xl font-extrabold text-white uppercase">{title}</h3>
+                <p className="text-gray-300 mt-2">{text}</p>
+            </div>
+        </div>
+    </div>
+);
+
 const TestimonialCard = ({ quote, name, image }: { quote: string, name: string, image: string }) => (
-    <div className="bg-gray-800 p-6 rounded-lg text-center shadow-lg">
-        <img src={image} alt={name} className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-red-500"/>
-        <p className="text-gray-300 italic mb-4">"{quote}"</p>
-        <h4 className="font-teko text-2xl text-white">- {name}</h4>
+    <div className="bg-[#1c1c1e] p-8 text-center">
+        <img src={image} alt={name} className="w-24 h-24 rounded-full mx-auto mb-6"/>
+        <p className="text-gray-300 italic text-lg mb-6">"{quote}"</p>
+        <h4 className="font-semibold text-xl text-accent tracking-wider">- {name}</h4>
     </div>
 );
 
@@ -27,87 +39,105 @@ const HomePage = (): React.ReactNode => {
   const { t } = useLanguage();
 
   return (
-    <div className="animate-fadeIn">
+    <div>
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
-        <div className="absolute z-0 top-0 left-0 w-full h-full pointer-events-none">
-           <iframe
-              className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2"
-              src="https://www.youtube.com/embed/chuNCzd3OHk?autoplay=1&mute=1&loop=1&playlist=chuNCzd3OHk&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0"
-              frameBorder="0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              title="Kraftvrk Promo"
-            ></iframe>
-        </div>
-        <div className="absolute inset-0 bg-black/60 z-10"></div>
-        <div className="relative z-20 px-4">
-          <h1 className="font-teko text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-wider text-white drop-shadow-lg">
-            {t('home.heroTitle')}
+        <img
+            src="https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2"
+            alt="Athlete preparing for a deadlift in a gym with chalk dust in the air"
+            className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="relative z-10 px-4">
+          <h1 className="text-5xl md:text-7xl font-bold uppercase tracking-wider text-white">
+            {t('home.heroTitle1')}
           </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-gray-300">
+          <h2 className="text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-wider text-outline text-transparent mt-2">
+            {t('home.heroTitle2')}
+          </h2>
+          <p className="mt-6 text-lg md:text-xl max-w-2xl mx-auto text-gray-300">
             {t('home.heroSubtitle')}
           </p>
-          <NavLink to="/wod" className="mt-8 inline-block bg-red-600 text-white font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md hover:bg-red-700 transition-colors duration-300 transform hover:scale-105">
-            {t('home.viewWodButton')}
+          <NavLink to="/membership" className="mt-10 inline-flex items-center gap-3 bg-accent text-black font-bold py-4 px-10 text-lg uppercase tracking-wider rounded-sm hover:bg-accent-dark transition-colors duration-300">
+            <span>{t('home.joinButton')}</span>
+            <ArrowRightIcon className="h-6 w-6" />
           </NavLink>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 bg-gray-900">
+      {/* Values Section */}
+      <section className="py-24 bg-[#111111]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-teko text-5xl text-center mb-12 uppercase tracking-wider">{t('home.whyTitle')}</h2>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-5xl font-extrabold text-center uppercase tracking-wider text-white">{t('home.valuesTitle')}</h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-             <FeatureCard icon={<CheckCircleIcon className="h-6 w-6"/>} title={t('home.feature1Title')}>
-               {t('home.feature1Text')}
-            </FeatureCard>
-            <FeatureCard icon={<CheckCircleIcon className="h-6 w-6"/>} title={t('home.feature2Title')}>
-                {t('home.feature2Text')}
-            </FeatureCard>
-            <FeatureCard icon={<CheckCircleIcon className="h-6 w-6"/>} title={t('home.feature3Title')}>
-                {t('home.feature3Text')}
-            </FeatureCard>
+             <ValueCard icon={<UsersIcon className="h-10 w-10"/>} title={t('home.value1Title')}>
+               {t('home.value1Text')}
+            </ValueCard>
+            <ValueCard icon={<BoltIcon className="h-10 w-10"/>} title={t('home.value2Title')}>
+                {t('home.value2Text')}
+            </ValueCard>
+            <ValueCard icon={<SparklesIcon className="h-10 w-10"/>} title={t('home.value3Title')}>
+                {t('home.value3Text')}
+            </ValueCard>
           </div>
         </div>
       </section>
       
+      {/* Types of Classes Section */}
+      <section className="py-24 bg-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+                <h2 className="text-5xl font-extrabold text-center uppercase tracking-wider text-white">{t('home.classesTitle')}</h2>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-1">
+                <ClassCard title={t('home.class1Title')} text={t('home.class1Text')} image="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+                <ClassCard title={t('home.class2Title')} text={t('home.class2Text')} image="https://images.pexels.com/photos/3253501/pexels-photo-3253501.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+                <ClassCard title={t('home.class3Title')} text={t('home.class3Text')} image="https://images.pexels.com/photos/4164085/pexels-photo-4164085.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+            </div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
-      <section className="py-20 bg-black">
+      <section className="py-24 bg-[#111111]">
          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-teko text-5xl text-center mb-12 uppercase tracking-wider">{t('home.testimonialsTitle')}</h2>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-5xl font-extrabold text-center uppercase tracking-wider text-white">{t('home.testimonialsTitle')}</h2>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <TestimonialCard 
                     name="Jessica M." 
                     quote={t('home.testimonial1')} 
-                    image="https://picsum.photos/200/200?random=1" 
+                    image="https://randomuser.me/api/portraits/women/21.jpg" 
                 />
                 <TestimonialCard 
                     name="David L." 
                     quote={t('home.testimonial2')} 
-                    image="https://picsum.photos/200/200?random=2" 
+                    image="https://randomuser.me/api/portraits/men/32.jpg" 
                 />
                 <TestimonialCard 
                     name="Sarah K." 
                     quote={t('home.testimonial3')}
-                    image="https://picsum.photos/200/200?random=3" 
+                    image="https://randomuser.me/api/portraits/women/45.jpg" 
                 />
             </div>
          </div>
       </section>
-
+      
       {/* CTA Section */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-24 bg-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="font-teko text-5xl text-white mb-4 uppercase">{t('home.ctaTitle')}</h2>
+            <h2 className="text-5xl font-extrabold text-white mb-4 uppercase">{t('home.ctaTitle')}</h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-8">
                 {t('home.ctaText')}
             </p>
             <NavLink 
-                to="/schedule" 
-                className="inline-block bg-red-600 text-white font-bold py-4 px-10 text-xl uppercase tracking-wider rounded-md hover:bg-red-700 transition-colors duration-300 transform hover:scale-105"
+                to="/membership" 
+                className="inline-flex items-center gap-3 bg-accent text-black font-bold py-4 px-10 text-lg uppercase tracking-wider rounded-sm hover:bg-accent-dark transition-colors duration-300"
             >
-                {t('home.ctaButton')}
+                <span>{t('home.ctaButton')}</span>
+                 <ArrowRightIcon className="h-6 w-6" />
             </NavLink>
         </div>
       </section>
