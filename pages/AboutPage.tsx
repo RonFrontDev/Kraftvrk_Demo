@@ -13,6 +13,18 @@ const CoachProfile = ({ name, specialty, image, bio }: { name: string, specialty
     </div>
 );
 
+const coachesData = [
+  { name: "Alex 'The Rep' Riley", specialtyKey: 'about.coach1Specialty', bioKey: 'about.coach1Bio', imageId: '5' },
+  { name: "Maria 'Cardio Queen' Sanchez", specialtyKey: 'about.coach2Specialty', bioKey: 'about.coach2Bio', imageId: '6' },
+  { name: 'David "The Engine" Chen', specialtyKey: 'about.coach3Specialty', bioKey: 'about.coach3Bio', imageId: '7' },
+  { name: 'Emily "Guns" Johnson', specialtyKey: 'about.coach4Specialty', bioKey: 'about.coach4Bio', imageId: '8' },
+  { name: 'Frank "The Tank" Kowalski', specialtyKey: 'about.coach5Specialty', bioKey: 'about.coach5Bio', imageId: '9' },
+  { name: 'Chloe "Mobility" Kim', specialtyKey: 'about.coach6Specialty', bioKey: 'about.coach6Bio', imageId: '10' },
+  { name: 'Brian "Barbell" O\'Connell', specialtyKey: 'about.coach7Specialty', bioKey: 'about.coach7Bio', imageId: '11' },
+  { name: 'Olivia "Pistol" Petrova', specialtyKey: 'about.coach8Specialty', bioKey: 'about.coach8Bio', imageId: '12' },
+  { name: 'Marcus "Metcon" Washington', specialtyKey: 'about.coach9Specialty', bioKey: 'about.coach9Bio', imageId: '13' },
+  { name: 'Isabelle "The Iron" Dubois', specialtyKey: 'about.coach10Specialty', bioKey: 'about.coach10Bio', imageId: '14' },
+];
 
 const AboutPage = (): React.ReactNode => {
   const { t } = useLanguage();
@@ -33,18 +45,15 @@ const AboutPage = (): React.ReactNode => {
       <div className="mb-12">
         <h2 className="font-teko text-5xl text-white mb-8 uppercase text-center">{t('about.coachesTitle')}</h2>
         <div className="space-y-8">
-            <CoachProfile 
-                name="Alex 'The Rep' Riley"
-                specialty={t('about.coach1Specialty')}
-                image="https://picsum.photos/400/400?random=5"
-                bio={t('about.coach1Bio')}
-            />
-            <CoachProfile 
-                name="Maria 'Cardio Queen' Sanchez"
-                specialty={t('about.coach2Specialty')}
-                image="https://picsum.photos/400/400?random=6"
-                bio={t('about.coach2Bio')}
-            />
+            {coachesData.map(coach => (
+              <CoachProfile 
+                  key={coach.name}
+                  name={coach.name}
+                  specialty={t(coach.specialtyKey)}
+                  image={`https://picsum.photos/400/400?random=${coach.imageId}`}
+                  bio={t(coach.bioKey)}
+              />
+            ))}
         </div>
       </div>
     </div>

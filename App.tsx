@@ -8,6 +8,9 @@ import AboutPage from './pages/AboutPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { LanguageProvider } from './contexts/LanguageContext';
+import MembershipPage from './pages/MembershipPage';
+import ShopPage from './pages/ShopPage';
+import ContactPage from './pages/ContactPage';
 
 function App(): React.ReactNode {
   return (
@@ -21,6 +24,9 @@ function App(): React.ReactNode {
               <Route path="/wod" element={<WodPage />} />
               <Route path="/schedule" element={<SchedulePage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/membership" element={<MembershipPage />} />
+              <Route path="/shop" element={<ShopPage />} />
+              <Route path="/contact" element={<ContactPage />} />
             </Routes>
           </main>
           <Footer />

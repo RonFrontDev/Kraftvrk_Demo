@@ -2,29 +2,86 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
+const scheduleData = [
+  {
+    day: 'schedule.dayMonday',
+    classes: [
+      { time: '06:00 - 07:00', name: 'schedule.classWod', coach: 'schedule.coachAlex' },
+      { time: '07:00 - 08:00', name: 'schedule.classWod', coach: 'schedule.coachAlex' },
+      { time: '12:00 - 13:00', name: 'schedule.classWod', coach: 'schedule.coachMaria' },
+      { time: '16:30 - 17:30', name: 'schedule.classWod', coach: 'schedule.coachMaria' },
+      { time: '17:30 - 18:30', name: 'schedule.classWod', coach: 'schedule.coachMaria' },
+      { time: '18:30 - 19:30', name: 'schedule.classWod', coach: 'schedule.coachAlex' },
+    ],
+  },
+  {
+    day: 'schedule.dayTuesday',
+    classes: [
+      { time: '06:00 - 07:00', name: 'schedule.classWod', coach: 'schedule.coachAlex' },
+      { time: '07:00 - 08:00', name: 'schedule.classWod', coach: 'schedule.coachAlex' },
+      { time: '12:00 - 13:00', name: 'schedule.classWod', coach: 'schedule.coachMaria' },
+      { time: '16:30 - 17:30', name: 'schedule.classWod', coach: 'schedule.coachMaria' },
+      { time: '17:30 - 18:30', name: 'schedule.classWod', coach: 'schedule.coachMaria' },
+      { time: '18:30 - 19:30', name: 'schedule.classWod', coach: 'schedule.coachAlex' },
+    ],
+  },
+    {
+    day: 'schedule.dayWednesday',
+    classes: [
+      { time: '06:00 - 07:00', name: 'schedule.classWod', coach: 'schedule.coachAlex' },
+      { time: '07:00 - 08:00', name: 'schedule.classWod', coach: 'schedule.coachAlex' },
+      { time: '12:00 - 13:00', name: 'schedule.classWod', coach: 'schedule.coachMaria' },
+      { time: '16:30 - 17:30', name: 'schedule.classWod', coach: 'schedule.coachMaria' },
+      { time: '17:30 - 18:30', name: 'schedule.classWod', coach: 'schedule.coachMaria' },
+      { time: '18:30 - 19:30', name: 'schedule.classWod', coach: 'schedule.coachAlex' },
+    ],
+  },
+  {
+    day: 'schedule.dayThursday',
+    classes: [
+      { time: '06:00 - 07:00', name: 'schedule.classWod', coach: 'schedule.coachAlex' },
+      { time: '07:00 - 08:00', name: 'schedule.classWod', coach: 'schedule.coachAlex' },
+      { time: '12:00 - 13:00', name: 'schedule.classWod', coach: 'schedule.coachMaria' },
+      { time: '16:30 - 17:30', name: 'schedule.classWod', coach: 'schedule.coachMaria' },
+      { time: '17:30 - 18:30', name: 'schedule.classWod', coach: 'schedule.coachMaria' },
+      { time: '18:30 - 19:30', name: 'schedule.classWod', coach: 'schedule.coachAlex' },
+    ],
+  },
+  {
+    day: 'schedule.dayFriday',
+    classes: [
+      { time: '06:00 - 07:00', name: 'schedule.classWod', coach: 'schedule.coachAlex' },
+      { time: '07:00 - 08:00', name: 'schedule.classWod', coach: 'schedule.coachAlex' },
+      { time: '12:00 - 13:00', name: 'schedule.classWod', coach: 'schedule.coachMaria' },
+      { time: '16:30 - 17:30', name: 'schedule.classWod', coach: 'schedule.coachMaria' },
+      { time: '17:30 - 18:30', name: 'schedule.classWod', coach: 'schedule.coachMaria' },
+    ],
+  },
+  {
+    day: 'schedule.daySaturday',
+    classes: [
+      { time: '09:00 - 10:00', name: 'schedule.classCommunityWod', coach: 'schedule.coachTeam' },
+      { time: '10:00 - 11:30', name: 'schedule.classOpenGym', coach: 'schedule.unsupervised' },
+    ],
+  },
+  {
+    day: 'schedule.daySunday',
+    classes: [
+      { time: '', name: 'schedule.closed', coach: '' }
+    ],
+  },
+];
+
+const ClassEntry = ({ time, name, coach }: { time: string, name: string, coach: string }) => (
+    <div className="bg-gray-700/50 p-3 rounded-md transition-colors duration-300 hover:bg-gray-700">
+        <p className="font-bold text-lg text-white">{time}</p>
+        <p className="text-red-400">{name}</p>
+        <p className="text-sm text-gray-400">{coach}</p>
+    </div>
+);
+
 const SchedulePage = (): React.ReactNode => {
   const { t } = useLanguage();
-
-  const scheduleData = {
-    [t('schedule.dayMonday')]: ['6:00 AM', '7:00 AM', '12:00 PM', '4:30 PM', '5:30 PM', '6:30 PM'],
-    [t('schedule.dayTuesday')]: ['6:00 AM', '7:00 AM', '12:00 PM', '4:30 PM', '5:30 PM', '6:30 PM'],
-    [t('schedule.dayWednesday')]: ['6:00 AM', '7:00 AM', '12:00 PM', '4:30 PM', '5:30 PM', '6:30 PM'],
-    [t('schedule.dayThursday')]: ['6:00 AM', '7:00 AM', '12:00 PM', '4:30 PM', '5:30 PM', '6:30 PM'],
-    [t('schedule.dayFriday')]: ['6:00 AM', '7:00 AM', '12:00 PM', '4:30 PM', '5:30 PM'],
-    [t('schedule.daySaturday')]: ['9:00 AM', `10:00 AM (${t('schedule.openGym')})`],
-    [t('schedule.daySunday')]: [t('schedule.closed')],
-  };
-
-  const daysInOrder = [
-    t('schedule.dayMonday'),
-    t('schedule.dayTuesday'),
-    t('schedule.dayWednesday'),
-    t('schedule.dayThursday'),
-    t('schedule.dayFriday'),
-    t('schedule.daySaturday'),
-    t('schedule.daySunday'),
-  ];
-
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -34,15 +91,26 @@ const SchedulePage = (): React.ReactNode => {
       </div>
       
       <div className="bg-gray-800 rounded-lg shadow-2xl overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {daysInOrder.map((day) => (
-            <div key={day} className="border-b md:border-b-0 md:border-r border-gray-700 p-6 last:border-r-0">
-              <h2 className="font-teko text-4xl text-red-500 uppercase tracking-wider mb-4">{day}</h2>
-              <ul className="space-y-2">
-                {scheduleData[day].map(time => (
-                  <li key={time} className="text-lg text-gray-300 bg-gray-700/50 p-2 rounded-md text-center">{time}</li>
-                ))}
-              </ul>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px">
+          {scheduleData.map(({ day, classes }) => (
+            <div key={day} className="bg-gray-800 p-6">
+              <h2 className="font-teko text-4xl text-red-500 uppercase tracking-wider mb-4 border-b-2 border-gray-700 pb-2">{t(day)}</h2>
+              <div className="space-y-3">
+                {classes.length > 0 && classes[0].name !== 'schedule.closed' ? (
+                   classes.map((cls, index) => (
+                    <ClassEntry 
+                        key={index} 
+                        time={cls.time} 
+                        name={t(cls.name)} 
+                        coach={cls.coach ? t(cls.coach) : ''}
+                    />
+                  ))
+                ) : (
+                    <div className="bg-gray-700/50 p-3 rounded-md text-center">
+                        <p className="font-bold text-lg text-gray-300">{t('schedule.closed')}</p>
+                    </div>
+                )}
+              </div>
             </div>
           ))}
         </div>
