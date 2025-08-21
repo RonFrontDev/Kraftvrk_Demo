@@ -40,15 +40,23 @@ const HomePage = (): React.ReactNode => {
 
   return (
     <div>
-      {/* Hero Section */}
+      {/* Hero Section with YouTube */}
       <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
-        <img
-            src="https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2"
-            alt="Athlete preparing for a deadlift in a gym with chalk dust in the air"
-            className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="relative z-10 px-4">
+        {/* YouTube Video */}
+        <iframe
+          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+          src="https://www.youtube.com/embed/chuNCzd3OHk?autoplay=1&mute=1&loop=1&playlist=chuNCzd3OHk&controls=0&modestbranding=1&showinfo=0"
+          title="Hero Video"
+          frameBorder="0"
+          allow="autoplay; fullscreen; encrypted-media"
+          allowFullScreen
+        ></iframe>
+
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/80 z-10"></div>
+
+        {/* Hero Content */}
+        <div className="relative z-20 px-4">
           <h1 className="text-5xl md:text-7xl font-bold uppercase tracking-wider text-white">
             {t('home.heroTitle1')}
           </h1>
@@ -58,7 +66,10 @@ const HomePage = (): React.ReactNode => {
           <p className="mt-6 text-lg md:text-xl max-w-2xl mx-auto text-gray-300">
             {t('home.heroSubtitle')}
           </p>
-          <NavLink to="/membership" className="mt-10 inline-flex items-center gap-3 bg-accent text-black font-bold py-4 px-10 text-lg uppercase tracking-wider rounded-sm hover:bg-accent-dark transition-colors duration-300">
+          <NavLink 
+            to="/membership" 
+            className="mt-10 inline-flex items-center gap-3 bg-accent text-black font-bold py-4 px-10 text-lg uppercase tracking-wider rounded-sm hover:bg-accent-dark transition-colors duration-300"
+          >
             <span>{t('home.joinButton')}</span>
             <ArrowRightIcon className="h-6 w-6" />
           </NavLink>

@@ -36,8 +36,8 @@ const Header = (): React.ReactNode => {
   );
 
   const headerClasses = `
-    absolute top-0 w-full z-50 transition-all duration-300
-    ${isScrolled || isMenuOpen ? 'bg-[#181818] shadow-lg sticky' : 'bg-transparent'}
+    fixed top-0 w-full z-50 transition-all duration-300
+    ${isScrolled && !isMenuOpen ? 'bg-transparent' : 'bg-[#181818] shadow-lg'}
   `;
 
   return (
