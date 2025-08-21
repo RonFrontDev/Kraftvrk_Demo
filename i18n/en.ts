@@ -8,6 +8,7 @@ export const en = {
     membership: 'Membership',
     shop: 'Shop',
     contact: 'Contact',
+    freeTrial: 'Free Trial',
   },
   // Footer
   footer: {
@@ -156,6 +157,9 @@ export const en = {
   membership: {
     title: 'Membership Plans',
     subtitle: 'Choose the plan that fits your goals and lifestyle. Join the Kraftvrk family today.',
+    trialTitle: 'Not Sure Yet?',
+    trialSubtitle: 'Experience the Kraftvrk community and coaching firsthand. Your first class is on us.',
+    trialButton: 'Claim Your Free Trial',
     popular: 'Most Popular',
     month: 'mo',
     joinButton: 'Sign Up Now',

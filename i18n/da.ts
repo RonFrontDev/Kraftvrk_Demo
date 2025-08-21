@@ -7,6 +7,7 @@ export const da = {
     membership: 'Medlemskab',
     shop: 'Butik',
     contact: 'Kontakt',
+    freeTrial: 'Gratis Prøvetime',
   },
   footer: {
     rightsReserved: 'Alle rettigheder forbeholdes.',
@@ -149,6 +150,9 @@ export const da = {
   membership: {
     title: 'Medlemskabsplaner',
     subtitle: 'Vælg den plan, der passer til dine mål og din livsstil. Bliv en del af Kraftvrk-familien i dag.',
+    trialTitle: 'Ikke Sikker Endnu?',
+    trialSubtitle: 'Oplev Kraftvrk-fællesskabet og coachingen på første hånd. Din første time er på vores regning.',
+    trialButton: 'Få Din Gratis Prøvetime',
     popular: 'Mest Populære',
     month: 'md',
     joinButton: 'Tilmeld Dig Nu',

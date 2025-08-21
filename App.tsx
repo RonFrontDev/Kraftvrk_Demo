@@ -11,28 +11,31 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import MembershipPage from './pages/MembershipPage';
 import ShopPage from './pages/ShopPage';
 import ContactPage from './pages/ContactPage';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 function App(): React.ReactNode {
   return (
-    <LanguageProvider>
-      <HashRouter>
-        <div className="flex flex-col min-h-screen">
-          <Header />
-          <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/wod" element={<WodPage />} />
-              <Route path="/schedule" element={<SchedulePage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/membership" element={<MembershipPage />} />
-              <Route path="/shop" element={<ShopPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </HashRouter>
-    </LanguageProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <HashRouter>
+          <div className="flex flex-col min-h-screen">
+            <Header />
+            <main className="flex-grow">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/wod" element={<WodPage />} />
+                <Route path="/schedule" element={<SchedulePage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/membership" element={<MembershipPage />} />
+                <Route path="/shop" element={<ShopPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </HashRouter>
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }
 

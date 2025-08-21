@@ -2,12 +2,12 @@ import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const CoachProfile = ({ name, specialty, image, bio }: { name: string, specialty: string, image: string, bio: string }) => (
-    <div className="bg-[#1c1c1e] overflow-hidden flex flex-col md:flex-row items-center transform hover:scale-[1.02] transition-transform duration-300">
+    <div className="bg-white dark:bg-[#1c1c1e] overflow-hidden flex flex-col md:flex-row items-center transform hover:scale-[1.02] transition-transform duration-300 shadow-lg rounded-md">
         <img src={image} alt={name} className="w-full md:w-1/3 h-64 md:h-auto object-cover" />
         <div className="p-8">
             <h3 className="text-4xl font-bold text-accent">{name}</h3>
-            <p className="text-lg font-bold text-white mb-2">{specialty}</p>
-            <p className="text-gray-400">{bio}</p>
+            <p className="text-lg font-bold text-gray-900 dark:text-white mb-2">{specialty}</p>
+            <p className="text-gray-600 dark:text-gray-400">{bio}</p>
         </div>
     </div>
 );
@@ -30,19 +30,19 @@ const AboutPage = (): React.ReactNode => {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-32">
       <div className="text-center mb-12">
-        <h1 className="text-7xl font-extrabold uppercase tracking-wider text-white">{t('about.title')}</h1>
-        <p className="text-xl text-gray-400 max-w-3xl mx-auto">{t('about.subtitle')}</p>
+        <h1 className="text-7xl font-extrabold uppercase tracking-wider text-gray-900 dark:text-white">{t('about.title')}</h1>
+        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">{t('about.subtitle')}</p>
       </div>
 
-      <div className="bg-[#1c1c1e] p-10 mb-16">
-          <h2 className="text-5xl font-extrabold text-white mb-4 uppercase">{t('about.philosophyTitle')}</h2>
-          <p className="text-lg text-gray-300 leading-relaxed">
+      <div className="bg-white dark:bg-[#1c1c1e] p-10 mb-16 shadow-lg rounded-md">
+          <h2 className="text-5xl font-extrabold text-gray-900 dark:text-white mb-4 uppercase">{t('about.philosophyTitle')}</h2>
+          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
             {t('about.philosophyText')}
           </p>
       </div>
 
       <div className="mb-12">
-        <h2 className="text-5xl font-extrabold text-white mb-8 uppercase text-center">{t('about.coachesTitle')}</h2>
+        <h2 className="text-5xl font-extrabold text-gray-900 dark:text-white mb-8 uppercase text-center">{t('about.coachesTitle')}</h2>
         <div className="space-y-8">
             {coachesData.map(coach => (
               <CoachProfile 

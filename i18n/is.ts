@@ -7,6 +7,7 @@ export const is = {
     membership: 'Aðild',
     shop: 'Verslun',
     contact: 'Hafa Samband',
+    freeTrial: 'Ókeypis Prufutími',
   },
   footer: {
     rightsReserved: 'Allur réttur áskilinn.',
@@ -149,6 +150,9 @@ export const is = {
   membership: {
     title: 'Aðildarleiðir',
     subtitle: 'Veldu þá leið sem hentar þínum markmiðum og lífsstíl. Gakktu í Kraftvrk fjölskylduna í dag.',
+    trialTitle: 'Ekki Viss Ennþá?',
+    trialSubtitle: 'Upplifðu Kraftvrk samfélagið og þjálfunina af eigin raun. Fyrsti tíminn er á okkur.',
+    trialButton: 'Sæktu Þinn Ókeypis Prufutíma',
     popular: 'Vinsælast',
     month: 'mán',
     joinButton: 'Skráðu Þig Núna',

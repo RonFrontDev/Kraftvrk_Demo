@@ -6,16 +6,16 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 const ValueCard = ({ icon, title, children }: { icon: React.ReactNode, title: string, children: React.ReactNode }) => (
   <div className="text-center p-4">
-    <div className="flex items-center justify-center h-20 w-20 rounded-full bg-[#1c1c1e] text-accent mb-6 mx-auto">
+    <div className="flex items-center justify-center h-20 w-20 rounded-full bg-white dark:bg-[#1c1c1e] text-accent mb-6 mx-auto shadow-md">
       {icon}
     </div>
-    <h3 className="text-2xl font-bold text-white mb-3 uppercase">{title}</h3>
-    <p className="text-gray-400 leading-relaxed">{children}</p>
+    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 uppercase">{title}</h3>
+    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{children}</p>
   </div>
 );
 
 const ClassCard = ({ title, text, image }: { title: string, text: string, image: string }) => (
-    <div className="bg-[#1c1c1e] overflow-hidden group">
+    <div className="bg-white dark:bg-[#1c1c1e] overflow-hidden group">
         <div className="relative h-96">
             <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -28,9 +28,9 @@ const ClassCard = ({ title, text, image }: { title: string, text: string, image:
 );
 
 const TestimonialCard = ({ quote, name, image }: { quote: string, name: string, image: string }) => (
-    <div className="bg-[#1c1c1e] p-8 text-center">
+    <div className="bg-white dark:bg-[#1c1c1e] p-8 text-center shadow-lg rounded-md">
         <img src={image} alt={name} className="w-24 h-24 rounded-full mx-auto mb-6"/>
-        <p className="text-gray-300 italic text-lg mb-6">"{quote}"</p>
+        <p className="text-gray-700 dark:text-gray-300 italic text-lg mb-6">"{quote}"</p>
         <h4 className="font-semibold text-xl text-accent tracking-wider">- {name}</h4>
     </div>
 );
@@ -77,10 +77,10 @@ const HomePage = (): React.ReactNode => {
       </section>
 
       {/* Values Section */}
-      <section className="py-24 bg-[#111111]">
+      <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-5xl font-extrabold text-center uppercase tracking-wider text-white">{t('home.valuesTitle')}</h2>
+            <h2 className="text-5xl font-extrabold text-center uppercase tracking-wider text-gray-900 dark:text-white">{t('home.valuesTitle')}</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
              <ValueCard icon={<UsersIcon className="h-10 w-10"/>} title={t('home.value1Title')}>
@@ -97,10 +97,10 @@ const HomePage = (): React.ReactNode => {
       </section>
       
       {/* Types of Classes Section */}
-      <section className="py-24 bg-black">
+      <section className="py-24 bg-gray-50 dark:bg-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-                <h2 className="text-5xl font-extrabold text-center uppercase tracking-wider text-white">{t('home.classesTitle')}</h2>
+                <h2 className="text-5xl font-extrabold text-center uppercase tracking-wider text-gray-900 dark:text-white">{t('home.classesTitle')}</h2>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-1">
                 <ClassCard title={t('home.class1Title')} text={t('home.class1Text')} image="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
@@ -111,10 +111,10 @@ const HomePage = (): React.ReactNode => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-[#111111]">
+      <section className="py-24">
          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-5xl font-extrabold text-center uppercase tracking-wider text-white">{t('home.testimonialsTitle')}</h2>
+              <h2 className="text-5xl font-extrabold text-center uppercase tracking-wider text-gray-900 dark:text-white">{t('home.testimonialsTitle')}</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <TestimonialCard 
@@ -137,10 +137,10 @@ const HomePage = (): React.ReactNode => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-24 bg-black">
+      <section className="py-24 bg-gray-50 dark:bg-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-5xl font-extrabold text-white mb-4 uppercase">{t('home.ctaTitle')}</h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-8">
+            <h2 className="text-5xl font-extrabold text-gray-900 dark:text-white mb-4 uppercase">{t('home.ctaTitle')}</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
                 {t('home.ctaText')}
             </p>
             <NavLink 

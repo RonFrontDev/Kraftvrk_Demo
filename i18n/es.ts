@@ -7,6 +7,7 @@ export const es = {
     membership: 'Membresías',
     shop: 'Tienda',
     contact: 'Contacto',
+    freeTrial: 'Prueba Gratis',
   },
   footer: {
     rightsReserved: 'Todos los derechos reservados.',
@@ -149,6 +150,9 @@ export const es = {
   membership: {
     title: 'Planes de Membresía',
     subtitle: 'Elige el plan que se adapte a tus objetivos y estilo de vida. Únete a la familia Kraftvrk hoy.',
+    trialTitle: '¿Aún no estás seguro?',
+    trialSubtitle: 'Experimenta la comunidad y el entrenamiento de Kraftvrk de primera mano. Tu primera clase corre por nuestra cuenta.',
+    trialButton: 'Reclama tu Prueba Gratis',
     popular: 'Más Popular',
     month: 'mes',
     joinButton: 'Inscríbete Ahora',
