@@ -2,13 +2,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 import type { Wod, WodSection } from '../types';
 import { translations, LanguageCode } from '../i18n';
 
-const API_KEY = process.env.API_KEY;
-
-if (!API_KEY) {
-  throw new Error("API_KEY environment variable not set");
-}
-
-const ai = new GoogleGenAI({ apiKey: API_KEY });
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const scalingOptionsSchema = {
     type: Type.OBJECT,
