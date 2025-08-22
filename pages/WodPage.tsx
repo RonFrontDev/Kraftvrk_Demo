@@ -208,7 +208,7 @@ const WodPage = (): React.ReactNode => {
 
     if (isLoading) {
       return (
-        <div className="flex justify-center items-center h-64 bg-white dark:bg-[#1c1c1e] rounded-lg shadow-md">
+        <div className="flex justify-center items-center h-64">
           <div className="text-center">
             <Spinner size="12" />
             <p className="mt-4 text-lg">{t('wod.generatingButton')}</p>
@@ -243,18 +243,18 @@ const WodPage = (): React.ReactNode => {
               isRegenerating={loadingSection === index}
             />
           ))}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 pt-4">
             {transientWod && (
-              <button onClick={pinWod} className="flex-1 bg-green-600 text-white font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-sm hover:bg-green-500 transition-all duration-300 flex items-center justify-center">
+              <button onClick={pinWod} className="flex-1 bg-green-600 text-white font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md hover:bg-green-500 transition-all duration-300 flex items-center justify-center shadow-md hover:shadow-lg transform hover:-translate-y-1">
                 <PinIcon className="h-6 w-6 mr-3" />
                 {t('wod.pinWod')}
               </button>
             )}
-            <button onClick={handleEditClick} disabled={isLoading || loadingSection !== null} className="flex-1 bg-gray-600 text-white font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-sm hover:bg-gray-500 disabled:bg-gray-800 transition-all duration-300 flex items-center justify-center">
+            <button onClick={handleEditClick} disabled={isLoading || loadingSection !== null} className="flex-1 bg-gray-600 text-white font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md hover:bg-gray-500 disabled:bg-gray-800 transition-all duration-300 flex items-center justify-center shadow-md hover:shadow-lg transform hover:-translate-y-1">
               <PencilIcon className="h-5 w-5 mr-3" />
               {t('wod.editWod')}
             </button>
-            <button onClick={handleFullRegeneration} disabled={isLoading || loadingSection !== null} className="flex-1 bg-blue-600 text-white font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-sm hover:bg-blue-500 disabled:bg-gray-800 transition-all duration-300 flex items-center justify-center">
+            <button onClick={handleFullRegeneration} disabled={isLoading || loadingSection !== null} className="flex-1 bg-blue-600 text-white font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md hover:bg-blue-500 disabled:bg-gray-800 transition-all duration-300 flex items-center justify-center shadow-md hover:shadow-lg transform hover:-translate-y-1">
               <RefreshIcon className={`h-6 w-6 mr-3 ${isLoading && loadingSection === null ? 'animate-spin' : ''}`} />
               {t('wod.regenerateWod')}
             </button>
@@ -264,23 +264,23 @@ const WodPage = (): React.ReactNode => {
     }
 
     return (
-      <div className="bg-white dark:bg-[#1c1c1e] p-8 text-center h-full flex flex-col justify-center min-h-[300px] rounded-lg shadow-md">
+      <div className="text-center h-full flex flex-col justify-center min-h-[300px]">
         <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">{t('wod.noWodForDate')}</p>
         <div className="flex justify-center mb-6">
           <div className="inline-flex rounded-md shadow-sm bg-gray-200 dark:bg-gray-900 p-1 border border-gray-300 dark:border-gray-700">
-            <button onClick={() => setWodType('individual')} className={`px-6 py-2 text-sm font-medium uppercase tracking-wider rounded-l-sm transition-colors duration-200 ${wodType === 'individual' ? 'bg-accent text-black' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700'}`}>
+            <button onClick={() => setWodType('individual')} className={`px-6 py-2 text-sm font-medium uppercase tracking-wider rounded-l-md transition-colors duration-200 ${wodType === 'individual' ? 'bg-accent text-black' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700'}`}>
               {t('wod.typeIndividual')}
             </button>
-            <button onClick={() => setWodType('team')} className={`px-6 py-2 text-sm font-medium uppercase tracking-wider rounded-r-sm transition-colors duration-200 ${wodType === 'team' ? 'bg-accent text-black' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700'}`}>
+            <button onClick={() => setWodType('team')} className={`px-6 py-2 text-sm font-medium uppercase tracking-wider rounded-r-md transition-colors duration-200 ${wodType === 'team' ? 'bg-accent text-black' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700'}`}>
               {t('wod.typeTeam')}
             </button>
           </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-4">
-          <button onClick={() => fetchWod()} disabled={isLoading} className="flex-1 bg-accent text-black font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-sm hover:bg-accent-dark transition-all duration-300 transform hover:scale-105 disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed">
+          <button onClick={() => fetchWod()} disabled={isLoading} className="flex-1 bg-accent text-black font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md hover:bg-accent-dark transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed shadow-md">
             {t(wodType === 'individual' ? 'wod.generateIndividualWod' : 'wod.generateTeamWod', { date: selectedDate.toLocaleDateString(t('langCode') as string, { month: 'long', day: 'numeric' }) })}
           </button>
-          <button onClick={handleWriteClick} disabled={isLoading} className="flex-1 bg-gray-300 text-gray-800 dark:bg-gray-600 dark:text-white font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-sm hover:bg-gray-400 dark:hover:bg-gray-500 transition-all duration-300 transform hover:scale-105 disabled:bg-gray-800 disabled:cursor-not-allowed">
+          <button onClick={handleWriteClick} disabled={isLoading} className="flex-1 bg-gray-300 text-gray-800 dark:bg-gray-600 dark:text-white font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md hover:bg-gray-400 dark:hover:bg-gray-500 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg disabled:bg-gray-800 disabled:cursor-not-allowed shadow-md">
             {t('wod.writeOwnWod')}
           </button>
         </div>
@@ -293,11 +293,11 @@ const WodPage = (): React.ReactNode => {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-32">
       <div className="text-center mb-12">
-        <h1 className="text-7xl font-extrabold uppercase tracking-wider text-gray-900 dark:text-white">{t('wod.title')}</h1>
+        <h1 className="text-7xl font-extrabold uppercase tracking-widest text-gray-900 dark:text-white">{t('wod.title')}</h1>
         <p className="text-xl text-gray-600 dark:text-gray-400">{t('wod.calendar')}</p>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        <div className="lg:sticky lg:top-32">
           <Calendar
             currentMonth={currentMonth}
             onMonthChange={setCurrentMonth}
@@ -307,8 +307,8 @@ const WodPage = (): React.ReactNode => {
             t={t}
           />
         </div>
-        <div className="w-full">
-          <div className="flex justify-between items-center mb-4">
+        <div className="w-full lg:col-span-2 bg-white dark:bg-[#1A1A1C] rounded-lg shadow-xl p-6 md:p-8">
+          <div className="flex justify-between items-center mb-6">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
               {t('wod.wodFor')}{' '}
               <span className="text-accent">

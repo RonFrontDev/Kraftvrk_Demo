@@ -19,7 +19,8 @@
     <style>
       body {
         font-family: 'Poppins', sans-serif;
-        --color-accent: #FDBB0B;
+        --color-accent: #FFD900; /* Brighter Yellow */
+        --color-secondary-accent: #00F5D4; /* Bright Cyan */
       }
       .text-outline {
         -webkit-text-stroke: 2px var(--color-accent);
@@ -28,8 +29,19 @@
       .bg-accent { background-color: var(--color-accent); }
       .text-accent { color: var(--color-accent); }
       .border-accent { border-color: var(--color-accent); }
-      .hover\:bg-accent-dark:hover { background-color: #e4a80a; }
+      .hover\:bg-accent-dark:hover { background-color: #e6c300; }
       .hover\:text-accent:hover { color: var(--color-accent); }
+
+      .bg-gradient-accent {
+        background-image: linear-gradient(to right, var(--color-accent) 0%, var(--color-secondary-accent) 100%);
+      }
+      .bg-gradient-accent-hover {
+        background-size: 200% auto;
+        transition: background-position 0.5s;
+      }
+      .bg-gradient-accent-hover:hover {
+        background-position: right center;
+      }
     </style>
   <script type="importmap">
 {
@@ -43,7 +55,7 @@
 }
 </script>
 </head>
-  <body class="bg-gray-100 dark:bg-[#111111] text-gray-800 dark:text-gray-300 transition-colors duration-300">
+  <body class="bg-gray-100 dark:bg-[#101012] text-gray-800 dark:text-gray-300 transition-colors duration-300">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

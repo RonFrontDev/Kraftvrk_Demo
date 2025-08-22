@@ -6,7 +6,7 @@ import { CheckCircleIcon, ArrowRightIcon } from '../components/IconComponents';
 const PricingCard = ({ plan, popular = false }: { plan: any, popular?: boolean }) => {
     const { t } = useLanguage();
     return (
-        <div className={`border-2 ${popular ? 'border-accent' : 'border-gray-300 dark:border-gray-700'} bg-white dark:bg-[#1c1c1e] p-8 flex flex-col relative rounded-md shadow-lg`}>
+        <div className={`border-2 ${popular ? 'border-accent' : 'border-gray-300 dark:border-gray-700'} bg-white dark:bg-[#1A1A1C] p-8 flex flex-col relative rounded-lg shadow-xl`}>
             {popular && (
                 <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
                     <span className="bg-accent text-black text-sm font-bold tracking-wider rounded-full px-4 py-1 uppercase">{t('membership.popular')}</span>
@@ -28,7 +28,7 @@ const PricingCard = ({ plan, popular = false }: { plan: any, popular?: boolean }
             </ul>
             <NavLink
                 to="/contact"
-                className={`mt-10 block w-full text-center font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-sm transition-colors duration-300 transform hover:scale-105 ${popular ? 'bg-accent text-black hover:bg-accent-dark' : 'bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-400 dark:hover:bg-gray-600'}`}
+                className={`mt-10 block w-full text-center font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg ${popular ? 'bg-accent text-black hover:bg-accent-dark' : 'bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-400 dark:hover:bg-gray-600'}`}
             >
                 {t('membership.joinButton')}
             </NavLink>
@@ -78,16 +78,16 @@ const MembershipPage = (): React.ReactNode => {
     return (
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-32">
             <div className="text-center mb-16">
-                <h1 className="text-7xl font-extrabold uppercase tracking-wider text-gray-900 dark:text-white">{t('membership.title')}</h1>
+                <h1 className="text-7xl font-extrabold uppercase tracking-widest text-gray-900 dark:text-white">{t('membership.title')}</h1>
                 <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">{t('membership.subtitle')}</p>
             </div>
 
-            <div className="max-w-4xl mx-auto mb-16 bg-white dark:bg-[#1c1c1e] border-2 border-accent p-8 text-center shadow-lg rounded-sm">
+            <div className="max-w-4xl mx-auto mb-16 bg-white dark:bg-[#1A1A1C] border-2 border-accent p-8 text-center shadow-lg rounded-lg">
                 <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white uppercase">{t('membership.trialTitle')}</h2>
                 <p className="mt-4 text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">{t('membership.trialSubtitle')}</p>
                 <NavLink 
                     to="/contact" 
-                    className="mt-8 inline-flex items-center gap-3 bg-accent text-black font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-sm hover:bg-accent-dark transition-colors duration-300 transform hover:scale-105"
+                    className="mt-8 inline-flex items-center gap-3 bg-accent text-black font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md hover:bg-accent-dark transition-colors duration-300 transform hover:-translate-y-1 hover:shadow-lg"
                 >
                     <span>{t('membership.trialButton')}</span>
                     <ArrowRightIcon className="h-6 w-6" />

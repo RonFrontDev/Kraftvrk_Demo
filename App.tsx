@@ -12,6 +12,8 @@ import MembershipPage from './pages/MembershipPage';
 import ShopPage from './pages/ShopPage';
 import ContactPage from './pages/ContactPage';
 import { ThemeProvider } from './contexts/ThemeContext';
+import FloatingChatButton from './components/FloatingChatButton';
+import CoachesPage from './pages/CoachesPage';
 
 function App(): React.ReactNode {
   return (
@@ -26,12 +28,14 @@ function App(): React.ReactNode {
                 <Route path="/wod" element={<WodPage />} />
                 <Route path="/schedule" element={<SchedulePage />} />
                 <Route path="/about" element={<AboutPage />} />
+                <Route path="/coaches" element={<CoachesPage />} />
                 <Route path="/membership" element={<MembershipPage />} />
                 <Route path="/shop" element={<ShopPage />} />
                 <Route path="/contact" element={<ContactPage />} />
               </Routes>
             </main>
             <Footer />
+            <FloatingChatButton />
           </div>
         </HashRouter>
       </LanguageProvider>
