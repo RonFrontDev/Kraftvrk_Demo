@@ -4,9 +4,9 @@ import { generateWod, regenerateWodSection } from '../services/geminiService';
 import Spinner from '../components/Spinner';
 import { useLanguage } from '../contexts/LanguageContext';
 import Calendar from '../components/Calendar';
-import { PinIcon, RefreshIcon, PencilIcon } from '../components/IconComponents';
-import WodSectionCard from '../components/WodSectionCard';
 import WodEditor, { EditorSectionState } from '../components/WodEditor';
+import WodDisplayPanel from '../components/WodDisplayPanel';
+import WodGenerationPanel from '../components/WodGenerationPanel';
 
 const toYYYYMMDD = (date: Date): string => date.toISOString().split('T')[0];
 
@@ -228,63 +228,28 @@ const WodPage = (): React.ReactNode => {
 
     if (wodToDisplay) {
       return (
-        <div className="space-y-4">
-          {wodToDisplay.goal && (
-            <div className="bg-black/5 dark:bg-black/30 p-4 border-l-4 border-accent rounded-r-md">
-                <h3 className="font-bold text-gray-900 dark:text-white uppercase tracking-wider text-lg">{t('wod.goal')}</h3>
-                <p className="text-gray-700 dark:text-gray-300">{wodToDisplay.goal}</p>
-            </div>
-          )}
-          {wodToDisplay.sections.map((section, index) => (
-            <WodSectionCard 
-              key={index}
-              section={section} 
-              onRegenerate={() => handleRegenerateSection(index)} 
-              isRegenerating={loadingSection === index}
-            />
-          ))}
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            {transientWod && (
-              <button onClick={pinWod} className="flex-1 bg-green-600 text-white font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md hover:bg-green-500 transition-all duration-300 flex items-center justify-center shadow-md hover:shadow-lg transform hover:-translate-y-1">
-                <PinIcon className="h-6 w-6 mr-3" />
-                {t('wod.pinWod')}
-              </button>
-            )}
-            <button onClick={handleEditClick} disabled={isLoading || loadingSection !== null} className="flex-1 bg-gray-600 text-white font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md hover:bg-gray-500 disabled:bg-gray-800 transition-all duration-300 flex items-center justify-center shadow-md hover:shadow-lg transform hover:-translate-y-1">
-              <PencilIcon className="h-5 w-5 mr-3" />
-              {t('wod.editWod')}
-            </button>
-            <button onClick={handleFullRegeneration} disabled={isLoading || loadingSection !== null} className="flex-1 bg-blue-600 text-white font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md hover:bg-blue-500 disabled:bg-gray-800 transition-all duration-300 flex items-center justify-center shadow-md hover:shadow-lg transform hover:-translate-y-1">
-              <RefreshIcon className={`h-6 w-6 mr-3 ${isLoading && loadingSection === null ? 'animate-spin' : ''}`} />
-              {t('wod.regenerateWod')}
-            </button>
-          </div>
-        </div>
+        <WodDisplayPanel
+            wod={wodToDisplay}
+            isTransient={transientWod !== null}
+            isLoading={isLoading}
+            loadingSection={loadingSection}
+            onPin={pinWod}
+            onEdit={handleEditClick}
+            onRegenerateFull={handleFullRegeneration}
+            onRegenerateSection={handleRegenerateSection}
+        />
       );
     }
 
     return (
-      <div className="text-center h-full flex flex-col justify-center min-h-[300px]">
-        <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">{t('wod.noWodForDate')}</p>
-        <div className="flex justify-center mb-6">
-          <div className="inline-flex rounded-md shadow-sm bg-gray-200 dark:bg-gray-900 p-1 border border-gray-300 dark:border-gray-700">
-            <button onClick={() => setWodType('individual')} className={`px-6 py-2 text-sm font-medium uppercase tracking-wider rounded-l-md transition-colors duration-200 ${wodType === 'individual' ? 'bg-accent text-black' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700'}`}>
-              {t('wod.typeIndividual')}
-            </button>
-            <button onClick={() => setWodType('team')} className={`px-6 py-2 text-sm font-medium uppercase tracking-wider rounded-r-md transition-colors duration-200 ${wodType === 'team' ? 'bg-accent text-black' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700'}`}>
-              {t('wod.typeTeam')}
-            </button>
-          </div>
-        </div>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <button onClick={() => fetchWod()} disabled={isLoading} className="flex-1 bg-accent text-black font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md hover:bg-accent-dark transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed shadow-md">
-            {t(wodType === 'individual' ? 'wod.generateIndividualWod' : 'wod.generateTeamWod', { date: selectedDate.toLocaleDateString(t('langCode') as string, { month: 'long', day: 'numeric' }) })}
-          </button>
-          <button onClick={handleWriteClick} disabled={isLoading} className="flex-1 bg-gray-300 text-gray-800 dark:bg-gray-600 dark:text-white font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md hover:bg-gray-400 dark:hover:bg-gray-500 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg disabled:bg-gray-800 disabled:cursor-not-allowed shadow-md">
-            {t('wod.writeOwnWod')}
-          </button>
-        </div>
-      </div>
+       <WodGenerationPanel
+            wodType={wodType}
+            onWodTypeChange={setWodType}
+            onGenerate={() => fetchWod()}
+            onWrite={handleWriteClick}
+            selectedDate={selectedDate}
+            isLoading={isLoading}
+        />
     );
   };
   

@@ -2,37 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { UsersIcon, BoltIcon, SparklesIcon, ArrowRightIcon } from '../components/IconComponents';
 import { useLanguage } from '../contexts/LanguageContext';
-
-const ValueCard = ({ icon, title, children }: { icon: React.ReactNode, title: string, children: React.ReactNode }) => (
-  <div className="text-center p-6 bg-white dark:bg-[#1A1A1C] rounded-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
-    <div className="flex items-center justify-center h-24 w-24 rounded-full bg-gray-100 dark:bg-[#101012] text-accent mb-6 mx-auto shadow-lg">
-      {icon}
-    </div>
-    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 uppercase tracking-wider">{title}</h3>
-    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{children}</p>
-  </div>
-);
-
-const ClassCard = ({ title, text, image }: { title: string, text: string, image: string }) => (
-    <div className="bg-white dark:bg-[#1A1A1C] overflow-hidden group rounded-lg shadow-xl">
-        <div className="relative h-96">
-            <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent transition-all duration-300 group-hover:from-black/90"></div>
-            <div className="absolute bottom-0 left-0 p-8 transition-transform duration-500 group-hover:-translate-y-2">
-                <h3 className="text-4xl font-extrabold text-white uppercase tracking-wide">{title}</h3>
-                <p className="text-gray-300 mt-2 opacity-80 group-hover:opacity-100">{text}</p>
-            </div>
-        </div>
-    </div>
-);
-
-const TestimonialCard = ({ quote, name, image }: { quote: string, name: string, image: string }) => (
-    <div className="bg-white dark:bg-[#1A1A1C] p-8 text-center shadow-xl rounded-lg transform hover:-translate-y-2 transition-transform duration-300">
-        <img src={image} alt={name} className="w-24 h-24 rounded-full mx-auto mb-6 border-4 border-accent/50"/>
-        <p className="text-gray-700 dark:text-gray-300 italic text-lg mb-6">"{quote}"</p>
-        <h4 className="font-semibold text-xl text-accent tracking-wider">- {name}</h4>
-    </div>
-);
+import ValueCard from '../components/ValueCard';
+import ClassCard from '../components/ClassCard';
+import TestimonialCard from '../components/TestimonialCard';
 
 const heroTexts = [
   { line1: 'home.heroTitle1', line2: 'home.heroTitle2', subtitle: 'home.heroSubtitle' },

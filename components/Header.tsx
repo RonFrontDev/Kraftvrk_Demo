@@ -99,7 +99,13 @@ const Header = (): React.ReactNode => {
               </NavLink>
             </div>
             <div className="lg:hidden ml-4">
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className={`${navTextColorClass} focus:outline-none transition-colors duration-300`}>
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className={`${navTextColorClass} focus:outline-none transition-colors duration-300`}
+                aria-expanded={isMenuOpen}
+                aria-controls="mobile-menu"
+                aria-label="Toggle mobile menu"
+              >
                 {isMenuOpen ? <XIcon className="h-8 w-8" /> : <MenuIcon className="h-8 w-8" />}
               </button>
             </div>
@@ -108,7 +114,7 @@ const Header = (): React.ReactNode => {
       </div>
       
       {isMenuOpen && (
-        <div className={mobileMenuClasses}>
+        <div className={mobileMenuClasses} id="mobile-menu">
           <nav className="px-4 pt-2 pb-8 space-y-2 flex flex-col items-center text-gray-900 dark:text-white">
             {renderNavLinks(true)}
              <NavLink to="/contact" onClick={closeMenu} className="mt-4 w-full text-center border-2 border-accent text-accent font-bold py-3 px-6 text-sm uppercase tracking-wider rounded-md hover:bg-accent hover:text-black transition-colors duration-300">
