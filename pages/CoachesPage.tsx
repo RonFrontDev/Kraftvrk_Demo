@@ -3,7 +3,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 const CoachProfile = ({ name, specialty, image, bio }: { name: string, specialty: string, image: string, bio: string }) => (
     <div className="bg-white dark:bg-[#1c1c1e] overflow-hidden flex flex-col md:flex-row items-center transform hover:scale-[1.02] transition-transform duration-300 shadow-lg rounded-md">
-        <img src={image} alt={name} className="w-full md:w-1/3 h-64 md:h-auto object-cover" />
+        <img src={image} alt={name} className="w-full aspect-square object-cover md:w-80 flex-shrink-0" />
         <div className="p-8">
             <h3 className="text-4xl font-bold text-accent">{name}</h3>
             <p className="text-lg font-bold text-gray-900 dark:text-white mb-2">{specialty}</p>
