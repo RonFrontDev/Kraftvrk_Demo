@@ -14,12 +14,14 @@ import ContactPage from './pages/ContactPage';
 import { ThemeProvider } from './contexts/ThemeContext';
 import FloatingChatButton from './components/FloatingChatButton';
 import CoachesPage from './pages/CoachesPage';
+import ScrollToTop from './components/ScrollToTop';
 
 function App(): React.ReactNode {
   return (
     <ThemeProvider>
       <LanguageProvider>
         <HashRouter>
+          <ScrollToTop />
           <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-grow">
