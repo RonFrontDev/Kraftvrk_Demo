@@ -39,14 +39,22 @@ export const en = {
     hero4Title2: 'Goals',
     hero4Subtitle: 'Whatever your fitness goals are, we provide the path and the encouragement to help you reach them.',
     joinButton: "Start Your Journey",
-    valuesTitle: 'What Makes Us Different',
-    valuesSubtitle: 'More than just a gym – we’re a community where everyone belongs.',
-    value1Title: 'Community First',
-    value1Text: 'You’ll never train alone – encouragement and support are at the heart of everything we do.',
-    value2Title: 'Expert Coaching',
-    value2Text: 'Our world-class coaches provide personalized guidance to help you smash your goals safely and effectively.',
-    value3Title: 'Fun & Energy',
-    value3Text: 'Workouts that leave you smiling, energized, and ready for more.',
+    wmusd: {
+      title: 'What Makes Us Different',
+      subtitle: 'We are more than just a gym. We are a community built on foundations that set us apart.',
+      item1: {
+        title: 'Community First',
+        text: 'You are not just a number here. You are part of the Kraftvrk family. From the moment you walk in, you will feel the support and camaraderie that fuels every workout and every personal record.'
+      },
+      item2: {
+        title: 'Coaching with Passion',
+        text: 'Our coaches are not just certified; they are deeply invested in your success. With personalized attention and expert guidance, we focus on safe, effective movements to help you crush your goals.'
+      },
+      item3: {
+        title: 'Unmatched Energy',
+        text: 'The atmosphere at Kraftvrk is electric. It is a place where loud music, chalk, and the sound of dropping weights create an environment that motivates you to push your limits and discover your true strength.'
+      }
+    },
     classesTitle: 'Training Programs',
     class1Title: 'WOD Classes',
     class1Text: 'Our signature daily workout, scaled to your individual fitness level. A new challenge every day.',
@@ -621,6 +629,12 @@ export const en = {
     plan4Title: 'Personal Training',
     plan4Desc: '1-on-1 coaching tailored to your specific goals. Contact us to create your custom plan.',
     plan4Price: 'Custom',
+    plan5Title: 'Company Deals',
+    plan5Desc: 'Custom packages for corporate wellness programs. Boost team morale and productivity.',
+    plan5Price: 'Contact Us',
+    plan6Title: 'Small Group',
+    plan6Desc: 'Train with friends! Special rates for groups of 3 or more. Motivation included.',
+    plan6Price: 'Custom Rate',
     feature: {
       '12classes': 'Up to 12 classes/month',
       unlimited: 'Unlimited classes',
@@ -633,6 +647,11 @@ export const en = {
       oneOnOne: '1-on-1 Personalized Coaching',
       customizedPlan: 'Customized Programming',
       goalTracking: 'Goal & Performance Tracking',
+      corporateWellness: 'Corporate Wellness Packages',
+      teamBuilding: 'Team Building Events',
+      groupRates: 'Discounted Group Rates',
+      privateClasses: 'Private Group Classes',
+      motivation: 'Shared Motivation',
     },
   },
   // Shop Page

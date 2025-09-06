@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { UsersIcon, SparklesIcon, ArrowRightIcon, ClipboardIcon } from '../components/IconComponents';
+import { UsersIcon, BoltIcon, ArrowRightIcon, ClipboardIcon } from '../components/IconComponents';
 import { useLanguage } from '../contexts/LanguageContext';
-import ValueCard from '../components/ValueCard';
 import ClassCard from '../components/ClassCard';
 import TestimonialCard from '../components/TestimonialCard';
 
@@ -32,6 +31,24 @@ const HomePage = (): React.ReactNode => {
   
   const currentText = heroTexts[currentIndex];
   const animationClasses = (delay: string) => `transition-all duration-700 ease-in-out ${isAnimatingOut ? 'opacity-0 translate-y-5' : 'opacity-100 translate-y-0'}`;
+
+  const DifferenceItem = ({ num, icon, title, text, image, reverse = false }: { num: string, icon: React.ReactNode, title: string, text: string, image: string, reverse?: boolean }) => (
+    <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 lg:gap-16`}>
+        <div className="lg:w-1/2 w-full">
+            <div className="overflow-hidden rounded-lg shadow-2xl">
+                <img src={image} alt={title} className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500" />
+            </div>
+        </div>
+        <div className="lg:w-1/2 w-full">
+            <div className="flex items-center gap-4">
+                <span className="text-7xl font-black text-accent">{num}</span>
+                {icon}
+            </div>
+            <h3 className="text-4xl font-extrabold text-gray-900 dark:text-white uppercase tracking-wider mt-4">{title}</h3>
+            <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">{text}</p>
+        </div>
+    </div>
+  );
 
   return (
     <div>
@@ -72,33 +89,46 @@ const HomePage = (): React.ReactNode => {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-24">
+      {/* What Makes Us Different Section */}
+      <section className="py-24 bg-gray-50 dark:bg-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-5xl font-extrabold text-center uppercase tracking-wider text-gray-900 dark:text-white">
-              {t('home.valuesTitle')}
-            </h2>
-            <p className="mt-4 text-xl text-gray-600 dark:text-gray-400">
-              {t('home.valuesSubtitle')}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <ValueCard icon={<UsersIcon className="h-12 w-12"/>} title={t('home.value1Title')}>
-              {t('home.value1Text')}
-            </ValueCard>
-            <ValueCard icon={<ClipboardIcon className="h-12 w-12"/>} title={t('home.value2Title')}>
-              {t('home.value2Text')}
-            </ValueCard>
-            <ValueCard icon={<SparklesIcon className="h-12 w-12"/>} title={t('home.value3Title')}>
-              {t('home.value3Text')}
-            </ValueCard>
-          </div>
+            <div className="text-center max-w-3xl mx-auto mb-20">
+                <h2 className="text-5xl font-extrabold text-center uppercase tracking-wider text-gray-900 dark:text-white">
+                    {t('home.wmusd.title')}
+                </h2>
+                <p className="mt-4 text-xl text-gray-600 dark:text-gray-400">
+                    {t('home.wmusd.subtitle')}
+                </p>
+            </div>
+            <div className="space-y-20">
+                <DifferenceItem 
+                    num="01"
+                    icon={<UsersIcon className="h-12 w-12 text-accent"/>}
+                    title={t('home.wmusd.item1.title')}
+                    text={t('home.wmusd.item1.text')}
+                    image="https://images.pexels.com/photos/3775131/pexels-photo-3775131.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                />
+                <DifferenceItem 
+                    num="02"
+                    icon={<ClipboardIcon className="h-12 w-12 text-accent"/>}
+                    title={t('home.wmusd.item2.title')}
+                    text={t('home.wmusd.item2.text')}
+                    image="https://images.pexels.com/photos/791763/pexels-photo-791763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    reverse
+                />
+                <DifferenceItem 
+                    num="03"
+                    icon={<BoltIcon className="h-12 w-12 text-accent"/>}
+                    title={t('home.wmusd.item3.title')}
+                    text={t('home.wmusd.item3.text')}
+                    image="https://images.pexels.com/photos/2261477/pexels-photo-2261477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                />
+            </div>
         </div>
       </section>
       
       {/* Types of Classes Section */}
-      <section className="py-24 bg-gray-50 dark:bg-black">
+      <section className="py-24 bg-white dark:bg-[#101012]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
                 <h2 className="text-5xl font-extrabold text-center uppercase tracking-wider text-gray-900 dark:text-white">{t('home.classesTitle')}</h2>

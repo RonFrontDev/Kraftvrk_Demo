@@ -36,14 +36,22 @@ export const is = {
     hero4Title2: 'Markmiðum',
     hero4Subtitle: 'Hver sem líkamsræktarmarkmið þín eru, bjóðum við upp á leiðina og hvatninguna til að hjálpa þér að ná þeim.',
     joinButton: 'Hefja Þitt Ferðalag',
-    valuesTitle: 'Hvað gerir okkur öðruvísi',
-    valuesSubtitle: 'Meira en bara rækt - við erum samfélag þar sem allir eiga heima.',
-    value1Title: 'Samfélagið í fyrirrúmi',
-    value1Text: 'Þú munt aldrei æfa ein(n) - hvatning og stuðningur eru kjarninn í öllu sem við gerum.',
-    value2Title: 'Sérfræðiþjálfun',
-    value2Text: 'Heimsklassa þjálfararnir okkar veita persónulega leiðsögn til að hjálpa þér að ná markmiðum þínum á öruggan og áhrifaríkan hátt.',
-    value3Title: 'Skemmtun og orka',
-    value3Text: 'Æfingar sem fá þig til að brosa, gefa þér orku og gera þig tilbúin(n) fyrir meira.',
+    wmusd: {
+      title: 'Hvað gerir okkur öðruvísi',
+      subtitle: 'Við erum meira en bara rækt. Við erum samfélag byggt á grunni sem aðgreinir okkur.',
+      item1: {
+        title: 'Samfélagið í fyrirrúmi',
+        text: 'Þú ert ekki bara númer hér. Þú ert hluti af Kraftvrk fjölskyldunni. Frá því þú gengur inn muntu finna fyrir stuðningnum og félagsskapnum sem knýr hverja æfingu og hvert persónulegt met.'
+      },
+      item2: {
+        title: 'Þjálfun með ástríðu',
+        text: 'Þjálfararnir okkar eru ekki bara með vottun; þeir eru djúpt fjárfestir í árangri þínum. Með persónulegri athygli og sérfræðileiðsögn leggjum við áherslu á öruggar, árangursríkar hreyfingar til að hjálpa þér að ná markmiðum þínum.'
+      },
+      item3: {
+        title: 'Óviðjafnanleg orka',
+        text: 'Andrúmsloftið hjá Kraftvrk er rafmagnað. Það er staður þar sem hávær tónlist, kalk og hljóðið af fallandi lóðum skapa umhverfi sem hvetur þig til að ýta á mörkin þín og uppgötva þinn sanna styrk.'
+      }
+    },
     classesTitle: 'Æfingaprógrömm',
     class1Title: 'WOD Tímar',
     class1Text: 'Okkar einkennis dagleg æfing, sköluð að þínu einstaklingsbundna líkamsformi. Ný áskorun á hverjum degi.',
@@ -612,6 +620,12 @@ export const is = {
     plan4Title: 'Einkaþjálfun',
     plan4Desc: '1-á-1 þjálfun sem er sérsniðin að þínum markmiðum. Hafðu samband til að búa til þinn sérsniðna pakka.',
     plan4Price: 'Sérsniðið',
+    plan5Title: 'Fyrirtækjatilboð',
+    plan5Desc: 'Sérsniðnir pakkar fyrir vellíðunarprógrömm fyrirtækja. Eflum liðsheild og framleiðni.',
+    plan5Price: 'Hafið Samband',
+    plan6Title: 'Litlir Hópar',
+    plan6Desc: 'Æfðu með vinum! Sérstök verð fyrir hópa af 3 eða fleiri. Hvatning innifalin.',
+    plan6Price: 'Sérverð',
     feature: {
       '12classes': 'Allt að 12 tímar/mán',
       unlimited: 'Ótakmarkaðir tímar',
@@ -624,6 +638,11 @@ export const is = {
       oneOnOne: '1-á-1 Persónuleg Þjálfun',
       customizedPlan: 'Sérsniðin Forritun',
       goalTracking: 'Markmiða- og Frammistöðumælingar',
+      corporateWellness: 'Vellíðunarpakkar fyrir fyrirtæki',
+      teamBuilding: 'Liðsheildarviðburðir',
+      groupRates: 'Afsláttur fyrir hópa',
+      privateClasses: 'Einkatímar fyrir hópa',
+      motivation: 'Sameiginleg hvatning',
     },
   },
   // Shop Page

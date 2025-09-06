@@ -36,14 +36,22 @@ export const da = {
     hero4Title2: 'Mål',
     hero4Subtitle: 'Uanset dine fitnessmål, tilbyder vi vejen og opmuntringen til at hjælpe dig med at nå dem.',
     joinButton: 'Start Din Rejse',
-    valuesTitle: 'Hvad Gør Os Anderledes',
-    valuesSubtitle: 'Mere end bare et fitnesscenter – vi er et fællesskab, hvor alle hører til.',
-    value1Title: 'Fællesskab Først',
-    value1Text: 'Du træner aldrig alene – opmuntring og støtte er kernen i alt, hvad vi gør.',
-    value2Title: 'Ekspert Coaching',
-    value2Text: 'Vores verdensklasse trænere giver personlig vejledning for at hjælpe dig med at nå dine mål sikkert og effektivt.',
-    value3Title: 'Sjov & Energi',
-    value3Text: 'Træning, der efterlader dig smilende, energisk og klar til mere.',
+    wmusd: {
+      title: 'Hvad Gør Os Anderledes',
+      subtitle: 'Vi er mere end bare et fitnesscenter. Vi er et fællesskab bygget på et fundament, der adskiller os.',
+      item1: {
+        title: 'Fællesskab Først',
+        text: 'Du er ikke bare et nummer her. Du er en del af Kraftvrk-familien. Fra det øjeblik du træder ind, vil du mærke støtten og kammeratskabet, der driver hver træning og hver personlig rekord.'
+      },
+      item2: {
+        title: 'Coaching med Passion',
+        text: 'Vores trænere er ikke kun certificerede; de er dybt investeret i din succes. Med personlig opmærksomhed og ekspertvejledning fokuserer vi på sikre, effektive bevægelser for at hjælpe dig med at nå dine mål.'
+      },
+      item3: {
+        title: 'Uovertruffen Energi',
+        text: 'Atmosfæren hos Kraftvrk er elektrisk. Det er et sted, hvor høj musik, kalk og lyden af vægte, der falder, skaber et miljø, der motiverer dig til at skubbe dine grænser og opdage din sande styrke.'
+      }
+    },
     classesTitle: 'Træningsprogrammer',
     class1Title: 'WOD Timer',
     class1Text: 'Vores signatur daglige træning, skaleret til dit individuelle fitnessniveau. En ny udfordring hver dag.',
@@ -612,6 +620,12 @@ export const da = {
     plan4Title: 'Personlig Træning',
     plan4Desc: '1-til-1 coaching skræddersyet til dine specifikke mål. Kontakt os for at oprette din brugerdefinerede plan.',
     plan4Price: 'Brugerdefineret',
+    plan5Title: 'Firmaaftaler',
+    plan5Desc: 'Skræddersyede pakker til firma-wellnessprogrammer. Styrk holdånden og produktiviteten.',
+    plan5Price: 'Kontakt Os',
+    plan6Title: 'Små Grupper',
+    plan6Desc: 'Træn med venner! Særlige priser for grupper på 3 eller flere. Motivation inkluderet.',
+    plan6Price: 'Særtakst',
     feature: {
       '12classes': 'Op til 12 hold/måned',
       unlimited: 'Ubegrænset antal hold',
@@ -624,6 +638,11 @@ export const da = {
       oneOnOne: '1-til-1 Personlig Coaching',
       customizedPlan: 'Tilpasset Programmering',
       goalTracking: 'Mål- & Præstationssporing',
+      corporateWellness: 'Firma-wellnesspakker',
+      teamBuilding: 'Teambuilding-arrangementer',
+      groupRates: 'Grupperabatter',
+      privateClasses: 'Private gruppetimer',
+      motivation: 'Fælles motivation',
     },
   },
   // Shop Page

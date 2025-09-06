@@ -84,6 +84,26 @@ const MembershipPage = (): React.ReactNode => {
                 'pricing.feature.customizedPlan',
                 'pricing.feature.goalTracking',
             ]
+        },
+        {
+            title: 'pricing.plan5Title',
+            description: 'pricing.plan5Desc',
+            price: 'pricing.plan5Price',
+            features: [
+                'pricing.feature.corporateWellness',
+                'pricing.feature.teamBuilding',
+                'pricing.feature.groupRates',
+            ]
+        },
+        {
+            title: 'pricing.plan6Title',
+            description: 'pricing.plan6Desc',
+            price: 'pricing.plan6Price',
+            features: [
+                'pricing.feature.privateClasses',
+                'pricing.feature.groupRates',
+                'pricing.feature.motivation',
+            ]
         }
     ];
 
@@ -106,7 +126,7 @@ const MembershipPage = (): React.ReactNode => {
                 </NavLink>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                 {plans.map((plan, index) => (
                     <PricingCard key={index} plan={plan} popular={plan.popular} />
                 ))}

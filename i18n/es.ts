@@ -36,14 +36,22 @@ export const es = {
     hero4Title2: 'Metas',
     hero4Subtitle: 'Sean cuales sean tus objetivos de fitness, te proporcionamos el camino y el aliento para ayudarte a alcanzarlos.',
     joinButton: 'Comienza Tu Viaje',
-    valuesTitle: 'Qué Nos Hace Diferentes',
-    valuesSubtitle: 'Más que un gimnasio, somos una comunidad donde todos pertenecen.',
-    value1Title: 'La Comunidad Primero',
-    value1Text: 'Nunca entrenarás solo: el ánimo y el apoyo son el corazón de todo lo que hacemos.',
-    value2Title: 'Entrenamiento Experto',
-    value2Text: 'Nuestros entrenadores de clase mundial brindan orientación personalizada para ayudarte a alcanzar tus metas de manera segura y efectiva.',
-    value3Title: 'Diversión y Energía',
-    value3Text: 'Entrenamientos que te dejan sonriendo, con energía y listo para más.',
+    wmusd: {
+      title: 'Qué Nos Hace Diferentes',
+      subtitle: 'Somos más que un simple gimnasio. Somos una comunidad construida sobre cimientos que nos distinguen.',
+      item1: {
+        title: 'La Comunidad Primero',
+        text: 'Aquí no eres solo un número. Eres parte de la familia Kraftvrk. Desde el momento en que entras, sentirás el apoyo y la camaradería que impulsan cada entrenamiento y cada récord personal.'
+      },
+      item2: {
+        title: 'Entrenamiento con Pasión',
+        text: 'Nuestros entrenadores no solo están certificados; están profundamente comprometidos con tu éxito. Con atención personalizada y orientación experta, nos enfocamos en movimientos seguros y efectivos para ayudarte a superar tus metas.'
+      },
+      item3: {
+        title: 'Energía Inigualable',
+        text: 'La atmósfera en Kraftvrk es eléctrica. Es un lugar donde la música alta, la magnesia y el sonido de las pesas al caer crean un ambiente que te motiva a superar tus límites y descubrir tu verdadera fuerza.'
+      }
+    },
     classesTitle: 'Programas de Entrenamiento',
     class1Title: 'Clases de WOD',
     class1Text: 'Nuestro entrenamiento diario insignia, adaptado a tu nivel de condición física individual. Un nuevo desafío cada día.',
@@ -612,6 +620,12 @@ export const es = {
     plan4Title: 'Entrenamiento Personal',
     plan4Desc: 'Entrenamiento 1 a 1 adaptado a tus objetivos específicos. Contáctanos para crear tu plan personalizado.',
     plan4Price: 'A medida',
+    plan5Title: 'Ofertas para Empresas',
+    plan5Desc: 'Paquetes personalizados para programas de bienestar corporativo. Aumenta la moral y la productividad del equipo.',
+    plan5Price: 'Contáctanos',
+    plan6Title: 'Grupos Pequeños',
+    plan6Desc: '¡Entrena con amigos! Tarifas especiales para grupos de 3 o más. Motivación incluida.',
+    plan6Price: 'Tarifa Especial',
     feature: {
       '12classes': 'Hasta 12 clases/mes',
       unlimited: 'Clases ilimitadas',
@@ -624,6 +638,11 @@ export const es = {
       oneOnOne: 'Entrenamiento Personalizado 1 a 1',
       customizedPlan: 'Programación a Medida',
       goalTracking: 'Seguimiento de Metas y Rendimiento',
+      corporateWellness: 'Paquetes de bienestar corporativo',
+      teamBuilding: 'Eventos de team building',
+      groupRates: 'Tarifas de grupo con descuento',
+      privateClasses: 'Clases grupales privadas',
+      motivation: 'Motivación compartida',
     },
   },
   // Shop Page
