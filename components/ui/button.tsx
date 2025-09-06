@@ -39,9 +39,9 @@ export interface ButtonProps
   asChild?: boolean
 }
 
-// Fix: Switched to destructuring props in the function signature.
-// This is a more common and stable pattern for components using cva with React.forwardRef,
-// and it resolves type inference issues with variant props.
+// FIX: Corrected the Button component to destructure props in the function signature.
+// The previous implementation was causing a TypeScript error where variant props were not being recognized.
+// This standard pattern for React.forwardRef components resolves the issue.
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"

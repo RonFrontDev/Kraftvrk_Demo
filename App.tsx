@@ -15,6 +15,7 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import FloatingChatButton from './components/FloatingChatButton';
 import CoachesPage from './pages/CoachesPage';
 import ScrollToTop from './components/ScrollToTop';
+import ExerciseLibraryPage from './pages/ExerciseLibraryPage';
 
 function App(): React.ReactNode {
   return (
@@ -31,6 +32,7 @@ function App(): React.ReactNode {
                 <Route path="/schedule" element={<SchedulePage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/coaches" element={<CoachesPage />} />
+                <Route path="/library" element={<ExerciseLibraryPage />} />
                 <Route path="/membership" element={<MembershipPage />} />
                 <Route path="/shop" element={<ShopPage />} />
                 <Route path="/contact" element={<ContactPage />} />

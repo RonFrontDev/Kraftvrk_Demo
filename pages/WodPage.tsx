@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import type { Wod, WodSection } from '../types';
-import { generateWod, regenerateWodSection } from '../services/geminiService';
+import { generateWod, regenerateWodSection, generateFullWeekWod } from '../services/geminiService';
 import Spinner from '../components/Spinner';
 import { useLanguage } from '../contexts/LanguageContext';
 import Calendar from '../components/Calendar';
@@ -60,12 +60,13 @@ const WodPage = (): React.ReactNode => {
   const [pinnedWods, setPinnedWods] = useState<{ [date: string]: Wod }>({});
   const [transientWod, setTransientWod] = useState<Wod | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [loadingMessage, setLoadingMessage] = useState<string | null>(null);
   const [loadingSection, setLoadingSection] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
   const [currentMonth, setCurrentMonth] = useState<Date>(new Date(new Date().getFullYear(), new Date().getMonth(), 1));
   const [editorState, setEditorState] = useState<{ goal: string; sections: EditorSectionState[] } | null>(null);
-  const [wodType, setWodType] = useState<'individual' | 'team'>('individual');
+  const [wodType, setWodType] = useState<'individual' | 'team' | 'competition'>('individual');
 
   const { language, t } = useLanguage();
 
@@ -82,8 +83,9 @@ const WodPage = (): React.ReactNode => {
     setEditorState(null);
   };
 
-  const fetchWod = useCallback(async (typeToGenerate?: 'individual' | 'team') => {
+  const fetchWod = useCallback(async (typeToGenerate?: 'individual' | 'team' | 'competition') => {
     setIsLoading(true);
+    setLoadingMessage(t('wod.generatingButton'));
     setError(null);
     setTransientWod(null);
     setEditorState(null);
@@ -94,8 +96,36 @@ const WodPage = (): React.ReactNode => {
       setError(t('wod.errorMessage'));
     } finally {
       setIsLoading(false);
+      setLoadingMessage(null);
     }
   }, [language, t, wodType]);
+
+  const handleGenerateFullWeek = async () => {
+    setIsLoading(true);
+    setLoadingMessage(t('wod.generatingFullWeek'));
+    setError(null);
+    try {
+      const wodWeek = await generateFullWeekWod(language);
+      const newPinnedWods = { ...pinnedWods };
+      const startDate = new Date(selectedDate);
+
+      wodWeek.forEach((wod, index) => {
+        const dateForWod = new Date(startDate);
+        dateForWod.setDate(startDate.getDate() + index);
+        const dateKey = toYYYYMMDD(dateForWod);
+        newPinnedWods[dateKey] = wod;
+      });
+
+      setPinnedWods(newPinnedWods);
+      localStorage.setItem('kraftvrk_pinned_wods', JSON.stringify(newPinnedWods));
+      
+    } catch (err: unknown) {
+      setError(t('wod.errorMessageWeek'));
+    } finally {
+      setIsLoading(false);
+      setLoadingMessage(null);
+    }
+  };
 
   const handleFullRegeneration = () => {
     const currentWod = transientWod || pinnedWods[toYYYYMMDD(selectedDate)];
@@ -211,7 +241,7 @@ const WodPage = (): React.ReactNode => {
         <div className="flex justify-center items-center h-64">
           <div className="text-center">
             <Spinner size="12" />
-            <p className="mt-4 text-lg">{t('wod.generatingButton')}</p>
+            <p className="mt-4 text-lg">{loadingMessage || t('wod.generatingButton')}</p>
           </div>
         </div>
       );
@@ -246,6 +276,7 @@ const WodPage = (): React.ReactNode => {
             wodType={wodType}
             onWodTypeChange={setWodType}
             onGenerate={() => fetchWod()}
+            onGenerateFullWeek={handleGenerateFullWeek}
             onWrite={handleWriteClick}
             selectedDate={selectedDate}
             isLoading={isLoading}
@@ -254,6 +285,18 @@ const WodPage = (): React.ReactNode => {
   };
   
   const wodToDisplay = transientWod || pinnedWods[toYYYYMMDD(selectedDate)];
+
+  const getWodTypeTranslationKey = (type: Wod['type']) => {
+    switch (type) {
+        case 'team':
+            return 'wod.typeTeam';
+        case 'competition':
+            return 'wod.typeCompetition';
+        case 'individual':
+        default:
+            return 'wod.typeIndividual';
+    }
+  };
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-32">
@@ -282,7 +325,7 @@ const WodPage = (): React.ReactNode => {
             </h2>
             {wodToDisplay && (
               <span className="bg-accent/20 text-accent text-sm font-bold uppercase tracking-wider px-3 py-1 rounded-full">
-                {t(wodToDisplay.type === 'team' ? 'wod.typeTeam' : 'wod.typeIndividual')}
+                {t(getWodTypeTranslationKey(wodToDisplay.type))}
               </span>
             )}
           </div>

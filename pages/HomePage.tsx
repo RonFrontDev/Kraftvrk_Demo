@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { UsersIcon, BoltIcon, SparklesIcon, ArrowRightIcon } from '../components/IconComponents';
+import { UsersIcon, SparklesIcon, ArrowRightIcon, ClipboardIcon } from '../components/IconComponents';
 import { useLanguage } from '../contexts/LanguageContext';
 import ValueCard from '../components/ValueCard';
 import ClassCard from '../components/ClassCard';
@@ -87,7 +87,7 @@ const HomePage = (): React.ReactNode => {
             <ValueCard icon={<UsersIcon className="h-12 w-12"/>} title={t('home.value1Title')}>
               {t('home.value1Text')}
             </ValueCard>
-            <ValueCard icon={<BoltIcon className="h-12 w-12"/>} title={t('home.value2Title')}>
+            <ValueCard icon={<ClipboardIcon className="h-12 w-12"/>} title={t('home.value2Title')}>
               {t('home.value2Text')}
             </ValueCard>
             <ValueCard icon={<SparklesIcon className="h-12 w-12"/>} title={t('home.value3Title')}>

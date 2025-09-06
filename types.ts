@@ -12,5 +12,16 @@ export interface WodSection {
 export interface Wod {
   goal: string; // Overall goal or focus of the WOD
   sections: WodSection[];
-  type: 'individual' | 'team';
+  type: 'individual' | 'team' | 'competition';
+}
+
+export type ExerciseCategory = 'barbell' | 'dumbbell' | 'kettlebell' | 'gymnastics' | 'cardio';
+
+export interface Exercise {
+  name: string;
+  description: string;
+  instructions: string[];
+  equipment: string[];
+  primaryMuscles: string[];
+  category: ExerciseCategory;
 }

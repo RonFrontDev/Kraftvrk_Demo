@@ -6,7 +6,8 @@ export const en = {
     schedule: 'Schedule',
     about: 'About',
     coaches: 'Coaches',
-    membership: 'Membership',
+    library: 'Library',
+    pricing: 'Pricing',
     shop: 'Shop',
     contact: 'Contact',
     freeTrial: 'Free Trial',
@@ -42,8 +43,8 @@ export const en = {
     valuesSubtitle: 'More than just a gym – we’re a community where everyone belongs.',
     value1Title: 'Community First',
     value1Text: 'You’ll never train alone – encouragement and support are at the heart of everything we do.',
-    value2Title: 'Empowerment',
-    value2Text: 'No matter your level, we help you progress at your own pace and celebrate every milestone.',
+    value2Title: 'Expert Coaching',
+    value2Text: 'Our world-class coaches provide personalized guidance to help you smash your goals safely and effectively.',
     value3Title: 'Fun & Energy',
     value3Text: 'Workouts that leave you smiling, energized, and ready for more.',
     classesTitle: 'Training Programs',
@@ -68,6 +69,7 @@ export const en = {
     generatingButton: 'Forging New WOD...',
     errorTitle: 'Error:',
     errorMessage: 'Failed to generate a new workout. Please try again later.',
+    errorMessageWeek: 'Failed to generate a full week of workouts. Please try again later.',
     calendar: 'WOD Calendar',
     pinWod: 'Pin WOD to Calendar',
     wodFor: 'Workout for',
@@ -75,6 +77,9 @@ export const en = {
     generateForDate: 'Generate WOD for {date}', // Kept for fallback, but more specific keys are better
     generateIndividualWod: 'Generate Individual WOD',
     generateTeamWod: 'Generate Team WOD',
+    generateCompetitionWod: 'Generate Competition WOD',
+    generateFullWeek: 'Generate Full Week',
+    generatingFullWeek: 'Forging a full week of WODs...',
     prevMonth: 'Previous Month',
     nextMonth: 'Next Month',
     daySun: 'Sun',
@@ -86,6 +91,7 @@ export const en = {
     daySat: 'Sat',
     typeIndividual: 'Individual',
     typeTeam: 'Team',
+    typeCompetition: 'Competition',
     regenerateWod: 'Regenerate WOD',
     regenerateSection: 'Regenerate Section',
     regeneratingSection: 'Regenerating...',
@@ -168,9 +174,433 @@ export const en = {
     title: 'Meet Our Team',
     subtitle: 'The passionate experts dedicated to your success.',
   },
-  // Membership Page
-  membership: {
-    title: 'Membership Plans',
+  // Exercise Library
+  library: {
+    title: 'Exercise Library',
+    subtitle: 'Browse our collection of fundamental movements.',
+    category_all: 'All',
+    category_barbell: 'Barbell',
+    category_dumbbell: 'Dumbbell',
+    category_kettlebell: 'Kettlebell',
+    category_gymnastics: 'Gymnastics',
+    category_cardio: 'Cardio',
+    instructions: 'Instructions',
+    equipment: 'Equipment',
+    primaryMuscles: 'Primary Muscles',
+    noEquipment: 'None',
+    exercises: {
+      back_squat: {
+        name: 'Back Squat',
+        description: 'A fundamental strength exercise targeting the lower body where a barbell is held on the upper back.',
+        instructions: [
+          'Set up in a squat rack with the bar resting on your upper traps. Grip the bar wider than shoulder-width.',
+          'Stand up to unrack the bar, and step back. Feet should be shoulder-width apart, toes slightly out.',
+          'Keep your chest up and core braced. Descend by bending your knees and hips, keeping your back straight.',
+          'Squat until your hips are below your knees (breaking parallel), then drive through your heels to return to the start.'
+        ],
+        equipment: ['Barbell', 'Squat Rack', 'Plates'],
+        primaryMuscles: ['Quadriceps', 'Glutes', 'Hamstrings', 'Core']
+      },
+      front_squat: {
+        name: 'Front Squat',
+        description: 'A squat variation where the barbell is held in a front rack position, emphasizing quadriceps and core strength.',
+        instructions: [
+          'Grip the bar with fingertips just outside your shoulders, driving your elbows high to create a shelf.',
+          'Unrack the bar and step back. Feet shoulder-width apart, toes slightly out.',
+          'Keep your torso as upright as possible, and descend until your hips are below your knees.',
+          'Drive up through your heels, keeping your elbows high to maintain the bar position.'
+        ],
+        equipment: ['Barbell', 'Squat Rack', 'Plates'],
+        primaryMuscles: ['Quadriceps', 'Glutes', 'Core', 'Upper Back']
+      },
+      overhead_squat: {
+        name: 'Overhead Squat',
+        description: 'A full-depth squat performed while holding a barbell overhead, demanding exceptional mobility and stability.',
+        instructions: [
+          'Grip the bar with a wide (snatch) grip. Press the bar overhead, with active shoulders and locked elbows.',
+          'With feet shoulder-width apart, initiate the squat while keeping the bar directly over your mid-foot.',
+          'Maintain an upright torso and active shoulders as you descend below parallel.',
+          'Stand back up, ensuring the bar path remains vertical.'
+        ],
+        equipment: ['Barbell', 'Plates'],
+        primaryMuscles: ['Quadriceps', 'Shoulders', 'Core', 'Glutes']
+      },
+      deadlift: {
+        name: 'Deadlift',
+        description: 'A foundational strength movement that involves lifting a loaded barbell from the floor to a standing position.',
+        instructions: [
+          'Stand with your mid-foot under the barbell. Hinge at your hips and grip the bar just outside your shins.',
+          'Keep your back straight, chest up, and shoulders slightly in front of the bar.',
+          'Drive through your legs to lift the weight, keeping the bar close to your body.',
+          'Stand up fully, extending your hips and knees. Lower the bar with control by reversing the motion.'
+        ],
+        equipment: ['Barbell', 'Plates'],
+        primaryMuscles: ['Hamstrings', 'Glutes', 'Back', 'Core']
+      },
+      sumo_deadlift_high_pull: {
+        name: 'Sumo Deadlift High Pull',
+        description: 'A dynamic, full-body movement that combines a sumo deadlift with an explosive upright row.',
+        instructions: [
+          'Take a wide (sumo) stance with toes pointed out. Grip the bar with a narrow grip inside your legs.',
+          'Lift the bar from the floor by extending your hips and legs explosively.',
+          'As the bar passes your knees, shrug forcefully and pull with your arms, bringing the bar to your collarbone.',
+          'Keep your elbows high and outside your hands. Lower with control.'
+        ],
+        equipment: ['Barbell', 'Plates'],
+        primaryMuscles: ['Hamstrings', 'Glutes', 'Traps', 'Shoulders']
+      },
+      bench_press: {
+        name: 'Bench Press',
+        description: 'An upper-body strength exercise where you press a weight upwards from a lying position on a bench.',
+        instructions: [
+          'Lie on a flat bench with your feet firmly on the ground. Grip the bar slightly wider than shoulder-width.',
+          'Unrack the bar and lower it to your mid-chest, keeping your elbows tucked at about a 45-degree angle.',
+          'Press the bar back up to the starting position, driving with your chest and triceps.',
+          'Maintain 5 points of contact: head, upper back, glutes, and both feet.'
+        ],
+        equipment: ['Bench', 'Barbell', 'Squat Rack', 'Plates'],
+        primaryMuscles: ['Pectorals', 'Triceps', 'Deltoids']
+      },
+      shoulder_press: {
+        name: 'Shoulder Press',
+        description: 'A strict overhead press performed standing, building shoulder strength and stability.',
+        instructions: [
+          'Stand with the bar in a front rack position, hands just outside your shoulders.',
+          'Brace your core and glutes to prevent arching your back. Do not use your legs to assist.',
+          'Press the bar directly overhead until your elbows are fully locked out.',
+          'Lower the bar under control back to the front rack position.'
+        ],
+        equipment: ['Barbell', 'Squat Rack', 'Plates'],
+        primaryMuscles: ['Shoulders', 'Triceps', 'Core']
+      },
+      push_press: {
+        name: 'Push Press',
+        description: 'An overhead press variation that uses a "dip and drive" from the legs to help move heavier loads.',
+        instructions: [
+          'Start with the bar in the front rack position, same as a shoulder press.',
+          'Perform a quick, shallow dip by bending your knees and hips.',
+          'Explosively drive up with your legs, using the momentum to help press the bar overhead.',
+          'Finish the press with your arms until lockout. Lower under control.'
+        ],
+        equipment: ['Barbell', 'Squat Rack', 'Plates'],
+        primaryMuscles: ['Shoulders', 'Triceps', 'Glutes', 'Quadriceps']
+      },
+      push_jerk: {
+        name: 'Push Jerk',
+        description: 'A dynamic lift where you dip, drive the bar up, and then dip a second time to catch it overhead.',
+        instructions: [
+          'Perform the "dip and drive" like a push press.',
+          'As the bar leaves your shoulders, quickly bend your knees again to drop under the bar.',
+          'Catch the bar with locked arms in a partial squat position.',
+          'Stand up to complete the lift with the bar overhead.'
+        ],
+        equipment: ['Barbell', 'Squat Rack', 'Plates'],
+        primaryMuscles: ['Shoulders', 'Quadriceps', 'Glutes', 'Core']
+      },
+      snatch: {
+        name: 'Snatch',
+        description: 'An Olympic weightlifting movement where a barbell is lifted from the floor to overhead in one continuous motion.',
+        instructions: [
+          'Start with a wide grip on the bar, in a deadlift setup.',
+          'Lift the bar explosively from the floor, extending your hips and shrugging hard.',
+          'Pull yourself under the bar, receiving it in a full overhead squat position with locked arms.',
+          'Stand up from the squat to complete the lift.'
+        ],
+        equipment: ['Barbell', 'Bumper Plates'],
+        primaryMuscles: ['Full Body', 'Glutes', 'Hamstrings', 'Shoulders']
+      },
+      clean_and_jerk: {
+        name: 'Clean and Jerk',
+        description: 'A two-part Olympic lift where the bar is moved from the floor to the shoulders (clean), then from shoulders to overhead (jerk).',
+        instructions: [
+          'Part 1 (Clean): Lift the bar from the floor, explode with your hips, and pull yourself under to catch it in a front squat.',
+          'Stand up from the squat with the bar in the front rack position.',
+          'Part 2 (Jerk): Dip and drive the bar off your shoulders. Drop under it into a split or squat stance.',
+          'Recover by bringing your feet together while the bar is stable overhead.'
+        ],
+        equipment: ['Barbell', 'Bumper Plates'],
+        primaryMuscles: ['Full Body', 'Glutes', 'Quadriceps', 'Shoulders']
+      },
+      dumbbell_snatch: {
+        name: 'Dumbbell Snatch',
+        description: 'A dynamic, single-arm movement that brings a dumbbell from the floor to overhead in one motion.',
+        instructions: [
+          'Start with a dumbbell on the floor between your feet.',
+          'Hinge at your hips, keeping your back straight, and grip the dumbbell.',
+          'Explosively extend your hips and knees, pulling the dumbbell upwards close to your body.',
+          'As the dumbbell reaches shoulder height, punch it up towards the ceiling, locking your arm overhead.'
+        ],
+        equipment: ['Dumbbell'],
+        primaryMuscles: ['Glutes', 'Hamstrings', 'Shoulders', 'Core']
+      },
+      dumbbell_clean: {
+        name: 'Dumbbell Clean',
+        description: 'An explosive movement to bring one or two dumbbells from the floor or hang position to the shoulders.',
+        instructions: [
+          'Start with dumbbells just outside your feet. Hinge at the hips.',
+          'Explosively extend your hips and shrug, pulling the dumbbells up.',
+          'Quickly drop under the dumbbells, rotating your elbows to catch them in the front rack position on your shoulders.'
+        ],
+        equipment: ['Dumbbell'],
+        primaryMuscles: ['Glutes', 'Hamstrings', 'Traps', 'Shoulders']
+      },
+      dumbbell_thruster: {
+        name: 'Dumbbell Thruster',
+        description: 'A compound movement combining a front squat with an overhead press, performed with dumbbells.',
+        instructions: [
+          'Hold a pair of dumbbells at your shoulders (front rack position).',
+          'Perform a full front squat, descending below parallel.',
+          'As you stand up from the squat, use the momentum to explosively press the dumbbells overhead.',
+          'Lower the dumbbells back to the shoulders to begin the next rep.'
+        ],
+        equipment: ['Dumbbell'],
+        primaryMuscles: ['Quadriceps', 'Glutes', 'Shoulders', 'Triceps']
+      },
+      dumbbell_bench_press: {
+        name: 'Dumbbell Bench Press',
+        description: 'A bench press variation using dumbbells, which allows for a greater range of motion and challenges stability.',
+        instructions: [
+          'Lie on a flat bench holding a dumbbell in each hand at your chest.',
+          'Press the dumbbells upwards until your arms are fully extended.',
+          'Lower the dumbbells with control, allowing for a deep stretch in the chest.',
+          'Keep your feet planted and your back stable on the bench.'
+        ],
+        equipment: ['Dumbbell', 'Bench'],
+        primaryMuscles: ['Pectorals', 'Deltoids', 'Triceps']
+      },
+      renegade_row: {
+        name: 'Renegade Row',
+        description: 'A challenging core exercise that combines a plank with a single-arm row.',
+        instructions: [
+          'Start in a high plank position, gripping two dumbbells with hands under your shoulders.',
+          'Keep your core tight and hips stable (minimize rocking).',
+          'Row one dumbbell up to your chest, squeezing your back muscles.',
+          'Lower the dumbbell with control and repeat on the other side.'
+        ],
+        equipment: ['Dumbbell'],
+        primaryMuscles: ['Core', 'Back', 'Shoulders', 'Biceps']
+      },
+      dumbbell_lunge: {
+        name: 'Dumbbell Lunge',
+        description: 'A lower-body exercise that targets each leg individually, great for building strength and stability.',
+        instructions: [
+          'Hold dumbbells in each hand at your sides or in a front rack position.',
+          'Step forward with one leg, lowering your hips until both knees are at a 90-degree angle.',
+          'Ensure your front knee does not track past your toes and your back knee hovers just above the ground.',
+          'Push off the front foot to return to the starting position. Alternate legs.'
+        ],
+        equipment: ['Dumbbell'],
+        primaryMuscles: ['Quadriceps', 'Glutes', 'Hamstrings']
+      },
+      kettlebell_swing: {
+        name: 'Kettlebell Swing',
+        description: 'A powerful, hip-hinge movement that builds explosive power, conditioning, and grip strength.',
+        instructions: [
+          'Stand with feet shoulder-width apart, with the kettlebell about a foot in front of you.',
+          'Hinge at your hips to grab the kettlebell. Hike it back between your legs.',
+          'Explosively drive your hips forward, squeezing your glutes, to propel the kettlebell up to chest height.',
+          'Let the kettlebell swing back down naturally, hinging at the hips again. The movement is driven by the hips, not the arms.'
+        ],
+        equipment: ['Kettlebell'],
+        primaryMuscles: ['Glutes', 'Hamstrings', 'Core', 'Back']
+      },
+      goblet_squat: {
+        name: 'Goblet Squat',
+        description: 'A squat variation where a kettlebell or dumbbell is held at chest level, promoting an upright torso.',
+        instructions: [
+          'Hold a single kettlebell by the horns (or a dumbbell on its end) close to your chest.',
+          'Keep your elbows tucked in. Place your feet shoulder-width apart.',
+          'Squat down between your legs, keeping your chest up and back straight.',
+          'Drive through your heels to return to a standing position.'
+        ],
+        equipment: ['Kettlebell', 'Dumbbell'],
+        primaryMuscles: ['Quadriceps', 'Glutes', 'Core']
+      },
+      turkish_get_up: {
+        name: 'Turkish Get-Up',
+        description: 'A complex, multi-stage movement that involves moving from a lying to a standing position while holding a weight overhead.',
+        instructions: [
+          'Lie on your back, press the kettlebell up with one arm. Bend the knee on the same side.',
+          'Roll up onto your opposite elbow, then to your hand.',
+          'Lift your hips off the ground and sweep your straight leg through to a lunge position.',
+          'Stand up from the lunge. Reverse all steps to return to the starting position.'
+        ],
+        equipment: ['Kettlebell'],
+        primaryMuscles: ['Full Body', 'Core', 'Shoulder Stability']
+      },
+      kettlebell_snatch: {
+        name: 'Kettlebell Snatch',
+        description: 'A dynamic, single-arm lift that moves a kettlebell from a swing to a locked-out overhead position in one fluid motion.',
+        instructions: [
+          'Start with a one-arm swing.',
+          'As the kettlebell reaches chest height, pull it upwards and punch your hand through and up, rotating the bell around your wrist.',
+          'Receive the kettlebell in a stable, locked-out overhead position.',
+          'Lower the kettlebell with control back into the swing.'
+        ],
+        equipment: ['Kettlebell'],
+        primaryMuscles: ['Glutes', 'Hamstrings', 'Shoulders', 'Core']
+      },
+      pull_up: {
+        name: 'Pull-up',
+        description: 'A classic bodyweight exercise for building upper body strength by pulling your body up to a bar.',
+        instructions: [
+          'Grip a pull-up bar with your hands slightly wider than shoulder-width, palms facing away (overhand grip).',
+          'Start from a dead hang with arms fully extended.',
+          'Pull yourself up until your chin is over the bar, engaging your back and biceps.',
+          'Lower yourself with control until your arms are straight again.'
+        ],
+        equipment: ['Pull-up Bar'],
+        primaryMuscles: ['Lats', 'Biceps', 'Upper Back']
+      },
+      push_up: {
+        name: 'Push-up',
+        description: 'A fundamental bodyweight exercise that builds chest, shoulder, and tricep strength.',
+        instructions: [
+          'Start in a high plank position with your hands directly under your shoulders.',
+          'Keep your body in a straight line from head to heels. Brace your core.',
+          'Lower your body until your chest is close to the floor.',
+          'Press back up to the starting position, maintaining a rigid torso.'
+        ],
+        equipment: [],
+        primaryMuscles: ['Pectorals', 'Deltoids', 'Triceps', 'Core']
+      },
+      sit_up: {
+        name: 'Sit-up',
+        description: 'A core exercise that involves lifting your torso from a lying position to a seated position.',
+        instructions: [
+          'Lie on your back with your knees bent and feet flat on the floor (often anchored).',
+          'Place your hands behind your head or across your chest.',
+          'Engage your core to lift your entire torso off the floor until it touches your thighs.',
+          'Lower yourself back down with control.'
+        ],
+        equipment: ['AbMat (optional)'],
+        primaryMuscles: ['Abdominals', 'Hip Flexors']
+      },
+      air_squat: {
+        name: 'Air Squat',
+        description: 'A foundational bodyweight squat, essential for developing proper squatting mechanics and leg strength.',
+        instructions: [
+          'Stand with feet shoulder-width apart, toes slightly pointed out.',
+          'Keep your chest up and core engaged. Initiate the movement by sending your hips back and down.',
+          'Squat until your hips break the plane of your knees (below parallel).',
+          'Keep your weight in your heels and drive back up to a standing position.'
+        ],
+        equipment: [],
+        primaryMuscles: ['Quadriceps', 'Glutes', 'Hamstrings']
+      },
+      toes_to_bar: {
+        name: 'Toes-to-Bar',
+        description: 'A high-skill gymnastic movement where you hang from a bar and bring your toes up to touch it.',
+        instructions: [
+          'Hang from a pull-up bar with an active shoulder position.',
+          'Initiate a kipping swing, moving from an "arch" to a "hollow" body position.',
+          'At the peak of the hollow position, use your lats and abs to pull your knees towards your chest.',
+          'Flick your feet upwards to touch the bar with your toes.'
+        ],
+        equipment: ['Pull-up Bar'],
+        primaryMuscles: ['Abdominals', 'Lats', 'Hip Flexors']
+      },
+      handstand_push_up: {
+        name: 'Handstand Push-up',
+        description: 'An advanced pressing movement performed from a handstand position, targeting the shoulders and triceps.',
+        instructions: [
+          'Kick up into a handstand against a wall, with hands placed just outside shoulder-width.',
+          'Keep your core tight and body straight. Lower yourself until the top of your head touches the floor.',
+          'Press yourself back up until your elbows are fully locked out.',
+          'For kipping, bend your knees to your chest at the bottom and explosively extend them to help drive up.'
+        ],
+        equipment: ['Wall', 'AbMat (optional)'],
+        primaryMuscles: ['Shoulders', 'Triceps', 'Traps', 'Core']
+      },
+      muscle_up: {
+        name: 'Muscle-up',
+        description: 'An advanced gymnastic skill that combines a pull-up and a dip to transition from below the rings or bar to above it.',
+        instructions: [
+          'Start with a false grip on the rings. Initiate a powerful kipping swing.',
+          'Pull hard, bringing the rings to your sternum while aggressively sitting up.',
+          'Transition your shoulders over your hands in one fluid motion.',
+          'Finish by pressing out of the dip to a locked-out support position.'
+        ],
+        equipment: ['Gymnastic Rings', 'Pull-up Bar'],
+        primaryMuscles: ['Lats', 'Shoulders', 'Chest', 'Triceps']
+      },
+      rope_climb: {
+        name: 'Rope Climb',
+        description: 'The act of ascending a rope using a combination of upper body strength and a secure leg wrap technique.',
+        instructions: [
+          'Jump up to grab the rope as high as possible.',
+          'Bring your knees to your chest and perform a J-hook or S-wrap with your feet to secure the rope.',
+          'Stand up on the rope by extending your legs. At the same time, reach up with your hands.',
+          'Repeat this "stand and reach" motion to ascend. Descend hand-over-hand.'
+        ],
+        equipment: ['Climbing Rope'],
+        primaryMuscles: ['Back', 'Biceps', 'Grip', 'Legs']
+      },
+      running: {
+        name: 'Running',
+        description: 'A fundamental cardiovascular exercise involving propelling oneself forward by moving the legs.',
+        instructions: [
+          'Maintain an upright posture with a slight forward lean from the ankles.',
+          'Keep your head up, looking forward.',
+          'Land on your mid-foot, directly underneath your center of mass.',
+          'Aim for a cadence of around 180 steps per minute.'
+        ],
+        equipment: [],
+        primaryMuscles: ['Full Body', 'Cardiovascular System']
+      },
+      rowing: {
+        name: 'Rowing',
+        description: 'A full-body, low-impact cardiovascular workout performed on a stationary rowing machine (ergometer).',
+        instructions: [
+          'The stroke has four parts: Catch, Drive, Finish, and Recovery.',
+          'Drive: Push powerfully with your legs first.',
+          'Finish: Hinge your torso back slightly and pull the handle to your sternum.',
+          'Recovery: Extend your arms, then hinge your torso forward, then bend your knees to return to the catch.'
+        ],
+        equipment: ['Rower'],
+        primaryMuscles: ['Quadriceps', 'Glutes', 'Back', 'Core']
+      },
+      double_unders: {
+        name: 'Double Unders',
+        description: 'An advanced jump rope skill where the rope passes under your feet twice for every single jump.',
+        instructions: [
+          'Use a properly sized speed rope.',
+          'Jump slightly higher and slower than a regular single jump.',
+          'Keep your elbows in and use your wrists to spin the rope quickly, not your arms.',
+          'Maintain a tall, neutral body position.'
+        ],
+        equipment: ['Speed Rope'],
+        primaryMuscles: ['Calves', 'Cardiovascular System', 'Coordination']
+      },
+      burpees: {
+        name: 'Burpees',
+        description: 'A full-body calisthenics exercise that combines a squat, a plank, a push-up, and a jump.',
+        instructions: [
+          'From a standing position, drop into a squat and place your hands on the floor.',
+          'Kick your feet back into a plank position.',
+          'Perform a push-up, touching your chest and thighs to the floor.',
+          'Jump your feet back to the squat position and explosively jump up with your hands overhead.'
+        ],
+        equipment: [],
+        primaryMuscles: ['Full Body', 'Cardiovascular System']
+      },
+      box_jumps: {
+        name: 'Box Jumps',
+        description: 'A plyometric exercise where you jump from the floor onto an elevated surface, like a box.',
+        instructions: [
+          'Stand in front of a plyo box at a comfortable distance.',
+          'Dip your hips and knees and swing your arms back to load the jump.',
+          'Explode upwards, swinging your arms forward, and land softly on the box with your feet flat.',
+          'Stand up fully on the box to complete the rep. Step or jump down with control.'
+        ],
+        equipment: ['Plyo Box'],
+        primaryMuscles: ['Glutes', 'Quadriceps', 'Hamstrings', 'Calves']
+      }
+    }
+  },
+  // Pricing Page
+  pricing: {
+    title: 'Our Pricing Plans',
     subtitle: 'Choose the plan that fits your goals and lifestyle. Join the Kraftvrk family today.',
     trialTitle: 'Not Sure Yet?',
     trialSubtitle: 'Experience the Kraftvrk community and coaching firsthand. Your first class is on us.',
@@ -179,8 +609,8 @@ export const en = {
     month: 'mo',
     joinButton: 'Sign Up Now',
     joinButtonShort: 'Join Us',
-    plan1Title: 'Competitor',
-    plan1Desc: 'For the dedicated athlete looking to push their limits 3-4 times a week.',
+    plan1Title: 'Student',
+    plan1Desc: 'For students looking to stay fit and active. Valid student ID required.',
     plan1Price: '$175',
     plan2Title: 'Unlimited',
     plan2Desc: 'Full access to all classes and open gym hours. The ultimate package for the committed.',
@@ -188,6 +618,9 @@ export const en = {
     plan3Title: 'Drop-In',
     plan3Desc: 'Perfect for visitors or those with an unpredictable schedule. Access any single class.',
     plan3Price: '$25',
+    plan4Title: 'Personal Training',
+    plan4Desc: '1-on-1 coaching tailored to your specific goals. Contact us to create your custom plan.',
+    plan4Price: 'Custom',
     feature: {
       '12classes': 'Up to 12 classes/month',
       unlimited: 'Unlimited classes',
@@ -197,6 +630,9 @@ export const en = {
       community: 'Community access',
       flexible: 'Flexible scheduling',
       experience: 'Experience our community',
+      oneOnOne: '1-on-1 Personalized Coaching',
+      customizedPlan: 'Customized Programming',
+      goalTracking: 'Goal & Performance Tracking',
     },
   },
   // Shop Page
