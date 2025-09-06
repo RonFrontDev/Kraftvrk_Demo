@@ -15,7 +15,7 @@ export interface Wod {
   type: 'individual' | 'team' | 'competition';
 }
 
-export type ExerciseCategory = 'barbell' | 'dumbbell' | 'kettlebell' | 'gymnastics' | 'cardio';
+export type ExerciseCategory = 'bootcamp' | 'crossfit' | 'weightlifting';
 
 export interface Exercise {
   name: string;
@@ -23,5 +23,5 @@ export interface Exercise {
   instructions: string[];
   equipment: string[];
   primaryMuscles: string[];
-  category: ExerciseCategory;
+  categories: ExerciseCategory[];
 }

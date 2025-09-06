@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { staticExercises } from '../data/exercises';
@@ -5,7 +6,7 @@ import type { Exercise, ExerciseCategory } from '../types';
 import ExerciseCard from '../components/ExerciseCard';
 import ExerciseDetailModal from '../components/ExerciseDetailModal';
 
-const categories: (ExerciseCategory | 'all')[] = ['all', 'barbell', 'dumbbell', 'kettlebell', 'gymnastics', 'cardio'];
+const categories: (ExerciseCategory | 'all')[] = ['all', 'bootcamp', 'crossfit', 'weightlifting'];
 
 const ExerciseLibraryPage = (): React.ReactNode => {
     const { t } = useLanguage();
@@ -25,14 +26,14 @@ const ExerciseLibraryPage = (): React.ReactNode => {
                 instructions: Array.isArray(instructions) ? instructions : [],
                 equipment: Array.isArray(equipment) ? equipment : [],
                 primaryMuscles: Array.isArray(primaryMuscles) ? primaryMuscles : [],
-                category: ex.category
+                categories: ex.categories
             };
         });
     }, [t]);
     
     const displayedExercises = activeCategory === 'all'
         ? allExercises
-        : allExercises.filter(ex => ex.category === activeCategory);
+        : allExercises.filter(ex => ex.categories.includes(activeCategory as ExerciseCategory));
 
     return (
         <>
