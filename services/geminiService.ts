@@ -43,10 +43,11 @@ export async function generateWod(language: LanguageCode, wodType: 'individual' 
      let prompt = `Generate a challenging and well-rounded CrossFit-style Workout of the Day (WOD) in ${languageName}.
     The WOD must have a clear, overall 'goal' that describes its primary focus (e.g., 'Building raw strength and anaerobic capacity').
     
-    The WOD should be structured into logical sections (like warmup, strength, metcon).
+    The WOD should be structured into logical sections (like warmup, strength, main conditioning piece). For the main conditioning section, avoid simply calling it 'Metcon'. Use a more descriptive or creative title like 'Engine Builder', 'The Grinder', 'For Time:', or a name that reflects the workout's character.
+    
     For each section, provide:
     1. A 'title'.
-    2. A list of 'details' outlining the exercises, reps, and sets. For any strength or weightlifting movements (e.g., squats, deadlifts, overhead press, snatch, clean and jerk), you MUST specify the working weight as a percentage of the athlete's 1-repetition max (1RM). For example: "Back Squat: 5 sets of 3 reps @ 85% 1RM".
+    2. A list of 'details' outlining the exercises, reps, and sets. For any strength or weightlifting movements (e.g., squats, deadlifts, overhead press, snatch, clean and jerk), you MUST specify the working weight as a percentage of the athlete's 1-repetition max (1RM). For example: "Back Squat: 5 sets of 3 reps @ 85% 1RM". For all other specified weights (e.g., dumbbells, kettlebells), you MUST specify weights for both male (RX M) and female (RX F) athletes in kilograms (kg). For example: "Kettlebell Swings (RX M: 24kg, RX F: 16kg)".
     3. A suggested 'duration'.
     4. A 'scalingOptions' object containing two arrays of strings:
        - 'beginner': At least one clear, actionable way for a beginner to scale down the movements.
@@ -107,7 +108,7 @@ export async function regenerateWodSection(
       
       For the new section, you must provide:
       1. A 'title'.
-      2. A list of 'details' outlining the exercises, reps, and sets. IMPORTANT: If the new section includes strength or weightlifting movements, you MUST specify the working weight as a percentage of the athlete's 1-repetition max (1RM). For example: "5 sets of 3 reps @ 85% 1RM".
+      2. A list of 'details' outlining the exercises, reps, and sets. IMPORTANT: If the new section includes strength or weightlifting movements, you MUST specify the working weight as a percentage of the athlete's 1-repetition max (1RM). For example: "5 sets of 3 reps @ 85% 1RM". For all other specified weights (e.g., for dumbbells or kettlebells), you MUST specify weights for both male (RX M) and female (RX F) athletes in kilograms (kg). For example: "Kettlebell Swings (RX M: 24kg, RX F: 16kg)".
       3. A suggested 'duration'.
       4. A 'scalingOptions' object with 'beginner' and 'advanced' scaling advice.
 
@@ -151,18 +152,20 @@ export async function generateFullWeekWod(language: LanguageCode): Promise<Wod[]
       The response must be a JSON array containing exactly 7 WOD objects, one for each day of the week, starting with Monday.
       Each WOD object must conform to the provided schema, including the 'type' property.
 
-      IMPORTANT: Each daily workout MUST be designed to be completed within a standard 60-minute class format. This includes time for a warmup, a strength or skill component, the main metabolic conditioning (metcon), and a cooldown. The 'duration' for each section should reflect this structure, and the total time should be approximately 60 minutes.
+      IMPORTANT: Each daily workout MUST be designed to be completed within a standard 60-minute class format. This includes time for a warmup, a strength or skill component, the main conditioning piece, and a cooldown. The 'duration' for each section should reflect this structure, and the total time should be approximately 60 minutes.
       
-      Furthermore, for any strength or weightlifting movements within any section of any day's WOD, you MUST specify the working weight as a percentage of the athlete's 1-repetition max (1RM). For example: "Back Squat: 5 sets of 5 reps @ 75% 1RM". This is a mandatory requirement for all strength-based exercises.
+      A crucial part of making the week interesting is varying the structure and naming of the main workout piece. While 'Metcon' is a common term, you MUST avoid using it repetitively. Instead, use more descriptive and varied titles for the main conditioning section each day. Examples include 'The Gauntlet', 'Engine Builder', 'For Time:', 'AMRAP', 'Death By...', 'The Grinder', 'Cardio Blast', or a creative name that fits the workout's theme. Be creative and mix it up to keep the programming exciting and engaging for the athletes.
 
-      The weekly structure must be as follows:
-      - Monday: A challenging individual workout. Set 'type' to 'individual'.
-      - Tuesday: A skill-focused individual workout. Set 'type' to 'individual'.
-      - Wednesday: An individual workout focused on endurance and stamina. Set 'type' to 'individual'.
-      - Thursday: A strength-focused individual workout. Set 'type' to 'individual'.
-      - Friday: A high-intensity metabolic conditioning (metcon) individual workout. Set 'type' to 'individual'.
-      - Saturday: A named CrossFit "Hero WOD". These are famously difficult workouts named in honor of fallen heroes. Make it a classic or a creative new one. Set 'type' to 'individual'.
-      - Sunday: A "Team WOD" designed for pairs (teams of 2). Adapt all components for a team format. Set 'type' to 'team'.
+      Furthermore, for any strength or weightlifting movements within any section of any day's WOD, you MUST specify the working weight as a percentage of the athlete's 1-repetition max (1RM). For example: "Back Squat: 5 sets of 5 reps @ 75% 1RM". This is a mandatory requirement for all strength-based exercises. For all other specified weights (e.g., for dumbbells or kettlebells), you MUST specify weights for both male (RX M) and female (RX F) athletes in kilograms (kg). For example: "Kettlebell Swings (RX M: 24kg, RX F: 16kg)".
+
+      The weekly structure must be varied and adhere to the following daily requirements:
+      - Monday: A challenging individual workout, like a classic CrossFit couplet or triplet. Set 'type' to 'individual'.
+      - Tuesday: A skill-focused individual workout, focusing on gymnastics or Olympic lifting technique. Set 'type' to 'individual'.
+      - Wednesday: An individual endurance workout. The main conditioning piece MUST be a 'Chipper' style workout designed to last between 35 and 45 minutes. Set 'type' to 'individual'.
+      - Thursday: A strength-focused individual workout, centered around a primary lift like squats, deadlifts, or presses. Set 'type' to 'individual'.
+      - Friday: A high-intensity individual workout. This should be a short, intense AMRAP or "For Time" workout. Give it a creative name. Set 'type' to 'individual'.
+      - Saturday: A named CrossFit "Hero WOD". These are famously difficult workouts named in honor of fallen heroes. It must be a classic or a creative new one. Set 'type' to 'individual'.
+      - Sunday: A "Team WOD" designed for pairs (teams of 2). The main workout portion MUST have a duration of at least 30 minutes. Adapt all components for a team format. Set 'type' to 'team'.
 
       Ensure the goal for each day is motivational and descriptive, and that each WOD has appropriate sections and scaling options. Do NOT include any rest days.
     `;

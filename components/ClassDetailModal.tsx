@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { XIcon } from './IconComponents';
-import type { ClassInfo } from '../pages/SchedulePage';
-import { classDetailsMap } from '../pages/SchedulePage';
+import type { ScheduleClassInfo } from '../data/roster';
+import { classDetailsMap, getCoachById } from '../data/roster';
 
 interface ClassDetailModalProps {
-    classInfo: ClassInfo;
+    classInfo: ScheduleClassInfo;
     onClose: () => void;
 }
 
@@ -30,11 +30,20 @@ const ClassDetailModal = ({ classInfo, onClose }: ClassDetailModalProps): React.
         }
     };
 
-    const details = classDetailsMap[classInfo.type];
+    const details = classDetailsMap[classInfo.classId];
+
+    const getCoachName = () => {
+        if (classInfo.coachId === 'team') return t('schedule.coachTeam');
+        if (classInfo.coachId) {
+            const coach = getCoachById(classInfo.coachId);
+            return coach ? coach.name : t('schedule.unsupervised');
+        }
+        return t('schedule.unsupervised');
+    };
     
     return (
         <div 
-            className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 backdrop-blur-sm animate-fade-in"
             style={{ animation: 'fadeIn 0.3s ease-out' }}
             onClick={handleBackdropClick}
         >
@@ -65,7 +74,7 @@ const ClassDetailModal = ({ classInfo, onClose }: ClassDetailModalProps): React.
                 
                 <div className="flex flex-wrap gap-x-6 gap-y-2 text-gray-600 dark:text-gray-400 mb-6 border-b border-gray-200 dark:border-gray-800 pb-4">
                     <p><span className="font-bold text-gray-800 dark:text-gray-200">Time:</span> {classInfo.time}</p>
-                    <p><span className="font-bold text-gray-800 dark:text-gray-200">Coach:</span> {classInfo.coach ? t(classInfo.coach) : 'N/A'}</p>
+                    <p><span className="font-bold text-gray-800 dark:text-gray-200">Coach:</span> {getCoachName()}</p>
                 </div>
                 
                 <div className="space-y-4 text-gray-700 dark:text-gray-300">

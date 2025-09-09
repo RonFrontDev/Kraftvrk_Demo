@@ -1,52 +1,103 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
+import { NavLink } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
+import { motion, AnimatePresence } from 'framer-motion';
+import { coachesData, getClassById, ClassType, classesData, ClassKey } from '../data/roster';
+import type { Coach } from '../data/roster';
 
-const CoachProfile = ({ name, specialty, image, bio }: { name: string, specialty: string, image: string, bio: string }) => (
-    <div className="bg-white dark:bg-[#1c1c1e] overflow-hidden flex flex-col md:flex-row items-center transform hover:scale-[1.02] transition-transform duration-300 shadow-lg rounded-md">
-        <img src={image} alt={name} className="w-full aspect-square object-cover md:w-80 flex-shrink-0" />
-        <div className="p-8">
-            <h3 className="text-4xl font-bold text-accent">{name}</h3>
-            <p className="text-lg font-bold text-gray-900 dark:text-white mb-2">{specialty}</p>
-            <p className="text-gray-600 dark:text-gray-400">{bio}</p>
+// A simple, non-animated presentational component for a coach's profile.
+const CoachProfile = ({ coach, classes }: { coach: Coach, classes: ClassType[] }): JSX.Element => {
+    const { t } = useLanguage();
+    return (
+        <div
+            id={`coach-${coach.id}`}
+            className="bg-white dark:bg-[#1c1c1e] overflow-hidden flex flex-col md:flex-row items-center shadow-lg rounded-md scroll-mt-32"
+        >
+            <img src={`https://i.pravatar.cc/400?u=${coach.imageId}`} alt={coach.name} className="w-full aspect-square object-cover md:w-80 flex-shrink-0" />
+            <div className="p-8 w-full">
+                <h3 className="text-4xl font-bold text-accent">{coach.name}</h3>
+                <p className="text-lg font-bold text-gray-900 dark:text-white mb-2">{t(coach.specialtyKey)}</p>
+                <p className="text-gray-600 dark:text-gray-400">{t(coach.bioKey)}</p>
+
+                {classes.length > 0 && (
+                    <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+                        <h4 className="font-bold text-gray-900 dark:text-white uppercase mb-3 tracking-wider">Teaches:</h4>
+                        <div className="flex flex-wrap gap-2">
+                            {classes.map(cls => (
+                                <NavLink key={cls.id} to="/classes" className="bg-accent/20 text-accent text-sm font-medium px-3 py-1 rounded-full hover:bg-accent/40 transition-colors">
+                                    {t(cls.titleKey)}
+                                </NavLink>
+                            ))}
+                        </div>
+                    </div>
+                )}
+            </div>
         </div>
-    </div>
-);
+    );
+};
 
-const coachesData = [
-  { name: "Alex 'The Rep' Riley", specialtyKey: 'about.coach1Specialty', bioKey: 'about.coach1Bio', imageId: '5' },
-  { name: "Maria 'Cardio Queen' Sanchez", specialtyKey: 'about.coach2Specialty', bioKey: 'about.coach2Bio', imageId: '6' },
-  { name: 'David "The Engine" Chen', specialtyKey: 'about.coach3Specialty', bioKey: 'about.coach3Bio', imageId: '7' },
-  { name: 'Emily "Guns" Johnson', specialtyKey: 'about.coach4Specialty', bioKey: 'about.coach4Bio', imageId: '8' },
-  { name: 'Frank "The Tank" Kowalski', specialtyKey: 'about.coach5Specialty', bioKey: 'about.coach5Bio', imageId: '9' },
-  { name: 'Chloe "Mobility" Kim', specialtyKey: 'about.coach6Specialty', bioKey: 'about.coach6Bio', imageId: '10' },
-  { name: 'Brian "Barbell" O\'Connell', specialtyKey: 'about.coach7Specialty', bioKey: 'about.coach7Bio', imageId: '11' },
-  { name: 'Olivia "Pistol" Petrova', specialtyKey: 'about.coach8Specialty', bioKey: 'about.coach8Bio', imageId: '12' },
-  { name: 'Marcus "Metcon" Washington', specialtyKey: 'about.coach9Specialty', bioKey: 'about.coach9Bio', imageId: '13' },
-  { name: 'Isabelle "The Iron" Dubois', specialtyKey: 'about.coach10Specialty', bioKey: 'about.coach10Bio', imageId: '14' },
-];
+const CoachesPage = (): JSX.Element => {
+    const { t } = useLanguage();
+    const [activeFilter, setActiveFilter] = useState<ClassKey | 'all'>('all');
 
-const CoachesPage = (): React.ReactNode => {
-  const { t } = useLanguage();
-  return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-32">
-      <div className="text-center mb-12">
-        <h1 className="text-7xl font-extrabold uppercase tracking-wider text-gray-900 dark:text-white">{t('coaches.title')}</h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">{t('coaches.subtitle')}</p>
-      </div>
+    const filteredCoaches = useMemo(() => {
+        if (activeFilter === 'all') {
+            return coachesData;
+        }
+        return coachesData.filter(coach => coach.classes.includes(activeFilter));
+    }, [activeFilter]);
 
-      <div className="space-y-8">
-          {coachesData.map(coach => (
-            <CoachProfile 
-                key={coach.name}
-                name={coach.name}
-                specialty={t(coach.specialtyKey)}
-                image={`https://i.pravatar.cc/400?u=${coach.imageId}`}
-                bio={t(coach.bioKey)}
-            />
-          ))}
-      </div>
-    </div>
-  );
+    return (
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-32">
+            <div className="text-center mb-12">
+                <h1 className="text-7xl font-extrabold uppercase tracking-wider text-gray-900 dark:text-white">{t('coaches.title')}</h1>
+                <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">{t('coaches.subtitle')}</p>
+            </div>
+
+            {/* Filter Buttons */}
+            <div className="flex justify-center items-center gap-2 sm:gap-4 mb-12 flex-wrap">
+                <button
+                    onClick={() => setActiveFilter('all')}
+                    className={`px-6 py-2 text-sm font-medium uppercase tracking-wider rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 dark:focus:ring-offset-[#101012] focus:ring-accent ${activeFilter === 'all' ? 'bg-accent text-black' : 'bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700'}`}
+                >
+                    {t('coaches.filterAll')}
+                </button>
+                {classesData.map(cls => (
+                    <button
+                        key={cls.id}
+                        onClick={() => setActiveFilter(cls.id)}
+                        className={`px-6 py-2 text-sm font-medium uppercase tracking-wider rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 dark:focus:ring-offset-[#101012] focus:ring-accent ${activeFilter === cls.id ? 'bg-accent text-black' : 'bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700'}`}
+                    >
+                        {t(cls.titleKey)}
+                    </button>
+                ))}
+            </div>
+
+            <div className="space-y-8">
+                <AnimatePresence>
+                    {filteredCoaches.map(coach => {
+                        const taughtClasses = coach.classes.map(classId => getClassById(classId)).filter(Boolean) as ClassType[];
+                        return (
+                            <motion.div
+                                key={coach.id}
+                                layout
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -30 }}
+                                transition={{ type: 'spring', stiffness: 200, damping: 25 }}
+                                whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                            >
+                                <CoachProfile 
+                                    coach={coach}
+                                    classes={taughtClasses}
+                                />
+                            </motion.div>
+                        )
+                    })}
+                </AnimatePresence>
+            </div>
+        </div>
+    );
 };
 
 export default CoachesPage;

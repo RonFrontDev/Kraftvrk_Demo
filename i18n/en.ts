@@ -11,6 +11,7 @@ export const en = {
     shop: 'Shop',
     contact: 'Contact',
     freeTrial: 'Free Trial',
+    classes: 'Classes',
   },
   // Footer
   footer: {
@@ -54,6 +55,17 @@ export const en = {
         title: 'Unmatched Energy',
         text: 'The atmosphere at Kraftvrk is electric. It is a place where loud music, chalk, and the sound of dropping weights create an environment that motivates you to push your limits and discover your true strength.'
       }
+    },
+    steps: {
+      title: 'Your Journey Starts Here',
+      subtitle: 'Getting started at Kraftvrk is simple. Follow these three easy steps to begin your transformation.',
+      step1Title: 'Book Your Free Trial',
+      step1Text: "Click the button below to schedule your free intro class. You'll meet a coach, see the facility, and get a taste of the Kraftvrk experience. No commitment, no pressure.",
+      step2Title: 'Show Up & Sweat',
+      step2Text: 'Come in for your class a few minutes early. Our coach will guide you through the entire workout, scaling every movement to your current fitness level. All you need to do is give your best effort.',
+      step3Title: 'Become a Member',
+      step3Text: 'Loved your first class? Talk to our staff to choose the membership plan that works for you. Welcome to the Kraftvrk family! Your journey to elite fitness has just begun.',
+      ctaButton: 'Book Free Trial',
     },
     classesTitle: 'Training Programs',
     class1Title: 'WOD Classes',
@@ -146,13 +158,13 @@ export const en = {
     classOpenGymDesc: 'Utilize our facility and top-of-the-line equipment to work on your own programming, practice specific skills, or make up a missed WOD. A coach will be present to ensure safety but this is not a structured class.',
     classCommunityWod: 'Community WOD',
     classCommunityWodDesc: 'A fun, high-energy partner or team workout designed to get you sweating and smiling. This class is a great way to meet fellow members and kick off your weekend with a challenge. All are welcome!',
-    coachAlex: 'Coach: Alex Riley',
-    coachMaria: 'Coach: Maria Sanchez',
     coachTeam: 'Team Coach',
     unsupervised: 'Unsupervised',
     closed: 'Closed',
     closedDesc: 'The gym is closed for the day. Time for some well-deserved rest and recovery!',
     modalTitle: 'Class Details',
+    wodPreviewTitle: 'WOD Preview',
+    wodNotRevealed: "The WOD for this class hasn't been revealed yet. Check back soon!",
   },
   // About Page
   about: {
@@ -186,6 +198,33 @@ export const en = {
   coaches: {
     title: 'Meet Our Team',
     subtitle: 'The passionate experts dedicated to your success.',
+    filterAll: 'All',
+  },
+  // Classes Page
+  classes: {
+    title: 'Our Classes',
+    subtitle: 'Find the perfect class to match your fitness style and goals. We offer a variety of programs for all levels.',
+    viewSchedule: 'View Schedule',
+    crossfit: {
+        title: 'CrossFit',
+        desc: 'Our core program. Constantly varied, high-intensity functional movements designed to improve your capacity across all domains of fitness. Expect lifting, gymnastics, and cardio.'
+    },
+    bootcamp: {
+        title: 'Bootcamp',
+        desc: 'A high-energy, circuit-style class focusing on metabolic conditioning and strength endurance. Less technical lifting, more sweat. Perfect for all fitness levels.'
+    },
+    weightlifting: {
+        title: 'Weightlifting',
+        desc: 'Dedicated to improving the snatch and clean & jerk. This class focuses on technique, strength, and mobility to make you more efficient with a barbell.'
+    },
+    hyrox: {
+        title: 'Hyrox',
+        desc: 'The new global fitness race. This class prepares you for the challenge, combining 1km runs with functional workout stations. Build your endurance and functional strength.'
+    },
+    threshold: {
+        title: 'Threshold',
+        desc: 'Improve your ability to sustain high-intensity effort for longer periods. This class focuses on workouts at or near your lactate threshold to build mental toughness and aerobic capacity.'
+    }
   },
   // Exercise Library
   library: {
@@ -199,6 +238,8 @@ export const en = {
     equipment: 'Equipment',
     primaryMuscles: 'Primary Muscles',
     noEquipment: 'None',
+    searchNamePlaceholder: 'Search by name...',
+    searchEquipmentPlaceholder: 'Search by equipment...',
     exercises: {
       back_squat: {
         name: 'Back Squat',
@@ -638,6 +679,10 @@ export const en = {
     plan6Title: 'Small Group',
     plan6Desc: 'Train with friends! Special rates for groups of 3 or more. Motivation included.',
     plan6Price: 'Custom Rate',
+    contactUsButton: 'Contact Us',
+    accordionCoreTitle: 'Core Memberships',
+    accordionFlexibleTitle: 'Flexible Options',
+    accordionCustomTitle: 'Custom Packages',
     feature: {
       '12classes': 'Up to 12 classes/month',
       unlimited: 'Unlimited classes',

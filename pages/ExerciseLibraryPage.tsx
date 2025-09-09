@@ -5,6 +5,7 @@ import { staticExercises } from '../data/exercises';
 import type { Exercise, ExerciseCategory } from '../types';
 import ExerciseCard from '../components/ExerciseCard';
 import ExerciseDetailModal from '../components/ExerciseDetailModal';
+import { Input } from '../components/ui/input';
 
 const categories: (ExerciseCategory | 'all')[] = ['all', 'bootcamp', 'crossfit', 'weightlifting'];
 
@@ -12,6 +13,8 @@ const ExerciseLibraryPage = (): React.ReactNode => {
     const { t } = useLanguage();
     const [activeCategory, setActiveCategory] = useState<ExerciseCategory | 'all'>('all');
     const [selectedExercise, setSelectedExercise] = useState<Exercise | null>(null);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [equipmentFilter, setEquipmentFilter] = useState('');
 
     const allExercises = useMemo((): Exercise[] => {
         return staticExercises.map(ex => {
@@ -31,9 +34,38 @@ const ExerciseLibraryPage = (): React.ReactNode => {
         });
     }, [t]);
     
-    const displayedExercises = activeCategory === 'all'
-        ? allExercises
-        : allExercises.filter(ex => ex.categories.includes(activeCategory as ExerciseCategory));
+    const displayedExercises = useMemo(() => {
+        let filtered = allExercises;
+
+        // Category filter
+        if (activeCategory !== 'all') {
+            filtered = filtered.filter(ex => ex.categories.includes(activeCategory as ExerciseCategory));
+        }
+
+        // Search term filter (name)
+        if (searchTerm) {
+            filtered = filtered.filter(ex => 
+                ex.name.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+        }
+
+        // Equipment filter
+        if (equipmentFilter) {
+            const lowerCaseEquipmentFilter = equipmentFilter.toLowerCase();
+            const noEquipmentTerm = t('library.noEquipment').toLowerCase();
+            
+            filtered = filtered.filter(ex => {
+                if (ex.equipment.length === 0) {
+                    return noEquipmentTerm.includes(lowerCaseEquipmentFilter);
+                }
+                return ex.equipment.some(eq => 
+                    eq.toLowerCase().includes(lowerCaseEquipmentFilter)
+                );
+            });
+        }
+
+        return filtered;
+    }, [allExercises, activeCategory, searchTerm, equipmentFilter, t]);
 
     return (
         <>
@@ -43,7 +75,7 @@ const ExerciseLibraryPage = (): React.ReactNode => {
                     <p className="text-xl text-gray-600 dark:text-gray-400">{t('library.subtitle')}</p>
                 </div>
 
-                <div className="flex justify-center items-center gap-2 sm:gap-4 mb-12 flex-wrap">
+                <div className="flex justify-center items-center gap-2 sm:gap-4 mb-8 flex-wrap">
                     {categories.map(category => (
                         <button
                             key={category}
@@ -55,6 +87,25 @@ const ExerciseLibraryPage = (): React.ReactNode => {
                     ))}
                 </div>
                 
+                <div className="flex flex-col sm:flex-row gap-4 mb-12 max-w-2xl mx-auto">
+                    <Input
+                        type="text"
+                        placeholder={t('library.searchNamePlaceholder')}
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="w-full bg-white dark:bg-[#1A1A1C]"
+                        aria-label="Search by exercise name"
+                    />
+                    <Input
+                        type="text"
+                        placeholder={t('library.searchEquipmentPlaceholder')}
+                        value={equipmentFilter}
+                        onChange={(e) => setEquipmentFilter(e.target.value)}
+                        className="w-full bg-white dark:bg-[#1A1A1C]"
+                        aria-label="Search by equipment"
+                    />
+                </div>
+
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {displayedExercises.map((exercise, index) => (
                         <ExerciseCard 

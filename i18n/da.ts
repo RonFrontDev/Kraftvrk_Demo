@@ -10,6 +10,7 @@ export const da = {
     shop: 'Butik',
     contact: 'Kontakt',
     freeTrial: 'Gratis Prøvetime',
+    classes: 'Hold',
   },
   footer: {
     rightsReserved: 'Alle rettigheder forbeholdes.',
@@ -51,6 +52,17 @@ export const da = {
         title: 'Uovertruffen Energi',
         text: 'Atmosfæren hos Kraftvrk er elektrisk. Det er et sted, hvor høj musik, kalk og lyden af vægte, der falder, skaber et miljø, der motiverer dig til at skubbe dine grænser og opdage din sande styrke.'
       }
+    },
+    steps: {
+      title: 'Din Rejse Starter Her',
+      subtitle: 'Det er simpelt at komme i gang hos Kraftvrk. Følg disse tre lette trin for at begynde din transformation.',
+      step1Title: 'Book Din Gratis Prøvetime',
+      step1Text: 'Klik på knappen nedenfor for at planlægge din gratis intro-time. Du vil møde en træner, se faciliteterne og få en smagsprøve på Kraftvrk-oplevelsen. Ingen forpligtelse, intet pres.',
+      step2Title: 'Mød Op & Sved',
+      step2Text: 'Kom til din time et par minutter før tid. Vores træner vil guide dig gennem hele træningen og skalere hver øvelse til dit nuværende fitnessniveau. Alt du skal gøre er at yde dit bedste.',
+      step3Title: 'Bliv Medlem',
+      step3Text: 'Elskede du din første time? Tal med vores personale for at vælge det medlemskab, der passer til dig. Velkommen til Kraftvrk-familien! Din rejse mod elite fitness er lige begyndt.',
+      ctaButton: 'Book Prøvetime',
     },
     classesTitle: 'Træningsprogrammer',
     class1Title: 'WOD Timer',
@@ -141,13 +153,13 @@ export const da = {
     classOpenGymDesc: 'Brug vores faciliteter og førsteklasses udstyr til at arbejde på dit eget program, øve specifikke færdigheder eller indhente en misset WOD. En træner vil være til stede for at sikre sikkerheden, men dette er ikke en struktureret time.',
     classCommunityWod: 'Fællesskabs WOD',
     classCommunityWodDesc: 'En sjov, højenergisk partner- eller holdtræning designet til at få dig til at svede og smile. Denne time er en fantastisk måde at møde andre medlemmer og starte din weekend med en udfordring. Alle er velkomne!',
-    coachAlex: 'Træner: Alex Riley',
-    coachMaria: 'Træner: Maria Sanchez',
     coachTeam: 'Team Træner',
     unsupervised: 'Uden opsyn',
     closed: 'Lukket',
     closedDesc: 'Centeret er lukket i dag. Tid til en velfortjent hvile og restitution!',
     modalTitle: 'Holddetaljer',
+    wodPreviewTitle: 'WOD-forhåndsvisning',
+    wodNotRevealed: 'Dagens træning for dette hold er endnu ikke afsløret. Kig tilbage snart!',
   },
   about: {
     title: 'Om Kraftvrk',
@@ -179,6 +191,32 @@ export const da = {
   coaches: {
     title: 'Mød Vores Team',
     subtitle: 'De passionerede eksperter dedikeret til din succes.',
+    filterAll: 'Alle',
+  },
+  classes: {
+    title: 'Vores Hold',
+    subtitle: 'Find det perfekte hold, der matcher din fitness-stil og dine mål. Vi tilbyder en række programmer for alle niveauer.',
+    viewSchedule: 'Se Tidsplan',
+    crossfit: {
+        title: 'CrossFit',
+        desc: 'Vores kerneprogram. Konstant varierede, højintensive funktionelle bevægelser designet til at forbedre din kapacitet på tværs af alle fitnessdomæner. Forvent løft, gymnastik og cardio.'
+    },
+    bootcamp: {
+        title: 'Bootcamp',
+        desc: 'En høj-energi, circuit-style time med fokus på metabolisk konditionering og styrkeudholdenhed. Mindre teknisk løft, mere sved. Perfekt for alle fitnessniveauer.'
+    },
+    weightlifting: {
+        title: 'Vægtløftning',
+        desc: 'Dedikeret til at forbedre snatch og clean & jerk. Denne time fokuserer på teknik, styrke og mobilitet for at gøre dig mere effektiv med en vægtstang.'
+    },
+    hyrox: {
+        title: 'Hyrox',
+        desc: 'Det nye globale fitnessløb. Denne time forbereder dig til udfordringen ved at kombinere 1 km løb med funktionelle træningsstationer. Opbyg din udholdenhed og funktionelle styrke.'
+    },
+    threshold: {
+        title: 'Tærskel',
+        desc: 'Forbedre din evne til at opretholde højintensiv indsats i længere perioder. Denne time fokuserer på træning ved eller nær din laktattærskel for at opbygge mental sejhed og aerob kapacitet.'
+    }
   },
   library: {
     title: 'Øvelsesbibliotek',
@@ -191,6 +229,8 @@ export const da = {
     equipment: 'Udstyr',
     primaryMuscles: 'Primære Muskler',
     noEquipment: 'Ingen',
+    searchNamePlaceholder: 'Søg efter navn...',
+    searchEquipmentPlaceholder: 'Søg efter udstyr...',
     exercises: {
       back_squat: {
         name: 'Back Squat',
@@ -304,7 +344,7 @@ export const da = {
         name: 'Snatch',
         description: 'En olympisk vægtløftningsbevægelse, hvor en vægtstang løftes fra gulvet til over hovedet i én kontinuerlig bevægelse.',
         instructions: [
-          'Start med et bredt greb på stangen i en dødløft-opsætning.',
+          'Start med et bredt greb om stangen, i en dødløft-opsætning.',
           'Løft stangen eksplosivt fra gulvet, stræk dine hofter og træk skuldrene hårdt op.',
           'Træk dig selv ind under stangen, og modtag den i en fuld overhead squat-position med låste arme.',
           'Stå op fra squatten for at fuldføre løftet.'
@@ -314,129 +354,129 @@ export const da = {
       },
       clean_and_jerk: {
         name: 'Clean and Jerk',
-        description: 'Et todelt olympisk løft, hvor stangen flyttes fra gulvet til skuldrene (clean), og derefter fra skuldre til over hovedet (jerk).',
+        description: 'Et todelt olympisk løft, hvor stangen flyttes fra gulvet til skuldrene (clean), derefter fra skuldre til over hovedet (jerk).',
         instructions: [
-          'Del 1 (Clean): Løft stangen fra gulvet, eksploder med dine hofter, og træk dig selv ind under for at gribe den i en front squat.',
+          'Del 1 (Clean): Løft stangen fra gulvet, eksplodér med dine hofter, og træk dig selv ind under for at gribe den i en front squat.',
           'Stå op fra squatten med stangen i front rack-positionen.',
-          'Del 2 (Jerk): Dip og drive stangen af dine skuldre. Fald ind under den i en split- eller squat-stilling.',
-          'Ret op ved at bringe dine fødder sammen, mens stangen er stabil over hovedet.'
+          'Del 2 (Jerk): Dip og driv stangen af dine skuldre. Fald ind under den i en split- eller squat-position.',
+          'Kom dig ved at bringe dine fødder sammen, mens stangen er stabil over hovedet.'
         ],
         equipment: ['Vægtstang', 'Bumper Plates'],
         primaryMuscles: ['Hele kroppen', 'Glutes', 'Quadriceps', 'Skuldre']
       },
       dumbbell_snatch: {
         name: 'Dumbbell Snatch',
-        description: 'En dynamisk, enkeltarmsbevægelse, der bringer en håndvægt fra gulvet til over hovedet i én bevægelse.',
+        description: 'En dynamisk, enarms bevægelse, der bringer en dumbbell fra gulvet til over hovedet i én bevægelse.',
         instructions: [
-          'Start med en håndvægt på gulvet mellem dine fødder.',
-          'Bøj i hofterne, hold ryggen ret, og grib håndvægten.',
-          'Stræk eksplosivt dine hofter og knæ, og træk håndvægten opad tæt på kroppen.',
-          'Når håndvægten når skulderhøjde, slå den op mod loftet, og lås din arm over hovedet.'
+          'Start med en dumbbell på gulvet mellem dine fødder.',
+          'Bøj i hofterne, hold ryggen ret, og grib dumbbellen.',
+          'Stræk eksplosivt dine hofter og knæ, og træk dumbbellen op tæt på din krop.',
+          'Når dumbbellen når skulderhøjde, stød den op mod loftet, og lås din arm over hovedet.'
         ],
-        equipment: ['Håndvægt'],
+        equipment: ['Dumbbell'],
         primaryMuscles: ['Glutes', 'Hamstrings', 'Skuldre', 'Core']
       },
       dumbbell_clean: {
         name: 'Dumbbell Clean',
-        description: 'En eksplosiv bevægelse for at bringe en eller to håndvægte fra gulvet eller hængende position til skuldrene.',
+        description: 'En eksplosiv bevægelse for at bringe en eller to dumbbells fra gulvet eller hængende position til skuldrene.',
         instructions: [
-          'Start med håndvægte lige uden for dine fødder. Bøj i hofterne.',
-          'Stræk eksplosivt dine hofter og træk skuldrene op, mens du trækker håndvægtene op.',
-          'Fald hurtigt ind under håndvægtene, roter dine albuer for at gribe dem i front rack-positionen på dine skuldre.'
+          'Start med dumbbells lige uden for dine fødder. Bøj i hofterne.',
+          'Stræk eksplosivt dine hofter og træk skuldrene op, og træk dumbbellsene op.',
+          'Fald hurtigt ind under dumbbellsene, roter albuerne for at gribe dem i front rack-positionen på dine skuldre.'
         ],
-        equipment: ['Håndvægt'],
+        equipment: ['Dumbbell'],
         primaryMuscles: ['Glutes', 'Hamstrings', 'Trapezius', 'Skuldre']
       },
       dumbbell_thruster: {
         name: 'Dumbbell Thruster',
-        description: 'En sammensat bevægelse, der kombinerer en front squat med et overhead pres, udført med håndvægte.',
+        description: 'En sammensat bevægelse, der kombinerer en front squat med et overhead pres, udført med dumbbells.',
         instructions: [
-          'Hold et par håndvægte ved dine skuldre (front rack-position).',
+          'Hold et par dumbbells ved dine skuldre (front rack-position).',
           'Udfør en fuld front squat, gå ned under parallel.',
-          'Når du står op fra squatten, brug momentet til eksplosivt at presse håndvægtene over hovedet.',
-          'Sænk håndvægtene tilbage til skuldrene for at starte næste rep.'
+          'Når du står op fra squatten, brug momentet til eksplosivt at presse dumbbellsene over hovedet.',
+          'Sænk dumbbellsene tilbage til skuldrene for at starte næste rep.'
         ],
-        equipment: ['Håndvægt'],
+        equipment: ['Dumbbell'],
         primaryMuscles: ['Quadriceps', 'Glutes', 'Skuldre', 'Triceps']
       },
       dumbbell_bench_press: {
         name: 'Dumbbell Bænkpres',
-        description: 'En bænkpres-variation med håndvægte, som tillader et større bevægelsesområde og udfordrer stabiliteten.',
+        description: 'En bænkpres-variation med dumbbells, som giver større bevægelsesområde og udfordrer stabiliteten.',
         instructions: [
-          'Lig på en flad bænk med en håndvægt i hver hånd ved dit bryst.',
-          'Pres håndvægtene opad, indtil dine arme er helt strakte.',
-          'Sænk håndvægtene kontrolleret, og tillad et dybt stræk i brystet.',
-          'Hold dine fødder plantet og din ryg stabil på bænken.'
+          'Lig på en flad bænk og hold en dumbbell i hver hånd ved dit bryst.',
+          'Pres dumbbellsene opad, indtil dine arme er helt strakte.',
+          'Sænk dumbbellsene kontrolleret, og tillad et dybt stræk i brystet.',
+          'Hold fødderne plantet og ryggen stabil på bænken.'
         ],
-        equipment: ['Håndvægt', 'Bænk'],
+        equipment: ['Dumbbell', 'Bænk'],
         primaryMuscles: ['Brystmuskler', 'Deltoids', 'Triceps']
       },
       renegade_row: {
         name: 'Renegade Row',
-        description: 'En udfordrende core-øvelse, der kombinerer en planke med en enkeltarms-roning.',
+        description: 'En udfordrende core-øvelse, der kombinerer en planke med en enarms roning.',
         instructions: [
-          'Start i en høj planke-position, med hænderne på to håndvægte under dine skuldre.',
+          'Start i en høj planke-position, og grib to dumbbells med hænderne under dine skuldre.',
           'Hold din core spændt og hofterne stabile (minimer vuggen).',
-          'Træk den ene håndvægt op til dit bryst, og klem dine rygmuskler.',
-          'Sænk håndvægten kontrolleret og gentag på den anden side.'
+          'Ro den ene dumbbell op til dit bryst, og klem dine rygmuskler.',
+          'Sænk dumbbellen kontrolleret og gentag på den anden side.'
         ],
-        equipment: ['Håndvægt'],
+        equipment: ['Dumbbell'],
         primaryMuscles: ['Core', 'Ryg', 'Skuldre', 'Biceps']
       },
       dumbbell_lunge: {
         name: 'Dumbbell Lunge',
-        description: 'En underkropsøvelse, der rammer hvert ben individuelt, fantastisk til at opbygge styrke og stabilitet.',
+        description: 'En underkropsøvelse, der sigter mod hvert ben individuelt, fantastisk til at opbygge styrke og stabilitet.',
         instructions: [
-          'Hold håndvægte i hver hånd ved dine sider eller i en front rack-position.',
+          'Hold dumbbells i hver hånd ved dine sider eller i en front rack-position.',
           'Tag et skridt frem med det ene ben, og sænk dine hofter, indtil begge knæ er i en 90-graders vinkel.',
-          'Sørg for, at dit forreste knæ ikke kommer forbi dine tæer, og at dit bagerste knæ svæver lige over jorden.',
-          'Skub fra med den forreste fod for at vende tilbage til startpositionen. Skift ben.'
+          'Sørg for, at dit forreste knæ ikke sporer forbi dine tæer, og dit bagerste knæ svæver lige over jorden.',
+          'Skub fra med forreste fod for at vende tilbage til startpositionen. Skift ben.'
         ],
-        equipment: ['Håndvægt'],
+        equipment: ['Dumbbell'],
         primaryMuscles: ['Quadriceps', 'Glutes', 'Hamstrings']
       },
       kettlebell_swing: {
         name: 'Kettlebell Swing',
-        description: 'En kraftfuld, hofte-hængsel bevægelse, der opbygger eksplosiv kraft, kondition og grebsstyrke.',
+        description: 'En kraftfuld hofte-hængsel bevægelse, der opbygger eksplosiv kraft, konditionering og grebsstyrke.',
         instructions: [
           'Stå med fødderne i skulderbredde, med kettlebellen cirka en fod foran dig.',
           'Bøj i hofterne for at gribe kettlebellen. Sving den tilbage mellem dine ben.',
-          'Kør dine hofter eksplosivt fremad, klem ballerne for at drive kettlebellen op til brysthøjde.',
-          'Lad kettlebellen svinge naturligt ned igen, mens du igen bøjer i hofterne. Bevægelsen drives af hofterne, ikke armene.'
+          'Kør eksplosivt dine hofter fremad, klem dine baller, for at drive kettlebellen op til brysthøjde.',
+          'Lad kettlebellen svinge naturligt ned igen, og bøj igen i hofterne. Bevægelsen drives af hofterne, ikke armene.'
         ],
         equipment: ['Kettlebell'],
         primaryMuscles: ['Glutes', 'Hamstrings', 'Core', 'Ryg']
       },
       goblet_squat: {
         name: 'Goblet Squat',
-        description: 'En squat-variation, hvor en kettlebell eller håndvægt holdes på brystniveau, hvilket fremmer en oprejst torso.',
+        description: 'En squat-variation, hvor en kettlebell eller dumbbell holdes på brystniveau, hvilket fremmer en oprejst torso.',
         instructions: [
-          'Hold en enkelt kettlebell i hornene (eller en håndvægt i enden) tæt på dit bryst.',
-          'Hold albuerne inde. Placer dine fødder i skulderbredde.',
-          'Gå ned i squat mellem dine ben, og hold brystet oppe og ryggen ret.',
+          'Hold en enkelt kettlebell ved hornene (eller en dumbbell i enden) tæt på dit bryst.',
+          'Hold dine albuer inde. Placer dine fødder i skulderbredde.',
+          'Squat ned mellem dine ben, hold brystet oppe og ryggen ret.',
           'Kør gennem dine hæle for at vende tilbage til en stående position.'
         ],
-        equipment: ['Kettlebell', 'Håndvægt'],
+        equipment: ['Kettlebell', 'Dumbbell'],
         primaryMuscles: ['Quadriceps', 'Glutes', 'Core']
       },
       turkish_get_up: {
         name: 'Turkish Get-Up',
-        description: 'En kompleks, flertrinsbevægelse, der involverer at bevæge sig fra en liggende til en stående position, mens man holder en vægt over hovedet.',
+        description: 'En kompleks, flertrins bevægelse, der involverer at bevæge sig fra en liggende til en stående position, mens man holder en vægt over hovedet.',
         instructions: [
           'Lig på ryggen, pres kettlebellen op med den ene arm. Bøj knæet på samme side.',
           'Rul op på din modsatte albue, derefter til din hånd.',
           'Løft dine hofter fra jorden og sving dit strakte ben igennem til en lunge-position.',
-          'Stå op fra lungen. Vend alle trin om for at vende tilbage til startpositionen.'
+          'Stå op fra lungen. Vend alle trin for at vende tilbage til startpositionen.'
         ],
         equipment: ['Kettlebell'],
         primaryMuscles: ['Hele kroppen', 'Core', 'Skulderstabilitet']
       },
       kettlebell_snatch: {
         name: 'Kettlebell Snatch',
-        description: 'Et dynamisk, enkeltarmsløft, der flytter en kettlebell fra et sving til en låst overhead-position i én flydende bevægelse.',
+        description: 'Et dynamisk, enarms løft, der flytter en kettlebell fra et sving til en låst overhead-position i én flydende bevægelse.',
         instructions: [
-          'Start med et enarms-sving.',
-          'Når kettlebellen når brysthøjde, træk den opad og slå din hånd igennem og op, så klokken roterer om dit håndled.',
+          'Start med et enarms sving.',
+          'Når kettlebellen når brysthøjde, træk den opad og stød din hånd igennem og op, roter klokken omkring dit håndled.',
           'Modtag kettlebellen i en stabil, låst overhead-position.',
           'Sænk kettlebellen kontrolleret tilbage i svinget.'
         ],
@@ -445,22 +485,22 @@ export const da = {
       },
       pull_up: {
         name: 'Pull-up',
-        description: 'En klassisk kropsvægtøvelse for at opbygge overkropsstyrke ved at trække din krop op til en stang.',
+        description: 'En klassisk kropsvægtsøvelse for at opbygge overkropsstyrke ved at trække din krop op til en stang.',
         instructions: [
-          'Grib en pull-up stang med dine hænder lidt bredere end skulderbredde, håndfladerne vender væk (overhåndsgreb).',
+          'Grib en pull-up stang med hænderne lidt bredere end skulderbredde, håndfladerne vender væk (overhåndsgreb).',
           'Start fra et dødt hæng med armene helt strakte.',
-          'Træk dig selv op, indtil din hage er over stangen, og engager din ryg og biceps.',
-          'Sænk dig selv kontrolleret, indtil dine arme er strakte igen.'
+          'Træk dig op, indtil din hage er over stangen, og engager din ryg og biceps.',
+          'Sænk dig kontrolleret, indtil dine arme er strakte igen.'
         ],
         equipment: ['Pull-up Stang'],
         primaryMuscles: ['Lats', 'Biceps', 'Øvre ryg']
       },
       push_up: {
-        name: 'Push-up',
-        description: 'En grundlæggende kropsvægtøvelse, der opbygger bryst-, skulder- og tricepsstyrke.',
+        name: 'Armbøjning',
+        description: 'En grundlæggende kropsvægtsøvelse, der opbygger bryst-, skulder- og tricepsstyrke.',
         instructions: [
           'Start i en høj planke-position med dine hænder direkte under dine skuldre.',
-          'Hold din krop i en lige linje fra hoved til hæle. Spænd i maven.',
+          'Hold din krop i en lige linje fra hoved til hæle. Spænd din core.',
           'Sænk din krop, indtil dit bryst er tæt på gulvet.',
           'Pres op igen til startpositionen, og oprethold en stiv torso.'
         ],
@@ -471,21 +511,21 @@ export const da = {
         name: 'Sit-up',
         description: 'En core-øvelse, der involverer at løfte din torso fra en liggende position til en siddende position.',
         instructions: [
-          'Lig på ryggen med bøjede knæ og fødderne fladt på gulvet (ofte forankret).',
-          'Placer dine hænder bag dit hoved eller på tværs af dit bryst.',
+          'Lig på ryggen med knæene bøjede og fødderne fladt på gulvet (ofte forankret).',
+          'Placer dine hænder bag hovedet eller på tværs af brystet.',
           'Engager din core for at løfte hele din torso fra gulvet, indtil den rører dine lår.',
-          'Sænk dig selv kontrolleret ned igen.'
+          'Sænk dig kontrolleret ned igen.'
         ],
         equipment: ['AbMat (valgfri)'],
         primaryMuscles: ['Mavemuskler', 'Hoftebøjere']
       },
       air_squat: {
         name: 'Air Squat',
-        description: 'En grundlæggende kropsvægt-squat, essentiel for at udvikle korrekt squat-mekanik og benstyrke.',
+        description: 'En grundlæggende kropsvægtssquat, essentiel for at udvikle korrekt squat-mekanik og benstyrke.',
         instructions: [
           'Stå med fødderne i skulderbredde, tæerne peger let udad.',
           'Hold brystet oppe og din core engageret. Start bevægelsen ved at sende dine hofter tilbage og ned.',
-          'Gå ned i squat, indtil dine hofter bryder knæenes plan (under parallel).',
+          'Squat, indtil dine hofter bryder knæenes plan (under parallel).',
           'Hold din vægt i dine hæle og kør op igen til en stående position.'
         ],
         equipment: [],
@@ -493,10 +533,10 @@ export const da = {
       },
       toes_to_bar: {
         name: 'Toes-to-Bar',
-        description: 'En høj-færdigheds gymnastisk bevægelse, hvor du hænger fra en stang og bringer dine tæer op for at røre den.',
+        description: 'En høj-færdigheds gymnastikbevægelse, hvor du hænger fra en stang og bringer dine tæer op for at røre den.',
         instructions: [
           'Hæng fra en pull-up stang med en aktiv skulderposition.',
-          'Start et kipping-sving, bevæger dig fra en "bue" til en "hul" kropsposition.',
+          'Start et kipping-sving, bevæg dig fra en "bue" til en "hul" kropsposition.',
           'På toppen af den hule position, brug dine lats og mavemuskler til at trække dine knæ mod dit bryst.',
           'Vip dine fødder opad for at røre stangen med dine tæer.'
         ],
@@ -507,9 +547,9 @@ export const da = {
         name: 'Handstand Push-up',
         description: 'En avanceret pressebevægelse udført fra en håndstandsposition, der sigter mod skuldre og triceps.',
         instructions: [
-          'Spark op i en håndstand mod en mur, med hænderne placeret lige uden for skulderbredde.',
-          'Hold din core spændt og kroppen ret. Sænk dig selv, indtil toppen af dit hoved rører gulvet.',
-          'Pres dig selv op igen, indtil dine albuer er helt låst.',
+          'Spark op i en håndstand mod en væg, med hænderne placeret lige uden for skulderbredde.',
+          'Hold din core spændt og kroppen ret. Sænk dig, indtil toppen af dit hoved rører gulvet.',
+          'Pres dig op igen, indtil dine albuer er helt låst.',
           'For kipping, bøj dine knæ til dit bryst i bunden og stræk dem eksplosivt for at hjælpe med at køre op.'
         ],
         equipment: ['Væg', 'AbMat (valgfri)'],
@@ -517,7 +557,7 @@ export const da = {
       },
       muscle_up: {
         name: 'Muscle-up',
-        description: 'En avanceret gymnastisk færdighed, der kombinerer en pull-up og en dip for at overgå fra under ringene eller stangen til over den.',
+        description: 'En avanceret gymnastikfærdighed, der kombinerer en pull-up og en dip for at overgå fra under ringene eller stangen til over den.',
         instructions: [
           'Start med et falsk greb om ringene. Start et kraftfuldt kipping-sving.',
           'Træk hårdt, bring ringene til dit brystben, mens du aggressivt sætter dig op.',
@@ -528,13 +568,13 @@ export const da = {
         primaryMuscles: ['Lats', 'Skuldre', 'Bryst', 'Triceps']
       },
       rope_climb: {
-        name: 'Rope Climb',
-        description: 'Handlingen at klatre op ad et reb ved hjælp af en kombination af overkropsstyrke og en sikker benindpakningsteknik.',
+        name: 'Rebklatring',
+        description: 'Handlingen med at bestige et reb ved hjælp af en kombination af overkropsstyrke og en sikker benindpakningsteknik.',
         instructions: [
           'Hop op for at gribe rebet så højt som muligt.',
-          'Bring dine knæ til dit bryst og udfør en J-krog eller S-indpakning med dine fødder for at sikre rebet.',
+          'Bring dine knæ til brystet og udfør en J-krog eller S-indpakning med dine fødder for at sikre rebet.',
           'Stå op på rebet ved at strække dine ben. Samtidig, ræk op med dine hænder.',
-          'Gentag denne "stå og ræk" bevægelse for at klatre op. Gå ned hånd-over-hånd.'
+          'Gentag denne "stå og ræk" bevægelse for at bestige. Gå ned hånd-over-hånd.'
         ],
         equipment: ['Klatrereb'],
         primaryMuscles: ['Ryg', 'Biceps', 'Greb', 'Ben']
@@ -544,8 +584,8 @@ export const da = {
         description: 'En grundlæggende kardiovaskulær øvelse, der involverer at drive sig selv fremad ved at bevæge benene.',
         instructions: [
           'Oprethold en oprejst holdning med en let foroverbøjning fra anklerne.',
-          'Hold hovedet oppe, og se fremad.',
-          'Land på din mellemfod, direkte under dit massecenter.',
+          'Hold hovedet oppe, se fremad.',
+          'Land på din midtfod, direkte under dit massecenter.',
           'Sigt efter en kadence på omkring 180 skridt i minuttet.'
         ],
         equipment: [],
@@ -553,12 +593,12 @@ export const da = {
       },
       rowing: {
         name: 'Roning',
-        description: 'En helkrops, lav-impact kardiovaskulær træning udført på en stationær romaskine (ergometer).',
+        description: 'En helkrops, lav-påvirknings kardiovaskulær træning udført på en stationær romaskine (ergometer).',
         instructions: [
           'Ro-taget har fire dele: Catch, Drive, Finish og Recovery.',
           'Drive: Skub kraftfuldt med dine ben først.',
-          'Finish: Læn din torso let tilbage og træk håndtaget til dit brystben.',
-          'Recovery: Stræk dine arme, læn derefter din torso fremad, og bøj så dine knæ for at vende tilbage til catch.'
+          'Finish: Hæng din torso lidt tilbage og træk håndtaget til dit brystben.',
+          'Recovery: Stræk dine arme, hæng derefter din torso fremad, og bøj derefter dine knæ for at vende tilbage til catchen.'
         ],
         equipment: ['Romaskine'],
         primaryMuscles: ['Quadriceps', 'Glutes', 'Ryg', 'Core']
@@ -568,8 +608,8 @@ export const da = {
         description: 'En avanceret sjippetovsfærdighed, hvor tovet passerer under dine fødder to gange for hvert enkelt hop.',
         instructions: [
           'Brug et speed rope i den rigtige størrelse.',
-          'Hop lidt højere og langsommere end et almindeligt enkelt hop.',
-          'Hold dine albuer inde og brug dine håndled til at spinne tovet hurtigt, ikke dine arme.',
+          'Hop lidt højere og langsommere end ved et almindeligt enkelt hop.',
+          'Hold dine albuer inde og brug dine håndled til at snurre tovet hurtigt, ikke dine arme.',
           'Oprethold en høj, neutral kropsposition.'
         ],
         equipment: ['Speed Rope'],
@@ -577,11 +617,11 @@ export const da = {
       },
       burpees: {
         name: 'Burpees',
-        description: 'En helkrops calisthenics-øvelse, der kombinerer en squat, en planke, en push-up og et hop.',
+        description: 'En helkrops calisthenics-øvelse, der kombinerer en squat, en planke, en armbøjning og et hop.',
         instructions: [
           'Fra en stående position, fald ned i en squat og placer dine hænder på gulvet.',
           'Spark dine fødder tilbage i en planke-position.',
-          'Udfør en push-up, hvor dit bryst og dine lår rører gulvet.',
+          'Udfør en armbøjning, rør dit bryst og lår til gulvet.',
           'Hop dine fødder tilbage til squat-positionen og hop eksplosivt op med hænderne over hovedet.'
         ],
         equipment: [],
@@ -592,9 +632,9 @@ export const da = {
         description: 'En plyometrisk øvelse, hvor du hopper fra gulvet op på en forhøjet overflade, som en kasse.',
         instructions: [
           'Stå foran en plyo-kasse i en behagelig afstand.',
-          'Dip dine hofter og knæ og sving dine arme tilbage for at oplade hoppet.',
+          'Dip dine hofter og knæ og sving dine arme tilbage for at lade hoppet op.',
           'Eksploder opad, sving dine arme fremad, og land blødt på kassen med dine fødder fladt.',
-          'Stå helt op på kassen for at fuldføre gentagelsen. Træd eller hop kontrolleret ned.'
+          'Stå helt op på kassen for at fuldføre gentagelsen. Træd eller hop ned kontrolleret.'
         ],
         equipment: ['Plyo Box'],
         primaryMuscles: ['Glutes', 'Quadriceps', 'Hamstrings', 'Lægmuskler']
@@ -610,79 +650,81 @@ export const da = {
     popular: 'Mest Populære',
     month: 'md',
     joinButton: 'Tilmeld Dig Nu',
-    joinButtonShort: 'Tilmeld',
+    joinButtonShort: 'Tilmeld Dig',
     plan1Title: 'Studerende',
-    plan1Desc: 'For studerende, der ønsker at holde sig i form og være aktive. Gyldigt studiekort kræves.',
+    plan1Desc: 'For studerende, der ønsker at holde sig i form og aktive. Gyldigt studiekort kræves.',
     plan1Price: '1.200 kr',
     plan2Title: 'Ubegrænset',
-    plan2Desc: 'Fuld adgang til alle hold og open gym timer. Den ultimative pakke for den engagerede.',
+    plan2Desc: 'Fuld adgang til alle timer og open gym-tider. Den ultimative pakke for den dedikerede.',
     plan2Price: '1.500 kr',
     plan3Title: 'Drop-In',
-    plan3Desc: 'Perfekt for besøgende eller dem med en uforudsigelig tidsplan. Adgang til et enkelt hold.',
+    plan3Desc: 'Perfekt for besøgende eller dem med en uforudsigelig tidsplan. Adgang til en enkelt time.',
     plan3Price: '175 kr',
     plan4Title: 'Personlig Træning',
     plan4Desc: '1-til-1 coaching skræddersyet til dine specifikke mål. Kontakt os for at oprette din brugerdefinerede plan.',
     plan4Price: 'Brugerdefineret',
     plan5Title: 'Firmaaftaler',
-    plan5Desc: 'Skræddersyede pakker til firma-wellnessprogrammer. Styrk holdånden og produktiviteten.',
+    plan5Desc: 'Brugerdefinerede pakker til firmaers wellness-programmer. Boost teammoral og produktivitet.',
     plan5Price: 'Kontakt Os',
-    plan6Title: 'Små Grupper',
+    plan6Title: 'Lille Gruppe',
     plan6Desc: 'Træn med venner! Særlige priser for grupper på 3 eller flere. Motivation inkluderet.',
-    plan6Price: 'Særtakst',
+    plan6Price: 'Brugerdefineret Sats',
+    contactUsButton: 'Kontakt Os',
+    accordionCoreTitle: 'Kerne-medlemskaber',
+    accordionFlexibleTitle: 'Fleksible Muligheder',
+    accordionCustomTitle: 'Brugerdefinerede Pakker',
     feature: {
-      '12classes': 'Op til 12 hold/måned',
-      unlimited: 'Ubegrænset antal hold',
-      oneClass: 'Adgang til et enkelt hold',
+      '12classes': 'Op til 12 timer/md',
+      unlimited: 'Ubegrænsede timer',
+      oneClass: 'Adgang til en enkelt time',
       openGym: 'Adgang til Open Gym',
       workshops: 'Rabat på workshops',
       community: 'Adgang til fællesskabet',
       flexible: 'Fleksibel planlægning',
       experience: 'Oplev vores fællesskab',
       oneOnOne: '1-til-1 Personlig Coaching',
-      customizedPlan: 'Tilpasset Programmering',
+      customizedPlan: 'Brugerdefineret Programmering',
       goalTracking: 'Mål- & Præstationssporing',
       corporateWellness: 'Firma-wellnesspakker',
       teamBuilding: 'Teambuilding-arrangementer',
-      groupRates: 'Grupperabatter',
-      privateClasses: 'Private gruppetimer',
-      motivation: 'Fælles motivation',
+      groupRates: 'Rabatpriser for grupper',
+      privateClasses: 'Private holdtimer',
+      motivation: 'Delt Motivation',
     },
   },
-  // Shop Page
   shop: {
-    title: 'Kraftvrk Udstyr',
+    title: 'Kraftvrk Gear',
     subtitle: 'Repræsenter dit hårde arbejde med vores officielle træningstøj og tilbehør.',
     addToCart: 'Læg i Kurv',
     category_all: 'Alle',
     category_apparel: 'Tøj',
     category_accessories: 'Tilbehør',
     category_equipment: 'Udstyr',
-    product1Name: 'Officiel Trænings T-shirt',
-    product1Price: '250 kr',
+    product1Name: 'Officiel Trænings-T-shirt',
+    product1Price: '200 kr',
     product2Name: 'Kraftvrk Hættetrøje',
-    product2Price: '550 kr',
+    product2Price: '450 kr',
     product3Name: 'Performance Shorts',
-    product3Price: '350 kr',
-    product4Name: 'Branded Drikkedunk',
+    product3Price: '300 kr',
+    product4Name: 'Mærket Vandflaske',
     product4Price: '150 kr',
     product5Name: 'Speed Rope',
-    product5Price: '200 kr',
+    product5Price: '175 kr',
     product6Name: 'Håndledsbind',
-    product6Price: '125 kr',
+    product6Price: '100 kr',
   },
-  // Contact Page
   contact: {
     title: 'Kontakt Os',
     subtitle: 'Har du spørgsmål? Klar til at starte? Skriv til os eller besøg os. Vi er klar til at hjælpe dig på din fitnessrejse.',
     formTitle: 'Send en Besked',
     formName: 'Dit Navn',
-    formEmail: 'Din Email',
+    formEmail: 'Din E-mail',
     formPhone: 'Dit Telefonnummer (valgfrit)',
     formMessage: 'Din Besked',
     formButton: 'Send Besked',
     infoTitle: 'Kontaktoplysninger',
     locationTitle: 'Vores Placering',
-    infoEmailLabel: 'Email',
+    infoEmailLabel: 'E-mail',
     infoPhoneLabel: 'Telefon',
     infoAddressLabel: 'Adresse',
   },

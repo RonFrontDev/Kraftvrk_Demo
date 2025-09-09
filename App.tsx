@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
@@ -16,6 +15,7 @@ import FloatingChatButton from './components/FloatingChatButton';
 import CoachesPage from './pages/CoachesPage';
 import ScrollToTop from './components/ScrollToTop';
 import ExerciseLibraryPage from './pages/ExerciseLibraryPage';
+import ClassesPage from './pages/ClassesPage';
 
 function App(): React.ReactNode {
   return (
@@ -33,6 +33,7 @@ function App(): React.ReactNode {
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/coaches" element={<CoachesPage />} />
                 <Route path="/library" element={<ExerciseLibraryPage />} />
+                <Route path="/classes" element={<ClassesPage />} />
                 <Route path="/membership" element={<MembershipPage />} />
                 <Route path="/shop" element={<ShopPage />} />
                 <Route path="/contact" element={<ContactPage />} />

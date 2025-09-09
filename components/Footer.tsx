@@ -17,9 +17,9 @@ const Footer = (): React.ReactNode => {
             </NavLink>
             <p className="text-sm leading-relaxed pr-8">{t('footer.aboutText')}</p>
              <div className="flex space-x-4 mt-6">
-              <a href="#" className="hover:text-accent transition-colors duration-300"><InstagramIcon className="h-6 w-6" /></a>
-              <a href="#" className="hover:text-accent transition-colors duration-300"><FacebookIcon className="h-6 w-6" /></a>
-              <a href="#" className="hover:text-accent transition-colors duration-300"><TwitterIcon className="h-6 w-6" /></a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-accent transition-colors duration-300"><InstagramIcon className="h-6 w-6" /></a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-accent transition-colors duration-300"><FacebookIcon className="h-6 w-6" /></a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-accent transition-colors duration-300"><TwitterIcon className="h-6 w-6" /></a>
             </div>
           </div>
           

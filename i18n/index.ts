@@ -3,6 +3,15 @@ import { is } from './is';
 import { da } from './da';
 import { es } from './es';
 
+// This represents the structure of the object for each language
+export interface LanguageTranslations {
+  geminiLang: string;
+  langCode: string;
+  [key: string]: any; // For all other nested translation keys
+}
+
+// FIX: The broad type annotation `{ [key: string]: LanguageTranslations }` caused `keyof typeof translations` to be `string | number`.
+// By removing it, TypeScript correctly infers the keys as a union of string literals, making the `isLanguageCode` type predicate valid.
 export const translations = {
   en,
   is,

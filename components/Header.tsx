@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { MenuIcon, XIcon, ChevronDownIcon } from './IconComponents';
+import { Menu as MenuIcon, X as XIcon, ChevronDown as ChevronDownIcon } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeSwitcher from './ThemeSwitcher';
@@ -65,7 +65,7 @@ const Header = (): React.ReactNode => {
   const navTextColorClass = isTransparent ? 'text-white' : 'text-gray-900 dark:text-white';
 
   const isWodActive = location.pathname.startsWith('/wod') || location.pathname.startsWith('/schedule') || location.pathname.startsWith('/library');
-  const isAboutActive = location.pathname.startsWith('/about') || location.pathname.startsWith('/coaches');
+  const isAboutActive = location.pathname.startsWith('/about') || location.pathname.startsWith('/coaches') || location.pathname.startsWith('/classes');
   
   const mobileMenuClasses = `
     lg:hidden absolute top-24 left-0 w-full transition-all duration-300
@@ -86,10 +86,10 @@ const Header = (): React.ReactNode => {
 
             {/* WOD Dropdown */}
             <div className="relative group py-6 -my-6">
-                <NavLink to="/wod" className={`${navLinkClasses} ${isWodActive ? activeNavLinkClasses : ''} flex items-center`}>
-                    {t('nav.wod')}
+                <button aria-haspopup="true" className={`${navLinkClasses} ${isWodActive ? activeNavLinkClasses : ''} flex items-center`}>
+                    <NavLink to="/wod">{t('nav.wod')}</NavLink>
                     <ChevronDownIcon className="h-4 w-4 ml-1" />
-                </NavLink>
+                </button>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-white dark:bg-[#181818] shadow-lg rounded-md p-2 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 ring-1 ring-black ring-opacity-5">
                     <NavLink to="/schedule" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.schedule')}</NavLink>
                     <NavLink to="/library" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.library')}</NavLink>
@@ -98,12 +98,13 @@ const Header = (): React.ReactNode => {
 
             {/* About Dropdown */}
             <div className="relative group py-6 -my-6">
-                <NavLink to="/about" className={`${navLinkClasses} ${isAboutActive ? activeNavLinkClasses : ''} flex items-center`}>
-                    {t('nav.about')}
+                <button aria-haspopup="true" className={`${navLinkClasses} ${isAboutActive ? activeNavLinkClasses : ''} flex items-center`}>
+                    <NavLink to="/about">{t('nav.about')}</NavLink>
                     <ChevronDownIcon className="h-4 w-4 ml-1" />
-                </NavLink>
+                </button>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-white dark:bg-[#181818] shadow-lg rounded-md p-2 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 ring-1 ring-black ring-opacity-5">
                     <NavLink to="/coaches" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.coaches')}</NavLink>
+                    <NavLink to="/classes" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.classes')}</NavLink>
                 </div>
             </div>
 
@@ -116,10 +117,7 @@ const Header = (): React.ReactNode => {
             <div className="hidden lg:flex items-center space-x-2">
               <LanguageSwitcher />
               <ThemeSwitcher />
-              <NavLink to="/contact" className="ml-2 border-2 border-accent text-accent font-bold py-3 px-6 text-sm uppercase tracking-wider rounded-md hover:bg-accent hover:text-black transition-colors duration-300">
-                {t('nav.freeTrial')}
-              </NavLink>
-              <NavLink to="/membership" className="bg-accent text-black font-bold py-3 px-6 text-sm uppercase tracking-wider rounded-md hover:bg-accent-dark transition-colors duration-300">
+              <NavLink to="/membership" className="ml-2 bg-accent text-black font-bold py-3 px-6 text-sm uppercase tracking-wider rounded-md hover:bg-accent-dark transition-colors duration-300">
                 {t('pricing.joinButtonShort')}
               </NavLink>
             </div>
@@ -145,7 +143,7 @@ const Header = (): React.ReactNode => {
             
             {/* WOD Dropdown Mobile */}
             <div className="w-full">
-                <button onClick={() => toggleMobileDropdown('wod')} className={`${navLinkClasses} ${isWodActive ? activeNavLinkClasses : ''} py-3 text-lg w-full flex items-center justify-center`}>
+                <button onClick={() => toggleMobileDropdown('wod')} aria-expanded={mobileDropdowns.wod} className={`${navLinkClasses} ${isWodActive ? activeNavLinkClasses : ''} py-3 text-lg w-full flex items-center justify-center`}>
                     {t('nav.wod')}
                     <ChevronDownIcon className={`h-5 w-5 ml-2 transition-transform ${mobileDropdowns.wod ? 'rotate-180' : ''}`} />
                 </button>
@@ -160,7 +158,7 @@ const Header = (): React.ReactNode => {
             
             {/* About Dropdown Mobile */}
              <div className="w-full">
-                <button onClick={() => toggleMobileDropdown('about')} className={`${navLinkClasses} ${isAboutActive ? activeNavLinkClasses : ''} py-3 text-lg w-full flex items-center justify-center`}>
+                <button onClick={() => toggleMobileDropdown('about')} aria-expanded={mobileDropdowns.about} className={`${navLinkClasses} ${isAboutActive ? activeNavLinkClasses : ''} py-3 text-lg w-full flex items-center justify-center`}>
                     {t('nav.about')}
                     <ChevronDownIcon className={`h-5 w-5 ml-2 transition-transform ${mobileDropdowns.about ? 'rotate-180' : ''}`} />
                 </button>
@@ -168,6 +166,7 @@ const Header = (): React.ReactNode => {
                     <div className="flex flex-col items-center bg-gray-100 dark:bg-black/20 pt-1 pb-2 w-full">
                         <NavLink to="/about" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.about')}</NavLink>
                         <NavLink to="/coaches" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.coaches')}</NavLink>
+                        <NavLink to="/classes" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.classes')}</NavLink>
                     </div>
                 )}
             </div>
@@ -176,16 +175,14 @@ const Header = (): React.ReactNode => {
             <NavLink to="/membership" className={({ isActive }) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-3 text-lg w-full text-center`} onClick={closeMenu}>{t('nav.pricing')}</NavLink>
             <NavLink to="/contact" className={({ isActive }) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-3 text-lg w-full text-center`} onClick={closeMenu}>{t('nav.contact')}</NavLink>
             
-             <NavLink to="/contact" onClick={closeMenu} className="mt-4 w-full text-center border-2 border-accent text-accent font-bold py-3 px-6 text-sm uppercase tracking-wider rounded-md hover:bg-accent hover:text-black transition-colors duration-300">
-                {t('nav.freeTrial')}
-              </NavLink>
-             <NavLink to="/membership" onClick={closeMenu} className="mt-2 w-full text-center bg-accent text-black font-bold py-3 px-6 text-sm uppercase tracking-wider rounded-md hover:bg-accent-dark transition-colors duration-300">
-                {t('pricing.joinButtonShort')}
-              </NavLink>
-              <div className="mt-4 flex justify-center items-center gap-4">
-                <LanguageSwitcher />
-                <ThemeSwitcher />
-              </div>
+            <NavLink to="/membership" onClick={closeMenu} className="mt-4 w-full text-center bg-accent text-black font-bold py-3 px-6 text-sm uppercase tracking-wider rounded-md hover:bg-accent-dark transition-colors duration-300">
+              {t('pricing.joinButtonShort')}
+            </NavLink>
+            
+            <div className="mt-4 flex justify-center items-center gap-4">
+              <LanguageSwitcher />
+              <ThemeSwitcher />
+            </div>
           </nav>
         </div>
       )}

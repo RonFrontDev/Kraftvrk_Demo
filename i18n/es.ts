@@ -10,6 +10,7 @@ export const es = {
     shop: 'Tienda',
     contact: 'Contacto',
     freeTrial: 'Prueba Gratis',
+    classes: 'Clases',
   },
   footer: {
     rightsReserved: 'Todos los derechos reservados.',
@@ -51,6 +52,17 @@ export const es = {
         title: 'Energía Inigualable',
         text: 'La atmósfera en Kraftvrk es eléctrica. Es un lugar donde la música alta, la magnesia y el sonido de las pesas al caer crean un ambiente que te motiva a superar tus límites y descubrir tu verdadera fuerza.'
       }
+    },
+    steps: {
+      title: 'Tu Viaje Comienza Aquí',
+      subtitle: 'Empezar en Kraftvrk es sencillo. Sigue estos tres fáciles pasos para comenzar tu transformación.',
+      step1Title: 'Reserva Tu Prueba Gratis',
+      step1Text: 'Haz clic en el botón de abajo para programar tu clase de introducción gratuita. Conocerás a un entrenador, verás las instalaciones y probarás la experiencia Kraftvrk. Sin compromiso, sin presión.',
+      step2Title: 'Preséntate y Suda',
+      step2Text: 'Ven a tu clase unos minutos antes. Nuestro entrenador te guiará durante todo el entrenamiento, adaptando cada movimiento a tu nivel de condición física actual. Todo lo que necesitas hacer es dar lo mejor de ti.',
+      step3Title: 'Hazte Miembro',
+      step3Text: '¿Te encantó tu primera clase? Habla con nuestro personal para elegir el plan de membresía que más te convenga. ¡Bienvenido/a a la familia Kraftvrk! Tu viaje hacia una condición física de élite acaba de comenzar.',
+      ctaButton: 'Reservar Prueba Gratis',
     },
     classesTitle: 'Programas de Entrenamiento',
     class1Title: 'Clases de WOD',
@@ -141,13 +153,13 @@ export const es = {
     classOpenGymDesc: 'Utiliza nuestras instalaciones y equipo de primera para trabajar en tu propia programación, practicar habilidades específicas o recuperar un WOD perdido. Un entrenador estará presente para garantizar la seguridad, pero no es una clase estructurada.',
     classCommunityWod: 'WOD Comunitario',
     classCommunityWodDesc: 'Un entrenamiento divertido y de alta energía en pareja o en equipo, diseñado para hacerte sudar y sonreír. Esta clase es una excelente manera de conocer a otros miembros y comenzar tu fin de semana con un desafío. ¡Todos son bienvenidos!',
-    coachAlex: 'Entrenador: Alex Riley',
-    coachMaria: 'Entrenadora: Maria Sanchez',
     coachTeam: 'Entrenador del Equipo',
     unsupervised: 'Sin supervisión',
     closed: 'Cerrado',
     closedDesc: 'El gimnasio está cerrado por hoy. ¡Es hora de un merecido descanso y recuperación!',
     modalTitle: 'Detalles de la Clase',
+    wodPreviewTitle: 'Vista Previa del WOD',
+    wodNotRevealed: 'El WOD para esta clase aún no ha sido revelado. ¡Vuelve a consultar pronto!',
   },
   about: {
     title: 'Sobre Kraftvrk',
@@ -179,6 +191,32 @@ export const es = {
   coaches: {
     title: 'Conoce a Nuestro Equipo',
     subtitle: 'Los expertos apasionados dedicados a tu éxito.',
+    filterAll: 'Todos',
+  },
+  classes: {
+    title: 'Nuestras Clases',
+    subtitle: 'Encuentra la clase perfecta que se ajuste a tu estilo de fitness y tus objetivos. Ofrecemos una variedad de programas para todos los niveles.',
+    viewSchedule: 'Ver Horario',
+    crossfit: {
+        title: 'CrossFit',
+        desc: 'Nuestro programa principal. Movimientos funcionales constantemente variados y de alta intensidad, diseñados para mejorar tu capacidad en todos los dominios del fitness. Espera levantamiento, gimnasia y cardio.'
+    },
+    bootcamp: {
+        title: 'Bootcamp',
+        desc: 'Una clase de alta energía, estilo circuito, centrada en el acondicionamiento metabólico y la resistencia a la fuerza. Menos levantamientos técnicos, más sudor. Perfecto para todos los niveles.'
+    },
+    weightlifting: {
+        title: 'Halterofilia',
+        desc: 'Dedicado a mejorar la arrancada y el dos tiempos. Esta clase se centra en la técnica, la fuerza y la movilidad para hacerte más eficiente con la barra.'
+    },
+    hyrox: {
+        title: 'Hyrox',
+        desc: 'La nueva carrera de fitness global. Esta clase te prepara para el desafío, combinando carreras de 1 km con estaciones de entrenamiento funcional. Construye tu resistencia y fuerza funcional.'
+    },
+    threshold: {
+        title: 'Umbral',
+        desc: 'Mejora tu capacidad para mantener un esfuerzo de alta intensidad durante períodos más largos. Esta clase se enfoca en entrenamientos en o cerca de tu umbral de lactato para desarrollar fortaleza mental y capacidad aeróbica.'
+    }
   },
   library: {
     title: 'Biblioteca de Ejercicios',
@@ -191,6 +229,8 @@ export const es = {
     equipment: 'Equipamiento',
     primaryMuscles: 'Músculos Primarios',
     noEquipment: 'Ninguno',
+    searchNamePlaceholder: 'Buscar por nombre...',
+    searchEquipmentPlaceholder: 'Buscar por equipo...',
     exercises: {
       back_squat: {
         name: 'Sentadilla Trasera',
@@ -533,47 +573,47 @@ export const es = {
         instructions: [
           'Salta para agarrar la cuerda lo más alto posible.',
           'Lleva las rodillas al pecho y realiza un gancho en J o una envoltura en S con los pies para asegurar la cuerda.',
-          'Ponte de pie sobre la cuerda extendiendo las piernas. Al mismo tiempo, alcanza más alto con las manos.',
+          'Ponte de pie sobre la cuerda extendiendo las piernas. Al mismo tiempo, estira las manos hacia arriba.',
           'Repite este movimiento de "ponerse de pie y alcanzar" para ascender. Desciende mano sobre mano.'
         ],
-        equipment: ['Cuerda de Trepa'],
+        equipment: ['Cuerda de Escalada'],
         primaryMuscles: ['Espalda', 'Bíceps', 'Agarre', 'Piernas']
       },
       running: {
         name: 'Correr',
-        description: 'Un ejercicio cardiovascular fundamental que implica propulsarse hacia adelante moviendo las piernas.',
+        description: 'Un ejercicio cardiovascular fundamental que implica impulsarse hacia adelante moviendo las piernas.',
         instructions: [
           'Mantén una postura erguida con una ligera inclinación hacia adelante desde los tobillos.',
           'Mantén la cabeza alta, mirando hacia adelante.',
-          'Aterriza con la parte media del pie, directamente debajo de tu centro de masa.',
-          'Intenta mantener una cadencia de alrededor de 180 pasos por minuto.'
+          'Aterriza en la parte media del pie, directamente debajo de tu centro de masa.',
+          'Apunta a una cadencia de alrededor de 180 pasos por minuto.'
         ],
         equipment: [],
         primaryMuscles: ['Cuerpo Completo', 'Sistema Cardiovascular']
       },
       rowing: {
         name: 'Remo',
-        description: 'Un entrenamiento cardiovascular de cuerpo completo y bajo impacto realizado en una máquina de remo estacionaria (ergómetro).',
+        description: 'Un entrenamiento cardiovascular de bajo impacto para todo el cuerpo que se realiza en una máquina de remo estacionaria (ergómetro).',
         instructions: [
-          'La remada tiene cuatro partes: Ataque, Impulso, Final y Recuperación.',
+          'La remada tiene cuatro partes: Agarre, Impulso, Final y Recuperación.',
           'Impulso: Empuja poderosamente con las piernas primero.',
-          'Final: Inclina ligeramente el torso hacia atrás y tira del mango hacia tu esternón.',
-          'Recuperación: Extiende los brazos, luego inclina el torso hacia adelante, y finalmente dobla las rodillas para volver al ataque.'
+          'Final: Inclina el torso ligeramente hacia atrás y tira del mango hacia tu esternón.',
+          'Recuperación: Extiende los brazos, luego inclina el torso hacia adelante, y finalmente dobla las rodillas para volver al agarre.'
         ],
         equipment: ['Remoergómetro'],
         primaryMuscles: ['Cuádriceps', 'Glúteos', 'Espalda', 'Core']
       },
       double_unders: {
         name: 'Saltos Dobles',
-        description: 'Una habilidad avanzada de salto de cuerda donde la cuerda pasa dos veces bajo tus pies por cada salto.',
+        description: 'Una habilidad avanzada de salto de comba donde la cuerda pasa dos veces bajo tus pies por cada salto.',
         instructions: [
           'Usa una comba de velocidad del tamaño adecuado.',
           'Salta un poco más alto y más lento que en un salto simple.',
-          'Mantén los codos pegados y usa las muñecas para girar la cuerda rápidamente, no los brazos.',
+          'Mantén los codos pegados al cuerpo y usa las muñecas para girar la cuerda rápidamente, no los brazos.',
           'Mantén una posición corporal alta y neutra.'
         ],
         equipment: ['Comba de Velocidad'],
-        primaryMuscles: ['Gemelos', 'Sistema Cardiovascular', 'Coordinación']
+        primaryMuscles: ['Pantorrillas', 'Sistema Cardiovascular', 'Coordinación']
       },
       burpees: {
         name: 'Burpees',
@@ -593,11 +633,11 @@ export const es = {
         instructions: [
           'Párate frente a un cajón pliométrico a una distancia cómoda.',
           'Flexiona las caderas y las rodillas y balancea los brazos hacia atrás para cargar el salto.',
-          'Explota hacia arriba, balanceando los brazos hacia adelante, y aterriza suavemente en el cajón con los pies planos.',
-          'Ponte de pie completamente sobre el cajón para completar la repetición. Baja del cajón con control, no saltes hacia atrás.'
+          'Explota hacia arriba, balanceando los brazos hacia adelante, y aterriza suavemente sobre el cajón con los pies planos.',
+          'Ponte de pie completamente sobre el cajón para completar la repetición. Baja del cajón con un paso o un salto controlado.'
         ],
         equipment: ['Cajón Pliométrico'],
-        primaryMuscles: ['Glúteos', 'Cuádriceps', 'Isquiotibiales', 'Gemelos']
+        primaryMuscles: ['Glúteos', 'Cuádriceps', 'Isquiotibiales', 'Pantorrillas']
       }
     }
   },
@@ -606,29 +646,33 @@ export const es = {
     subtitle: 'Elige el plan que se adapte a tus objetivos y estilo de vida. Únete a la familia Kraftvrk hoy.',
     trialTitle: '¿Aún no estás seguro?',
     trialSubtitle: 'Experimenta la comunidad y el entrenamiento de Kraftvrk de primera mano. Tu primera clase corre por nuestra cuenta.',
-    trialButton: 'Reserva Tu Prueba Gratis',
+    trialButton: 'Reserva tu Prueba Gratis',
     popular: 'Más Popular',
     month: 'mes',
-    joinButton: 'Inscríbete Ahora',
+    joinButton: 'Regístrate Ahora',
     joinButtonShort: 'Únete',
     plan1Title: 'Estudiante',
     plan1Desc: 'Para estudiantes que buscan mantenerse en forma y activos. Se requiere identificación de estudiante válida.',
-    plan1Price: '€160',
+    plan1Price: '€175',
     plan2Title: 'Ilimitado',
-    plan2Desc: 'Acceso completo a todas las clases y horas de gimnasio abierto. El paquete definitivo para los comprometidos.',
-    plan2Price: '€200',
+    plan2Desc: 'Acceso completo a todas las clases y horarios de gimnasio abierto. El paquete definitivo para los comprometidos.',
+    plan2Price: '€220',
     plan3Title: 'Clase Suelta',
     plan3Desc: 'Perfecto para visitantes o aquellos con un horario impredecible. Acceso a cualquier clase individual.',
-    plan3Price: '€20',
+    plan3Price: '€25',
     plan4Title: 'Entrenamiento Personal',
     plan4Desc: 'Entrenamiento 1 a 1 adaptado a tus objetivos específicos. Contáctanos para crear tu plan personalizado.',
-    plan4Price: 'A medida',
+    plan4Price: 'Personalizado',
     plan5Title: 'Ofertas para Empresas',
     plan5Desc: 'Paquetes personalizados para programas de bienestar corporativo. Aumenta la moral y la productividad del equipo.',
     plan5Price: 'Contáctanos',
-    plan6Title: 'Grupos Pequeños',
+    plan6Title: 'Grupo Pequeño',
     plan6Desc: '¡Entrena con amigos! Tarifas especiales para grupos de 3 o más. Motivación incluida.',
-    plan6Price: 'Tarifa Especial',
+    plan6Price: 'Tarifa Personalizada',
+    contactUsButton: 'Contáctanos',
+    accordionCoreTitle: 'Membresías Principales',
+    accordionFlexibleTitle: 'Opciones Flexibles',
+    accordionCustomTitle: 'Paquetes Personalizados',
     feature: {
       '12classes': 'Hasta 12 clases/mes',
       unlimited: 'Clases ilimitadas',
@@ -639,38 +683,36 @@ export const es = {
       flexible: 'Horario flexible',
       experience: 'Experimenta nuestra comunidad',
       oneOnOne: 'Entrenamiento Personalizado 1 a 1',
-      customizedPlan: 'Programación a Medida',
+      customizedPlan: 'Programación Personalizada',
       goalTracking: 'Seguimiento de Metas y Rendimiento',
-      corporateWellness: 'Paquetes de bienestar corporativo',
-      teamBuilding: 'Eventos de team building',
-      groupRates: 'Tarifas de grupo con descuento',
-      privateClasses: 'Clases grupales privadas',
-      motivation: 'Motivación compartida',
+      corporateWellness: 'Paquetes de Bienestar Corporativo',
+      teamBuilding: 'Eventos de Team Building',
+      groupRates: 'Tarifas de Grupo con Descuento',
+      privateClasses: 'Clases Privadas para Grupos',
+      motivation: 'Motivación Compartida',
     },
   },
-  // Shop Page
   shop: {
     title: 'Equipamiento Kraftvrk',
-    subtitle: 'Representa tu arduo trabajo con nuestra ropa y accesorios oficiales del gimnasio.',
+    subtitle: 'Representa tu trabajo duro con nuestra ropa y accesorios oficiales del gimnasio.',
     addToCart: 'Añadir al Carrito',
-    category_all: 'Todos',
+    category_all: 'Todo',
     category_apparel: 'Ropa',
     category_accessories: 'Accesorios',
     category_equipment: 'Equipamiento',
-    product1Name: 'Camiseta Oficial del Gym',
-    product1Price: '€25',
-    product2Name: 'Sudadera Kraftvrk',
-    product2Price: '€55',
+    product1Name: 'Camiseta Oficial del Gimnasio',
+    product1Price: '€30',
+    product2Name: 'Sudadera con Capucha Kraftvrk',
+    product2Price: '€65',
     product3Name: 'Pantalones Cortos de Rendimiento',
-    product3Price: '€40',
-    product4Name: 'Botella de Agua con Logo',
-    product4Price: '€18',
-    product5Name: 'Cuerda de Saltar Rápida',
-    product5Price: '€22',
+    product3Price: '€45',
+    product4Name: 'Botella de Agua de la Marca',
+    product4Price: '€20',
+    product5Name: 'Comba de Velocidad',
+    product5Price: '€25',
     product6Name: 'Muñequeras',
     product6Price: '€15',
   },
-  // Contact Page
   contact: {
     title: 'Ponte en Contacto',
     subtitle: '¿Tienes preguntas? ¿Listo para empezar? Escríbenos o visítanos. Estamos listos para ayudarte en tu viaje de fitness.',
@@ -682,7 +724,7 @@ export const es = {
     formButton: 'Enviar Mensaje',
     infoTitle: 'Información de Contacto',
     locationTitle: 'Nuestra Ubicación',
-    infoEmailLabel: 'Correo',
+    infoEmailLabel: 'Correo Electrónico',
     infoPhoneLabel: 'Teléfono',
     infoAddressLabel: 'Dirección',
   },

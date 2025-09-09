@@ -1,23 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-
-const ProductCard = ({ name, price, image }: { name: string, price: string, image: string }) => {
-    const { t } = useLanguage();
-    return (
-        <div className="bg-white dark:bg-[#1A1A1C] overflow-hidden group shadow-lg rounded-lg transform hover:-translate-y-1 transition-all duration-300 flex flex-col">
-            <div className="relative aspect-square w-full overflow-hidden">
-                <img src={image} alt={name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-            </div>
-            <div className="p-4 flex flex-col flex-grow">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white uppercase tracking-wide flex-grow">{name}</h3>
-                <p className="text-xl font-bold text-accent mt-2">{price}</p>
-                <button className="mt-4 w-full bg-accent text-black font-bold py-2 px-4 text-sm uppercase tracking-wider rounded-md hover:bg-accent-dark transition-colors duration-300">
-                    {t('shop.addToCart')}
-                </button>
-            </div>
-        </div>
-    );
-};
+import ProductCard from '../components/ProductCard';
+import { motion } from 'framer-motion';
 
 type Category = 'apparel' | 'accessories' | 'equipment';
 interface Product {
@@ -38,7 +22,18 @@ const products: Product[] = [
 
 const categories = ['all', 'apparel', 'accessories', 'equipment'];
 
-const ShopPage = (): React.ReactNode => {
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+// FIX: Changed return type from React.ReactNode to JSX.Element to fix type inference issues with framer-motion props.
+const ShopPage = (): JSX.Element => {
     const { t } = useLanguage();
     const [activeCategory, setActiveCategory] = useState('all');
 
@@ -47,7 +42,7 @@ const ShopPage = (): React.ReactNode => {
             return products;
         }
         return products.filter(product => product.category === activeCategory);
-    }, [activeCategory, products]);
+    }, [activeCategory]);
 
     return (
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-32">
@@ -74,7 +69,13 @@ const ShopPage = (): React.ReactNode => {
             </div>
 
             {/* Products Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <motion.div
+                key={activeCategory} // Re-trigger animation on category change
+                className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+            >
                 {filteredProducts.map(product => (
                     <ProductCard
                         key={product.nameKey}
@@ -83,7 +84,7 @@ const ShopPage = (): React.ReactNode => {
                         image={`https://picsum.photos/400/400?random=${product.imageId}`}
                     />
                 ))}
-            </div>
+            </motion.div>
         </div>
     );
 };

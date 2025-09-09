@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { UsersIcon, BoltIcon, ArrowRightIcon, ClipboardIcon } from '../components/IconComponents';
+import { UsersIcon, BoltIcon, ArrowRightIcon, ClipboardIcon, DumbbellIcon, CalendarCheckIcon } from '../components/IconComponents';
 import { useLanguage } from '../contexts/LanguageContext';
 import ClassCard from '../components/ClassCard';
 import TestimonialCard from '../components/TestimonialCard';
@@ -11,6 +11,35 @@ const heroTexts = [
   { line1: 'home.hero3Title1', line2: 'home.hero3Title2', subtitle: 'home.hero3Subtitle' },
   { line1: 'home.hero4Title1', line2: 'home.hero4Title2', subtitle: 'home.hero4Subtitle' }
 ];
+
+const StepCard = ({ num, icon, title, text }: { num: string, icon: React.ReactNode, title: string, text: string }) => (
+    <div className="relative p-8 bg-gray-100 dark:bg-black/50 rounded-lg shadow-lg overflow-hidden">
+        <div className="absolute -top-4 -left-4 text-7xl font-black text-gray-200 dark:text-gray-800/50 -z-0" aria-hidden="true">{num}</div>
+        <div className="relative z-10">
+            <div className="mb-4 text-accent">{icon}</div>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-wider">{title}</h3>
+            <p className="text-gray-600 dark:text-gray-400">{text}</p>
+        </div>
+    </div>
+);
+
+const DifferenceItem = ({ num, icon, title, text, image, reverse = false }: { num: string, icon: React.ReactNode, title: string, text: string, image: string, reverse?: boolean }) => (
+    <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 lg:gap-16`}>
+        <div className="lg:w-1/2 w-full">
+            <div className="overflow-hidden rounded-lg shadow-2xl">
+                <img src={image} alt={title} className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500" />
+            </div>
+        </div>
+        <div className="lg:w-1/2 w-full">
+            <div className="flex items-center gap-4">
+                <span className="text-7xl font-black text-accent">{num}</span>
+                {icon}
+            </div>
+            <h3 className="text-4xl font-extrabold text-gray-900 dark:text-white uppercase tracking-wider mt-4">{title}</h3>
+            <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">{text}</p>
+        </div>
+    </div>
+);
 
 const HomePage = (): React.ReactNode => {
   const { t } = useLanguage();
@@ -31,24 +60,6 @@ const HomePage = (): React.ReactNode => {
   
   const currentText = heroTexts[currentIndex];
   const animationClasses = (delay: string) => `transition-all duration-700 ease-in-out ${isAnimatingOut ? 'opacity-0 translate-y-5' : 'opacity-100 translate-y-0'}`;
-
-  const DifferenceItem = ({ num, icon, title, text, image, reverse = false }: { num: string, icon: React.ReactNode, title: string, text: string, image: string, reverse?: boolean }) => (
-    <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 lg:gap-16`}>
-        <div className="lg:w-1/2 w-full">
-            <div className="overflow-hidden rounded-lg shadow-2xl">
-                <img src={image} alt={title} className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500" />
-            </div>
-        </div>
-        <div className="lg:w-1/2 w-full">
-            <div className="flex items-center gap-4">
-                <span className="text-7xl font-black text-accent">{num}</span>
-                {icon}
-            </div>
-            <h3 className="text-4xl font-extrabold text-gray-900 dark:text-white uppercase tracking-wider mt-4">{title}</h3>
-            <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">{text}</p>
-        </div>
-    </div>
-  );
 
   return (
     <div>
@@ -126,9 +137,48 @@ const HomePage = (): React.ReactNode => {
             </div>
         </div>
       </section>
+
+      {/* Your Journey Starts Here Section */}
+      <section className="py-24 bg-white dark:bg-[#101012]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center max-w-3xl mx-auto mb-16">
+                  <h2 className="text-5xl font-extrabold text-center uppercase tracking-wider text-gray-900 dark:text-white">{t('home.steps.title')}</h2>
+                  <p className="mt-4 text-xl text-gray-600 dark:text-gray-400">{t('home.steps.subtitle')}</p>
+              </div>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                  <StepCard
+                      num="01"
+                      icon={<CalendarCheckIcon className="h-12 w-12"/>}
+                      title={t('home.steps.step1Title')}
+                      text={t('home.steps.step1Text')}
+                  />
+                  <StepCard
+                      num="02"
+                      icon={<DumbbellIcon className="h-12 w-12"/>}
+                      title={t('home.steps.step2Title')}
+                      text={t('home.steps.step2Text')}
+                  />
+                  <StepCard
+                      num="03"
+                      icon={<UsersIcon className="h-12 w-12"/>}
+                      title={t('home.steps.step3Title')}
+                      text={t('home.steps.step3Text')}
+                  />
+              </div>
+              <div className="text-center mt-12">
+                   <NavLink 
+                      to="/contact" 
+                      className="inline-flex items-center gap-3 bg-accent text-black font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md hover:bg-accent-dark transition-colors duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+                  >
+                      <span>{t('home.steps.ctaButton')}</span>
+                      <ArrowRightIcon className="h-6 w-6" />
+                  </NavLink>
+              </div>
+          </div>
+      </section>
       
       {/* Types of Classes Section */}
-      <section className="py-24 bg-white dark:bg-[#101012]">
+      <section className="py-24 bg-gray-50 dark:bg-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
                 <h2 className="text-5xl font-extrabold text-center uppercase tracking-wider text-gray-900 dark:text-white">{t('home.classesTitle')}</h2>
@@ -142,7 +192,7 @@ const HomePage = (): React.ReactNode => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24">
+      <section className="py-24 bg-white dark:bg-[#101012]">
          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-5xl font-extrabold text-center uppercase tracking-wider text-gray-900 dark:text-white">{t('home.testimonialsTitle')}</h2>
