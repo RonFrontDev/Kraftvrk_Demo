@@ -1,5 +1,7 @@
+
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+// FIX: Changed to namespace import to fix module resolution issues.
+import * as ReactRouterDOM from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { ArrowRightIcon } from '../components/IconComponents';
 import { classesData, getCoachById } from '../data/roster';
@@ -31,13 +33,13 @@ const ClassInfoCard: React.FC<ClassInfoCardProps> = ({ title, description, image
                     <div className="mt-4 pt-4 border-t border-white/20 flex items-center gap-4">
                         <div className="flex -space-x-3">
                             {coaches.map(coach => (
-                                <NavLink key={coach.id} to={`/coaches#coach-${coach.id}`} title={coach.name}>
+                                <ReactRouterDOM.NavLink key={coach.id} to={`/coaches#coach-${coach.id}`} title={coach.name}>
                                     <img 
                                         src={`https://i.pravatar.cc/150?u=${coach.imageId}`} 
                                         alt={coach.name}
                                         className="w-12 h-12 rounded-full border-2 border-gray-900 object-cover transition-transform hover:scale-110 hover:z-10"
                                     />
-                                </NavLink>
+                                </ReactRouterDOM.NavLink>
                             ))}
                         </div>
                     </div>
@@ -66,13 +68,13 @@ const ClassesPage = (): React.ReactNode => {
             <div className="text-center mb-16">
                 <h1 className="text-7xl font-extrabold uppercase tracking-widest text-gray-900 dark:text-white">{t('classes.title')}</h1>
                 <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">{t('classes.subtitle')}</p>
-                 <NavLink 
+                 <ReactRouterDOM.NavLink 
                     to="/schedule" 
                     className="mt-8 inline-flex items-center gap-3 bg-gradient-accent bg-gradient-accent-hover text-black font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                 >
                     <span>{t('classes.viewSchedule')}</span>
                     <ArrowRightIcon className="h-6 w-6" />
-                </NavLink>
+                </ReactRouterDOM.NavLink>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

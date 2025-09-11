@@ -1,5 +1,7 @@
+
 import React, { useState, useMemo } from 'react';
-import { NavLink } from 'react-router-dom';
+// FIX: Changed to namespace import to fix module resolution issues.
+import * as ReactRouterDOM from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { coachesData, getClassById, ClassType, classesData, ClassKey } from '../data/roster';
@@ -24,9 +26,9 @@ const CoachProfile = ({ coach, classes }: { coach: Coach, classes: ClassType[] }
                         <h4 className="font-bold text-gray-900 dark:text-white uppercase mb-3 tracking-wider">Teaches:</h4>
                         <div className="flex flex-wrap gap-2">
                             {classes.map(cls => (
-                                <NavLink key={cls.id} to="/classes" className="bg-accent/20 text-accent text-sm font-medium px-3 py-1 rounded-full hover:bg-accent/40 transition-colors">
+                                <ReactRouterDOM.NavLink key={cls.id} to="/classes" className="bg-accent/20 text-accent text-sm font-medium px-3 py-1 rounded-full hover:bg-accent/40 transition-colors">
                                     {t(cls.titleKey)}
-                                </NavLink>
+                                </ReactRouterDOM.NavLink>
                             ))}
                         </div>
                     </div>

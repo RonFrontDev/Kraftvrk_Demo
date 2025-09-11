@@ -1,8 +1,10 @@
+
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+// FIX: Changed to namespace import to fix module resolution issues.
+import * as ReactRouterDOM from 'react-router-dom';
 
 const ScrollToTop = () => {
-  const { pathname, hash, key } = useLocation();
+  const { pathname, hash, key } = ReactRouterDOM.useLocation();
 
   useEffect(() => {
     // if not a hash link, scroll to top

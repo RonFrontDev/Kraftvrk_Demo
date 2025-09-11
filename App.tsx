@@ -1,5 +1,7 @@
+
 import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+// FIX: Changed to namespace import to fix module resolution issues.
+import * as ReactRouterDOM from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import WodPage from './pages/WodPage';
 import SchedulePage from './pages/SchedulePage';
@@ -16,33 +18,35 @@ import CoachesPage from './pages/CoachesPage';
 import ScrollToTop from './components/ScrollToTop';
 import ExerciseLibraryPage from './pages/ExerciseLibraryPage';
 import ClassesPage from './pages/ClassesPage';
+import MembersPage from './pages/MembersPage';
 
 function App(): React.ReactNode {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <HashRouter>
+        <ReactRouterDOM.HashRouter>
           <ScrollToTop />
           <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-grow">
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/wod" element={<WodPage />} />
-                <Route path="/schedule" element={<SchedulePage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/coaches" element={<CoachesPage />} />
-                <Route path="/library" element={<ExerciseLibraryPage />} />
-                <Route path="/classes" element={<ClassesPage />} />
-                <Route path="/membership" element={<MembershipPage />} />
-                <Route path="/shop" element={<ShopPage />} />
-                <Route path="/contact" element={<ContactPage />} />
-              </Routes>
+              <ReactRouterDOM.Routes>
+                <ReactRouterDOM.Route path="/" element={<HomePage />} />
+                <ReactRouterDOM.Route path="/wod" element={<WodPage />} />
+                <ReactRouterDOM.Route path="/schedule" element={<SchedulePage />} />
+                <ReactRouterDOM.Route path="/about" element={<AboutPage />} />
+                <ReactRouterDOM.Route path="/coaches" element={<CoachesPage />} />
+                <ReactRouterDOM.Route path="/library" element={<ExerciseLibraryPage />} />
+                <ReactRouterDOM.Route path="/classes" element={<ClassesPage />} />
+                <ReactRouterDOM.Route path="/membership" element={<MembershipPage />} />
+                <ReactRouterDOM.Route path="/shop" element={<ShopPage />} />
+                <ReactRouterDOM.Route path="/contact" element={<ContactPage />} />
+                <ReactRouterDOM.Route path="/members" element={<MembersPage />} />
+              </ReactRouterDOM.Routes>
             </main>
             <Footer />
             <FloatingChatButton />
           </div>
-        </HashRouter>
+        </ReactRouterDOM.HashRouter>
       </LanguageProvider>
     </ThemeProvider>
   );

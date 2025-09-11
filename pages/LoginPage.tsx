@@ -1,5 +1,7 @@
+
 import React, { useState } from 'react';
-import { NavLink, useNavigate, useLocation } from 'react-router-dom';
+// FIX: Changed to namespace import to fix module resolution issues.
+import * as ReactRouterDOM from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Input } from '../components/ui/input';
@@ -14,8 +16,8 @@ const LoginPage = (): React.ReactNode => {
   const [isLoading, setIsLoading] = useState(false);
   const { login } = useAuth();
   const { t } = useLanguage();
-  const navigate = useNavigate();
-  const location = useLocation();
+  const navigate = ReactRouterDOM.useNavigate();
+  const location = ReactRouterDOM.useLocation();
 
   const from = location.state?.from?.pathname || '/dashboard';
 
@@ -45,7 +47,7 @@ const LoginPage = (): React.ReactNode => {
         <div>
           <h2 className="mt-6 text-center text-4xl font-extrabold text-white uppercase tracking-wider">{t('auth.loginTitle')}</h2>
           <p className="mt-2 text-center text-sm text-gray-300">
-            {t('auth.or')} <NavLink to="/signup" className="font-medium text-accent hover:text-accent-dark">{t('auth.signupInstead')}</NavLink>
+            {t('auth.or')} <ReactRouterDOM.NavLink to="/signup" className="font-medium text-accent hover:text-accent-dark">{t('auth.signupInstead')}</ReactRouterDOM.NavLink>
           </p>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>

@@ -12,6 +12,7 @@ export const en = {
     contact: 'Contact',
     freeTrial: 'Free Trial',
     classes: 'Classes',
+    members: 'Members',
   },
   // Footer
   footer: {
@@ -679,6 +680,19 @@ export const en = {
     plan6Title: 'Small Group',
     plan6Desc: 'Train with friends! Special rates for groups of 3 or more. Motivation included.',
     plan6Price: 'Custom Rate',
+    planYearlyTitle: 'Yearly',
+    planYearlyDesc: 'Commit for a year and save. The best value for our most dedicated members.',
+    planYearlyPrice: '$2200',
+    planYearlyBillingCycle: 'yr',
+    planPunch10Title: '10x Punchcard',
+    planPunch10Desc: 'Ten classes, flexible use. Perfect for a varied schedule.',
+    planPunch10Price: '$225',
+    planPunch5Title: '5x Punchcard',
+    planPunch5Desc: 'Five classes to use whenever you want. Great for supplementary training.',
+    planPunch5Price: '$120',
+    planPunch3Title: '3x Punchcard',
+    planPunch3Desc: 'Three classes, ideal for trying out different times or as a gift.',
+    planPunch3Price: '$75',
     contactUsButton: 'Contact Us',
     accordionCoreTitle: 'Core Memberships',
     accordionFlexibleTitle: 'Flexible Options',
@@ -700,6 +714,11 @@ export const en = {
       groupRates: 'Discounted Group Rates',
       privateClasses: 'Private Group Classes',
       motivation: 'Shared Motivation',
+      yearlyAccess: '12 Months Unlimited Access',
+      tenClasses: '10 Class Credits',
+      fiveClasses: '5 Class Credits',
+      threeClasses: '3 Class Credits',
+      noExpiry: 'Credits Never Expire',
     },
   },
   // Shop Page
@@ -739,6 +758,12 @@ export const en = {
     infoEmailLabel: 'Email',
     infoPhoneLabel: 'Phone',
     infoAddressLabel: 'Address',
+  },
+  // Members Page
+  members: {
+    title: 'Our Family',
+    subtitle: 'The heart and soul of Kraftvrk. We sweat together, we grow together.',
+    galleryTitle: 'Our Community in Action',
   },
   // Gemini Prompt Language
   geminiLang: 'English',

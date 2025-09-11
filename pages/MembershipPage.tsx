@@ -1,5 +1,7 @@
+
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+// FIX: Changed to namespace import to fix module resolution issues.
+import * as ReactRouterDOM from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { CheckCircleIcon, ArrowRightIcon } from '../components/IconComponents';
 import { Accordion, AccordionItem } from '../components/ui/accordion';
@@ -33,12 +35,12 @@ const PricingCard = ({ plan, popular = false }: { plan: any, popular?: boolean }
                     </li>
                 ))}
             </ul>
-            <NavLink
+            <ReactRouterDOM.NavLink
                 to="/contact"
                 className={`mt-10 block w-full text-center font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg ${popular ? 'bg-accent text-black hover:bg-accent-dark' : 'bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-400 dark:hover:bg-gray-600'}`}
             >
                 {buttonText}
-            </NavLink>
+            </ReactRouterDOM.NavLink>
         </div>
     );
 };
@@ -48,17 +50,24 @@ const MembershipPage = (): React.ReactNode => {
     const { t } = useLanguage();
 
     const plans = [
+        // Core
         { title: 'pricing.plan1Title', description: 'pricing.plan1Desc', price: 'pricing.plan1Price', billingCycle: 'pricing.month', features: ['pricing.feature.12classes', 'pricing.feature.openGym', 'pricing.feature.community'] },
         { title: 'pricing.plan2Title', description: 'pricing.plan2Desc', price: 'pricing.plan2Price', billingCycle: 'pricing.month', features: ['pricing.feature.unlimited', 'pricing.feature.openGym', 'pricing.feature.workshops', 'pricing.feature.community'], popular: true },
+        { title: 'pricing.planYearlyTitle', description: 'pricing.planYearlyDesc', price: 'pricing.planYearlyPrice', billingCycle: 'pricing.planYearlyBillingCycle', features: ['pricing.feature.yearlyAccess', 'pricing.feature.unlimited', 'pricing.feature.workshops', 'pricing.feature.community'] },
+        // Flexible
         { title: 'pricing.plan3Title', description: 'pricing.plan3Desc', price: 'pricing.plan3Price', features: ['pricing.feature.oneClass', 'pricing.feature.flexible', 'pricing.feature.experience'] },
+        { title: 'pricing.planPunch10Title', description: 'pricing.planPunch10Desc', price: 'pricing.planPunch10Price', features: ['pricing.feature.tenClasses', 'pricing.feature.openGym', 'pricing.feature.noExpiry'] },
+        { title: 'pricing.planPunch5Title', description: 'pricing.planPunch5Desc', price: 'pricing.planPunch5Price', features: ['pricing.feature.fiveClasses', 'pricing.feature.openGym', 'pricing.feature.noExpiry'] },
+        { title: 'pricing.planPunch3Title', description: 'pricing.planPunch3Desc', price: 'pricing.planPunch3Price', features: ['pricing.feature.threeClasses', 'pricing.feature.openGym', 'pricing.feature.noExpiry'] },
+        // Custom
         { title: 'pricing.plan4Title', description: 'pricing.plan4Desc', price: 'pricing.plan4Price', features: ['pricing.feature.oneOnOne', 'pricing.feature.customizedPlan', 'pricing.feature.goalTracking'] },
         { title: 'pricing.plan5Title', description: 'pricing.plan5Desc', price: 'pricing.plan5Price', features: ['pricing.feature.corporateWellness', 'pricing.feature.teamBuilding', 'pricing.feature.groupRates'] },
         { title: 'pricing.plan6Title', description: 'pricing.plan6Desc', price: 'pricing.plan6Price', features: ['pricing.feature.privateClasses', 'pricing.feature.groupRates', 'pricing.feature.motivation'] }
     ];
 
-    const corePlans = plans.slice(0, 2);
-    const flexiblePlans = [plans[2]];
-    const customPlans = plans.slice(3);
+    const corePlans = plans.slice(0, 3);
+    const flexiblePlans = plans.slice(3, 7);
+    const customPlans = plans.slice(7);
 
     return (
         <div className="relative">
@@ -77,30 +86,28 @@ const MembershipPage = (): React.ReactNode => {
                 <div className="max-w-4xl mx-auto mb-16 bg-white dark:bg-[#1A1A1C] border-2 border-accent p-8 text-center shadow-lg rounded-lg">
                     <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white uppercase">{t('pricing.trialTitle')}</h2>
                     <p className="mt-4 text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">{t('pricing.trialSubtitle')}</p>
-                    <NavLink 
+                    <ReactRouterDOM.NavLink 
                         to="/contact" 
                         className="mt-8 inline-flex items-center gap-3 bg-accent text-black font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md hover:bg-accent-dark transition-colors duration-300 transform hover:-translate-y-1 hover:shadow-lg"
                     >
                         <span>{t('pricing.trialButton')}</span>
                         <ArrowRightIcon className="h-6 w-6" />
-                    </NavLink>
+                    </ReactRouterDOM.NavLink>
                 </div>
                 
                 <Accordion defaultValue="core">
                     <AccordionItem value="core" trigger={t('pricing.accordionCoreTitle')}>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {corePlans.map((plan, index) => (
                                 <PricingCard key={index} plan={plan} popular={plan.popular} />
                             ))}
                         </div>
                     </AccordionItem>
                     <AccordionItem value="flexible" trigger={t('pricing.accordionFlexibleTitle')}>
-                         <div className="flex justify-center">
-                            <div className="w-full md:w-2/3 lg:w-1/2">
-                                {flexiblePlans.map((plan, index) => (
-                                    <PricingCard key={index} plan={plan} popular={plan.popular} />
-                                ))}
-                            </div>
+                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                            {flexiblePlans.map((plan, index) => (
+                                <PricingCard key={index} plan={plan} popular={plan.popular} />
+                            ))}
                         </div>
                     </AccordionItem>
                     <AccordionItem value="custom" trigger={t('pricing.accordionCustomTitle')}>
