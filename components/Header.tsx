@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 // FIX: Changed to namespace import to fix module resolution issues.
 import * as ReactRouterDOM from 'react-router-dom';
@@ -13,7 +12,7 @@ const activeNavLinkClasses = "text-accent";
 const Header = (): React.ReactNode => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileDropdowns, setMobileDropdowns] = useState({ wod: false, about: false });
+  const [mobileDropdowns, setMobileDropdowns] = useState({ wod: false, about: false, pricing: false });
   const { t } = useLanguage();
   const location = ReactRouterDOM.useLocation();
   const isHomePage = location.pathname === '/';
@@ -31,7 +30,7 @@ const Header = (): React.ReactNode => {
   
   const closeMenu = () => {
     setIsMenuOpen(false);
-    setMobileDropdowns({ wod: false, about: false });
+    setMobileDropdowns({ wod: false, about: false, pricing: false });
   };
 
   useEffect(() => {
@@ -50,7 +49,7 @@ const Header = (): React.ReactNode => {
     };
   }, [isMenuOpen]);
 
-  const toggleMobileDropdown = (menu: 'wod' | 'about') => {
+  const toggleMobileDropdown = (menu: 'wod' | 'about' | 'pricing') => {
     setMobileDropdowns(prev => ({ ...prev, [menu]: !prev[menu] }));
   };
   
@@ -115,7 +114,17 @@ const Header = (): React.ReactNode => {
 
             <ReactRouterDOM.NavLink to="/shop" className={({ isActive }) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.shop')}</ReactRouterDOM.NavLink>
             
-            <ReactRouterDOM.NavLink to="/membership" className={`${navLinkClasses} ${isPricingActive ? activeNavLinkClasses : ''}`}>{t('nav.pricing')}</ReactRouterDOM.NavLink>
+            {/* Pricing Dropdown */}
+            <div className="relative group py-6 -my-6">
+                <button aria-haspopup="true" className={`${navLinkClasses} ${isPricingActive ? activeNavLinkClasses : ''} flex items-center`}>
+                    <ReactRouterDOM.NavLink to="/membership">{t('nav.pricing')}</ReactRouterDOM.NavLink>
+                    <ChevronDownIcon className="h-4 w-4 ml-1" />
+                </button>
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-white dark:bg-[#181818] shadow-lg rounded-xl p-2 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 ring-1 ring-black ring-opacity-5">
+                    <ReactRouterDOM.NavLink to="/membership" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.pricing')}</ReactRouterDOM.NavLink>
+                    <ReactRouterDOM.NavLink to="/referral" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.referrals')}</ReactRouterDOM.NavLink>
+                </div>
+            </div>
 
             <ReactRouterDOM.NavLink to="/contact" className={({ isActive }) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.contact')}</ReactRouterDOM.NavLink>
           </nav>
@@ -182,7 +191,19 @@ const Header = (): React.ReactNode => {
 
             <ReactRouterDOM.NavLink to="/shop" className={({ isActive }) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-3 text-lg w-full text-center`} onClick={closeMenu}>{t('nav.shop')}</ReactRouterDOM.NavLink>
 
-            <ReactRouterDOM.NavLink to="/membership" className={() => `${navLinkClasses} ${isPricingActive ? activeNavLinkClasses : ''} py-3 text-lg w-full text-center`} onClick={closeMenu}>{t('nav.pricing')}</ReactRouterDOM.NavLink>
+            {/* Pricing Dropdown Mobile */}
+            <div className="w-full">
+                <button onClick={() => toggleMobileDropdown('pricing')} aria-expanded={mobileDropdowns.pricing} className={`${navLinkClasses} ${isPricingActive ? activeNavLinkClasses : ''} py-3 text-lg w-full flex items-center justify-center`}>
+                    {t('nav.pricing')}
+                    <ChevronDownIcon className={`h-5 w-5 ml-2 transition-transform ${mobileDropdowns.pricing ? 'rotate-180' : ''}`} />
+                </button>
+                {mobileDropdowns.pricing && (
+                    <div className="flex flex-col items-center bg-gray-100 dark:bg-black/20 pt-1 pb-2 w-full">
+                        <ReactRouterDOM.NavLink to="/membership" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.pricing')}</ReactRouterDOM.NavLink>
+                        <ReactRouterDOM.NavLink to="/referral" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.referrals')}</ReactRouterDOM.NavLink>
+                    </div>
+                )}
+            </div>
 
             <ReactRouterDOM.NavLink to="/contact" className={({ isActive }) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-3 text-lg w-full text-center`} onClick={closeMenu}>{t('nav.contact')}</ReactRouterDOM.NavLink>
             
