@@ -40,7 +40,7 @@ const ContactPage = (): React.ReactNode => {
                         <p className="text-xl max-w-3xl mx-auto mt-4 text-gray-300">{t('contact.subtitle')}</p>
                     </div>
 
-                    <div className="max-w-xl w-full mx-auto bg-white/10 dark:bg-black/20 backdrop-blur-md p-8 rounded-lg border border-white/20 relative">
+                    <div className="max-w-xl w-full mx-auto bg-white/10 dark:bg-black/20 backdrop-blur-md p-8 rounded-2xl border border-white/20 relative">
                         <h2 className="text-3xl font-bold text-white mb-6 text-center">{t('contact.formTitle')}</h2>
                         <form onSubmit={handleSubmit} className="w-full space-y-4">
                             <div className="flex flex-col gap-2">

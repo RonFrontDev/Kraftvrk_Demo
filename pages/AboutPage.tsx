@@ -21,7 +21,7 @@ const AboutPage = (): React.ReactNode => {
                 </div>
 
                 <div className="max-w-4xl mx-auto">
-                    <div className="bg-white/90 dark:bg-[#1c1c1e]/90 backdrop-blur-sm p-10 shadow-xl rounded-lg">
+                    <div className="bg-white/90 dark:bg-[#1c1c1e]/90 backdrop-blur-sm p-10 shadow-xl rounded-2xl">
                         <h2 className="text-5xl font-extrabold text-gray-900 dark:text-white mb-4 uppercase">{t('about.philosophyTitle')}</h2>
                         <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                             {t('about.philosophyText')}

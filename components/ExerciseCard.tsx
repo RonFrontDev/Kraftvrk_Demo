@@ -24,7 +24,7 @@ const ExerciseCard = ({ exercise, onClick }: ExerciseCardProps): React.ReactNode
     return (
         <div 
             onClick={onClick}
-            className="bg-white dark:bg-[#1A1A1C] overflow-hidden group shadow-lg rounded-lg transform hover:-translate-y-1 transition-all duration-300 flex flex-col cursor-pointer"
+            className="bg-white dark:bg-[#1A1A1C] overflow-hidden group shadow-lg rounded-2xl transform hover:-translate-y-1 transition-all duration-300 flex flex-col cursor-pointer"
         >
             <div className="relative aspect-square w-full overflow-hidden">
                 <img 

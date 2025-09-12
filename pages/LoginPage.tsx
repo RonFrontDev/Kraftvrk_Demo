@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react';
 // FIX: Changed to namespace import to fix module resolution issues.
 import * as ReactRouterDOM from 'react-router-dom';
@@ -43,7 +44,7 @@ const LoginPage = (): React.ReactNode => {
       />
       <div className="absolute inset-0 bg-black/70" />
       
-      <div className="relative max-w-md w-full space-y-8 bg-white/10 dark:bg-black/20 backdrop-blur-md p-10 rounded-lg border border-white/20">
+      <div className="relative max-w-md w-full space-y-8 bg-white/10 dark:bg-black/20 backdrop-blur-md p-10 rounded-2xl border border-white/20">
         <div>
           <h2 className="mt-6 text-center text-4xl font-extrabold text-white uppercase tracking-wider">{t('auth.loginTitle')}</h2>
           <p className="mt-2 text-center text-sm text-gray-300">

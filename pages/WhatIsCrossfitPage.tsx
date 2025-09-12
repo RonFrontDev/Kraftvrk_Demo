@@ -1,7 +1,9 @@
 
+
+
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 // FIX: Changed to namespace import to fix module resolution issues.
 import * as ReactRouterDOM from 'react-router-dom';
 import { Dumbbell as DumbbellIcon, HeartPulse as HeartPulseIcon, Repeat as RepeatIcon, Users as UsersIcon, Award as AwardIcon, BrainCircuit as BrainCircuitIcon, ArrowRight as ArrowRightIcon, PartyPopper as FunIcon } from 'lucide-react';
@@ -18,7 +20,11 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+// FIX: Explicitly typed the `itemVariants` constant with `Variants` from framer-motion.
+// This resolves a TypeScript error where the `type` property in the transition object
+// was being inferred as a generic `string` instead of the specific AnimationGeneratorType
+// (e.g., 'spring') that framer-motion expects.
+const itemVariants: Variants = {
   hidden: { y: 20, opacity: 0 },
   visible: {
     y: 0,
@@ -74,7 +80,7 @@ const WhatIsCrossfitPage = (): React.ReactNode => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.7 }}
           >
-            <img src="https://images.pexels.com/photos/4761786/pexels-photo-4761786.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="CrossFit workout" className="rounded-lg shadow-2xl"/>
+            <img src="https://images.pexels.com/photos/4761786/pexels-photo-4761786.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="CrossFit workout" className="rounded-2xl shadow-2xl"/>
           </motion.div>
           <div>
             <h2 className="text-5xl font-extrabold text-accent uppercase tracking-wider">{t('whatIsCrossfit.definition.title')}</h2>
@@ -135,7 +141,7 @@ const WhatIsCrossfitPage = (): React.ReactNode => {
           <p className="mt-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">{t('whatIsCrossfit.forMe.text1')}</p>
           <ReactRouterDOM.NavLink 
             to="/contact" 
-            className="mt-10 inline-flex items-center gap-3 bg-gradient-accent bg-gradient-accent-hover text-black font-bold py-4 px-10 text-lg uppercase tracking-wider rounded-md shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+            className="mt-10 inline-flex items-center gap-3 bg-gradient-accent bg-gradient-accent-hover text-black font-bold py-4 px-10 text-lg uppercase tracking-wider rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
           >
             <span>{t('pricing.trialButton')}</span>
             <ArrowRightIcon className="h-6 w-6" />

@@ -57,7 +57,7 @@ const ClassDetailModal = ({ classInfo, onClose }: ClassDetailModalProps): React.
             </style>
             <div 
                 ref={modalRef} 
-                className="bg-white dark:bg-[#1A1A1C] rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative p-8"
+                className="bg-white dark:bg-[#1A1A1C] rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative p-8"
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby="class-title"

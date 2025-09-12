@@ -73,6 +73,7 @@ const ExerciseLibraryPage = (): React.ReactNode => {
                 <div className="text-center mb-12">
                     <h1 className="text-7xl font-extrabold uppercase tracking-widest text-gray-900 dark:text-white">{t('library.title')}</h1>
                     <p className="text-xl text-gray-600 dark:text-gray-400">{t('library.subtitle')}</p>
+                    <p className="mt-2 text-lg text-gray-500 dark:text-gray-500">{t('library.introduction')}</p>
                 </div>
 
                 <div className="flex justify-center items-center gap-2 sm:gap-4 mb-8 flex-wrap">

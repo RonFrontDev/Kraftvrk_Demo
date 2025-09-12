@@ -106,7 +106,7 @@ const Calendar = ({ currentMonth, onMonthChange, selectedDate, onDateSelect, pin
 
 
   return (
-    <div className="bg-white dark:bg-[#1c1c1e] p-6 rounded-lg shadow-md">
+    <div className="bg-white dark:bg-[#1c1c1e] p-6 rounded-2xl shadow-md">
       {renderHeader()}
       {renderDays()}
       {renderCells()}

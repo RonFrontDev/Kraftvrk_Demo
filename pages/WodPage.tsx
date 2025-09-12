@@ -249,7 +249,7 @@ const WodPage = (): React.ReactNode => {
 
     if (error) {
       return (
-        <div className="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-lg text-center" role="alert">
+        <div className="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-xl text-center" role="alert">
           <strong className="font-bold">{t('wod.errorTitle')}</strong>
           <span className="block sm:inline ml-2">{error}</span>
         </div>
@@ -315,7 +315,7 @@ const WodPage = (): React.ReactNode => {
             t={t}
           />
         </div>
-        <div className="w-full lg:col-span-2 bg-white dark:bg-[#1A1A1C] rounded-lg shadow-xl p-6 md:p-8">
+        <div className="w-full lg:col-span-2 bg-white dark:bg-[#1A1A1C] rounded-2xl shadow-xl p-6 md:p-8">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
               {t('wod.wodFor')}{' '}

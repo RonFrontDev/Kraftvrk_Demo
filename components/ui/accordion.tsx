@@ -43,7 +43,7 @@ export const AccordionItem = ({ value, trigger, children }: AccordionItemProps):
   };
 
   return (
-    <div className="bg-white/90 dark:bg-[#1c1c1e]/90 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-lg">
+    <div className="bg-white/90 dark:bg-[#1c1c1e]/90 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden transition-shadow duration-300 hover:shadow-lg">
       <button
         onClick={toggleOpen}
         className="flex justify-between items-center w-full p-6 text-left text-xl sm:text-2xl font-bold text-gray-900 dark:text-white uppercase tracking-wider"

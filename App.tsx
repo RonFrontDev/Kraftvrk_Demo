@@ -13,7 +13,6 @@ import MembershipPage from './pages/MembershipPage';
 import ShopPage from './pages/ShopPage';
 import ContactPage from './pages/ContactPage';
 import { ThemeProvider } from './contexts/ThemeContext';
-import FloatingChatButton from './components/FloatingChatButton';
 import CoachesPage from './pages/CoachesPage';
 import ScrollToTop from './components/ScrollToTop';
 import ExerciseLibraryPage from './pages/ExerciseLibraryPage';
@@ -48,7 +47,6 @@ function App(): React.ReactNode {
               </ReactRouterDOM.Routes>
             </main>
             <Footer />
-            <FloatingChatButton />
           </div>
         </ReactRouterDOM.HashRouter>
       </LanguageProvider>

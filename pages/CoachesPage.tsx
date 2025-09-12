@@ -1,4 +1,5 @@
 
+
 import React, { useState, useMemo } from 'react';
 // FIX: Changed to namespace import to fix module resolution issues.
 import * as ReactRouterDOM from 'react-router-dom';
@@ -13,7 +14,7 @@ const CoachProfile = ({ coach, classes }: { coach: Coach, classes: ClassType[] }
     return (
         <div
             id={`coach-${coach.id}`}
-            className="bg-white dark:bg-[#1c1c1e] overflow-hidden flex flex-col md:flex-row items-center shadow-lg rounded-md scroll-mt-32"
+            className="bg-white dark:bg-[#1c1c1e] overflow-hidden flex flex-col md:flex-row items-center shadow-lg rounded-2xl scroll-mt-32"
         >
             <img src={`https://i.pravatar.cc/400?u=${coach.imageId}`} alt={coach.name} className="w-full aspect-square object-cover md:w-80 flex-shrink-0" />
             <div className="p-8 w-full">

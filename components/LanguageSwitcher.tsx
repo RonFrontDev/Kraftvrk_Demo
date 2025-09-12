@@ -27,7 +27,7 @@ const LanguageSwitcher = (): React.ReactNode => {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+        className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
         aria-haspopup="true"
         aria-expanded={isOpen}
       >
@@ -37,7 +37,7 @@ const LanguageSwitcher = (): React.ReactNode => {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-900 rounded-md shadow-lg z-50 ring-1 ring-black ring-opacity-5">
+        <div className="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-900 rounded-xl shadow-lg z-50 ring-1 ring-black ring-opacity-5">
           <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
             {languages.map(lang => (
               <button

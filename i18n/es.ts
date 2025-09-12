@@ -279,6 +279,7 @@ export const es = {
   library: {
     title: 'Biblioteca de Ejercicios',
     subtitle: 'Explora nuestra colección de movimientos fundamentales.',
+    introduction: 'Familiarízate con los movimientos antes de empezar.',
     category_all: 'Todos',
     category_bootcamp: 'Bootcamp',
     category_crossfit: 'CrossFit',

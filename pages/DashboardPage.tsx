@@ -93,11 +93,11 @@ const DashboardPage = (): React.ReactNode => {
 
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
                 {/* WOD Logging Section */}
-                <div className="lg:col-span-3 bg-white dark:bg-[#1A1A1C] p-6 rounded-lg shadow-xl">
+                <div className="lg:col-span-3 bg-white dark:bg-[#1A1A1C] p-6 rounded-2xl shadow-xl">
                     <h2 className="text-3xl font-bold text-accent mb-4">{t('dashboard.wodLog.title')}</h2>
                     {isWodLoading && <Spinner />}
                     {!isWodLoading && todayWod && (
-                         <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                         <div className="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
                              <div className="bg-gray-100 dark:bg-gray-900/50 p-4">
                                 <h3 className="text-xl font-bold text-gray-900 dark:text-white uppercase tracking-wider">{t('dashboard.wodLog.today')}</h3>
                              </div>
@@ -107,7 +107,7 @@ const DashboardPage = (): React.ReactNode => {
                          </div>
                     )}
                     {!isWodLoading && !todayWod && (
-                        <p className="text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-black/20 p-4 rounded-md">{t('dashboard.wodLog.noWod')}</p>
+                        <p className="text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-black/20 p-4 rounded-xl">{t('dashboard.wodLog.noWod')}</p>
                     )}
 
                     {todayWod && (
@@ -139,9 +139,9 @@ const DashboardPage = (): React.ReactNode => {
                 </div>
 
                 {/* PR Tracking Section */}
-                <div className="lg:col-span-2 bg-white dark:bg-[#1A1A1C] p-6 rounded-lg shadow-xl">
+                <div className="lg:col-span-2 bg-white dark:bg-[#1A1A1C] p-6 rounded-2xl shadow-xl">
                     <h2 className="text-3xl font-bold text-accent mb-4">{t('dashboard.pr.title')}</h2>
-                    <form onSubmit={handlePrSubmit} className="space-y-4 p-4 mb-6 border border-gray-200 dark:border-gray-700 rounded-md">
+                    <form onSubmit={handlePrSubmit} className="space-y-4 p-4 mb-6 border border-gray-200 dark:border-gray-700 rounded-xl">
                         <h3 className="text-lg font-bold text-gray-900 dark:text-white">{t('dashboard.pr.addTitle')}</h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
@@ -150,7 +150,7 @@ const DashboardPage = (): React.ReactNode => {
                                     id="pr-exercise" 
                                     value={prExercise} 
                                     onChange={e => setPrExercise(e.target.value)}
-                                    className="w-full h-10 rounded-md border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-900 px-3 text-sm text-gray-900 dark:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                                    className="w-full h-10 rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-900 px-3 text-sm text-gray-900 dark:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                                 >
                                     {PR_EXERCISES.map(exId => <option key={exId} value={exId}>{t(`library.exercises.${exId}.name`)}</option>)}
                                 </select>
@@ -170,7 +170,7 @@ const DashboardPage = (): React.ReactNode => {
                     <div className="space-y-2 max-h-96 overflow-y-auto">
                          {sortedPrs.length === 0 && <p className="text-center text-gray-500 p-4">{t('dashboard.pr.noPrs')}</p>}
                          {sortedPrs.map(([exerciseId, pr]) => (
-                             <div key={exerciseId} className="flex justify-between items-center bg-gray-100 dark:bg-gray-900/50 p-3 rounded-md">
+                             <div key={exerciseId} className="flex justify-between items-center bg-gray-100 dark:bg-gray-900/50 p-3 rounded-xl">
                                  <div>
                                      <p className="font-bold text-gray-900 dark:text-white">{t(`library.exercises.${exerciseId}.name`)}</p>
                                      <p className="text-sm text-gray-500 dark:text-gray-400">{new Date(pr.date).toLocaleDateString(t('langCode') as string, { year: 'numeric', month: 'short', day: 'numeric' })}</p>

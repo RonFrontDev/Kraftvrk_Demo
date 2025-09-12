@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 // FIX: Changed to namespace import to fix module resolution issues.
 import * as ReactRouterDOM from 'react-router-dom';
@@ -17,7 +18,7 @@ interface ClassInfoCardProps {
 
 const ClassInfoCard: React.FC<ClassInfoCardProps> = ({ title, description, image, coaches }) => {
     return (
-        <div className="relative bg-gray-900 overflow-hidden group rounded-lg shadow-xl min-h-[450px] flex flex-col justify-end">
+        <div className="relative bg-gray-900 overflow-hidden group rounded-2xl shadow-xl min-h-[450px] flex flex-col justify-end">
             <img 
                 src={image} 
                 alt={title} 
@@ -70,7 +71,7 @@ const ClassesPage = (): React.ReactNode => {
                 <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">{t('classes.subtitle')}</p>
                  <ReactRouterDOM.NavLink 
                     to="/schedule" 
-                    className="mt-8 inline-flex items-center gap-3 bg-gradient-accent bg-gradient-accent-hover text-black font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                    className="mt-8 inline-flex items-center gap-3 bg-gradient-accent bg-gradient-accent-hover text-black font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                 >
                     <span>{t('classes.viewSchedule')}</span>
                     <ArrowRightIcon className="h-6 w-6" />

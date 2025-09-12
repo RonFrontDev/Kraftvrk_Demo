@@ -1,4 +1,5 @@
 
+
 import React, { useState, useEffect } from 'react';
 // FIX: Changed to namespace import to fix module resolution issues.
 import * as ReactRouterDOM from 'react-router-dom';
@@ -67,7 +68,7 @@ const ClassEntry = ({ classInfo, onClassClick }: { classInfo: ScheduleClassInfo,
     return (
         <div
             onClick={isClickable ? onClassClick : undefined}
-            className={`bg-gray-200 dark:bg-gray-900/50 p-4 rounded-md flex items-center gap-4 ${isClickable ? 'transition-all duration-300 hover:bg-gray-300 dark:hover:bg-gray-800 hover:shadow-lg transform hover:-translate-y-1 cursor-pointer' : ''}`}
+            className={`bg-gray-200 dark:bg-gray-900/50 p-4 rounded-xl flex items-center gap-4 ${isClickable ? 'transition-all duration-300 hover:bg-gray-300 dark:hover:bg-gray-800 hover:shadow-lg transform hover:-translate-y-1 cursor-pointer' : ''}`}
         >
             <img src={imageUrl} alt={t(details.nameKey)} className="w-16 h-16 rounded-full object-cover border-2 border-accent/50 flex-shrink-0" />
             <div>
@@ -126,7 +127,7 @@ const SchedulePage = (): React.ReactNode => {
                     <p className="text-xl text-gray-600 dark:text-gray-400">{t('schedule.subtitle')}</p>
                 </div>
                 
-                <div className="bg-white dark:bg-[#1c1c1e] rounded-lg shadow-2xl overflow-hidden">
+                <div className="bg-white dark:bg-[#1c1c1e] rounded-2xl shadow-2xl overflow-hidden">
                     <div className="flex flex-wrap border-b border-gray-200 dark:border-gray-800">
                         {scheduleData.map((day, index) => (
                             <button 
@@ -150,7 +151,7 @@ const SchedulePage = (): React.ReactNode => {
                                     />
                                 ))
                             ) : (
-                                <div className="md:col-span-2 lg:col-span-3 bg-gray-200 dark:bg-gray-900/50 p-8 rounded-md text-center flex flex-col items-center justify-center gap-4">
+                                <div className="md:col-span-2 lg:col-span-3 bg-gray-200 dark:bg-gray-900/50 p-8 rounded-xl text-center flex flex-col items-center justify-center gap-4">
                                      <img src={classImageMap.closed} alt={t('schedule.closed')} className="w-24 h-24 rounded-full object-cover border-4 border-gray-400 dark:border-gray-700 filter grayscale" />
                                     <p className="font-bold text-2xl text-gray-700 dark:text-gray-300">{t('schedule.closed')}</p>
                                 </div>

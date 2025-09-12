@@ -22,7 +22,7 @@ const ProductCard = ({ name, price, image }: { name: string, price: string, imag
     const { t } = useLanguage();
     return (
         <motion.div 
-            className="bg-white dark:bg-[#1A1A1C] overflow-hidden group shadow-lg rounded-lg flex flex-col"
+            className="bg-white dark:bg-[#1A1A1C] overflow-hidden group shadow-lg rounded-2xl flex flex-col"
             variants={itemVariants}
             whileHover={{ y: -5, transition: { duration: 0.2 } }}
         >
@@ -32,7 +32,7 @@ const ProductCard = ({ name, price, image }: { name: string, price: string, imag
             <div className="p-4 flex flex-col flex-grow">
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white uppercase tracking-wide flex-grow">{name}</h3>
                 <p className="text-xl font-bold text-accent mt-2">{price}</p>
-                <button className="mt-4 w-full bg-accent text-black font-bold py-2 px-4 text-sm uppercase tracking-wider rounded-md hover:bg-accent-dark transition-colors duration-300">
+                <button className="mt-4 w-full bg-accent text-black font-bold py-2 px-4 text-sm uppercase tracking-wider rounded-full hover:bg-accent-dark transition-colors duration-300">
                     {t('shop.addToCart')}
                 </button>
             </div>

@@ -279,6 +279,7 @@ export const is = {
   library: {
     title: 'Æfingasafn',
     subtitle: 'Skoðaðu safnið okkar af grunnæfingum.',
+    introduction: 'Kynntu þér hreyfingarnar áður en þú byrjar.',
     category_all: 'Allar',
     category_bootcamp: 'Bootcamp',
     category_crossfit: 'CrossFit',

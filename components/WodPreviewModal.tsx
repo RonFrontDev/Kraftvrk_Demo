@@ -36,7 +36,7 @@ const WodPreviewModal = ({ wod, onClose, classTime }: WodPreviewModalProps): Rea
         >
             <div 
                 ref={modalRef} 
-                className="bg-gray-100 dark:bg-[#1A1A1C] rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto relative"
+                className="bg-gray-100 dark:bg-[#1A1A1C] rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto relative"
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby="wod-preview-title"

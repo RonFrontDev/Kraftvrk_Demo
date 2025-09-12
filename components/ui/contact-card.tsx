@@ -31,7 +31,7 @@ export function ContactCard({
 	return (
 		<div
 			className={cn(
-				'bg-white dark:bg-[#1A1A1C] border border-gray-300 dark:border-gray-700 relative grid h-full w-full shadow-lg rounded-lg md:grid-cols-2 lg:grid-cols-3',
+				'bg-white dark:bg-[#1A1A1C] border border-gray-300 dark:border-gray-700 relative grid h-full w-full shadow-lg rounded-2xl md:grid-cols-2 lg:grid-cols-3',
 				className,
 			)}
 			{...props}

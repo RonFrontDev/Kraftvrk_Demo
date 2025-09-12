@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Input } from '../components/ui/input';
@@ -112,7 +113,7 @@ const ReferralPage = (): React.ReactNode => {
                         <p className="text-xl max-w-3xl mx-auto mt-4 text-gray-300">{t('referral.subtitle')}</p>
                     </div>
 
-                    <div className="max-w-2xl w-full mx-auto bg-white/10 dark:bg-black/20 backdrop-blur-md rounded-lg border border-white/20 overflow-hidden shadow-lg">
+                    <div className="max-w-2xl w-full mx-auto bg-white/10 dark:bg-black/20 backdrop-blur-md rounded-2xl border border-white/20 overflow-hidden shadow-lg">
                         <div className="flex border-b border-white/20">
                             <TabButton
                                 icon={UsersIcon}

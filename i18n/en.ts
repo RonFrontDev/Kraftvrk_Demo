@@ -288,6 +288,7 @@ export const en = {
   library: {
     title: 'Exercise Library',
     subtitle: 'Browse our collection of fundamental movements.',
+    introduction: 'Get familiar with the movements before you start.',
     category_all: 'All',
     category_bootcamp: 'Bootcamp',
     category_crossfit: 'CrossFit',

@@ -41,7 +41,7 @@ const WodEditor = ({
     onSectionsChange(updatedSections);
   };
 
-  const inputClasses = "mt-1 block w-full bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm py-2 px-3 text-gray-900 dark:text-white focus:outline-none focus:ring-accent focus:border-accent";
+  const inputClasses = "mt-1 block w-full bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-xl shadow-sm py-2 px-3 text-gray-900 dark:text-white focus:outline-none focus:ring-accent focus:border-accent";
   const labelClasses = "block text-sm font-medium text-gray-700 dark:text-gray-300 uppercase tracking-wider";
 
   return (
@@ -91,11 +91,11 @@ const WodEditor = ({
         </div>
       ))}
       
-      <button onClick={handleAddSection} className="w-full border-2 border-dashed border-gray-400 dark:border-gray-600 text-gray-600 dark:text-gray-400 font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md hover:border-accent hover:text-accent transition-colors duration-300">{t('wod.addSection')}</button>
+      <button onClick={handleAddSection} className="w-full border-2 border-dashed border-gray-400 dark:border-gray-600 text-gray-600 dark:text-gray-400 font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-xl hover:border-accent hover:text-accent transition-colors duration-300">{t('wod.addSection')}</button>
 
       <div className="flex flex-col sm:flex-row gap-4 pt-4">
-        <button onClick={onSave} className="flex-1 bg-accent text-black font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md hover:bg-accent-dark transition-colors duration-300">{t('wod.saveWod')}</button>
-        <button onClick={onCancel} className="flex-1 bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-white font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md hover:bg-gray-400 dark:hover:bg-gray-500 transition-colors duration-300">{t('wod.cancelEdit')}</button>
+        <button onClick={onSave} className="flex-1 bg-accent text-black font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-full hover:bg-accent-dark transition-colors duration-300">{t('wod.saveWod')}</button>
+        <button onClick={onCancel} className="flex-1 bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-white font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-full hover:bg-gray-400 dark:hover:bg-gray-500 transition-colors duration-300">{t('wod.cancelEdit')}</button>
       </div>
     </div>
   );

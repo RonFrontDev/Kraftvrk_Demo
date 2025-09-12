@@ -279,6 +279,7 @@ export const da = {
   library: {
     title: 'Øvelsesbibliotek',
     subtitle: 'Gennemse vores samling af grundlæggende bevægelser.',
+    introduction: 'Bliv fortrolig med øvelserne, før du starter.',
     category_all: 'Alle',
     category_bootcamp: 'Bootcamp',
     category_crossfit: 'CrossFit',

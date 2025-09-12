@@ -15,7 +15,7 @@ const heroTexts = [
 ];
 
 const StepCard = ({ num, icon, title, text }: { num: string, icon: React.ReactNode, title: string, text: string }) => (
-    <div className="relative p-8 bg-gray-100 dark:bg-black/50 rounded-lg shadow-lg overflow-hidden">
+    <div className="relative p-8 bg-gray-100 dark:bg-black/50 rounded-2xl shadow-lg overflow-hidden">
         <div className="absolute -top-4 -left-4 text-7xl font-black text-gray-200 dark:text-gray-800/50 -z-0" aria-hidden="true">{num}</div>
         <div className="relative z-10">
             <div className="mb-4 text-accent">{icon}</div>
@@ -28,7 +28,7 @@ const StepCard = ({ num, icon, title, text }: { num: string, icon: React.ReactNo
 const DifferenceItem = ({ num, icon, title, text, image, reverse = false }: { num: string, icon: React.ReactNode, title: string, text: string, image: string, reverse?: boolean }) => (
     <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 lg:gap-16`}>
         <div className="lg:w-1/2 w-full">
-            <div className="overflow-hidden rounded-lg shadow-2xl">
+            <div className="overflow-hidden rounded-2xl shadow-2xl">
                 <img src={image} alt={title} className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500" />
             </div>
         </div>
@@ -93,7 +93,7 @@ const HomePage = (): React.ReactNode => {
           </p>
           <ReactRouterDOM.NavLink 
             to="/membership" 
-            className={`${animationClasses('delay-300')} mt-10 inline-flex items-center gap-3 bg-gradient-accent bg-gradient-accent-hover text-black font-bold py-4 px-10 text-lg uppercase tracking-wider rounded-md shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300`}
+            className={`${animationClasses('delay-300')} mt-10 inline-flex items-center gap-3 bg-gradient-accent bg-gradient-accent-hover text-black font-bold py-4 px-10 text-lg uppercase tracking-wider rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300`}
             style={{ transitionDelay: '300ms' }}
           >
             <span>{t('home.joinButton')}</span>
@@ -170,7 +170,7 @@ const HomePage = (): React.ReactNode => {
               <div className="text-center mt-12">
                    <ReactRouterDOM.NavLink 
                       to="/contact" 
-                      className="inline-flex items-center gap-3 bg-accent text-black font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md hover:bg-accent-dark transition-colors duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+                      className="inline-flex items-center gap-3 bg-accent text-black font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-full hover:bg-accent-dark transition-colors duration-300 transform hover:-translate-y-1 hover:shadow-lg"
                   >
                       <span>{t('home.steps.ctaButton')}</span>
                       <ArrowRightIcon className="h-6 w-6" />
@@ -228,7 +228,7 @@ const HomePage = (): React.ReactNode => {
             </p>
             <ReactRouterDOM.NavLink 
                 to="/contact" 
-                className="inline-flex items-center gap-3 bg-gradient-accent bg-gradient-accent-hover text-black font-bold py-4 px-10 text-lg uppercase tracking-wider rounded-md shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                className="inline-flex items-center gap-3 bg-gradient-accent bg-gradient-accent-hover text-black font-bold py-4 px-10 text-lg uppercase tracking-wider rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
             >
                 <span>{t('membership.trialButton')}</span>
                  <ArrowRightIcon className="h-6 w-6" />

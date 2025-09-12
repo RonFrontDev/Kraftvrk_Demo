@@ -14,7 +14,7 @@ const WodSectionCard = ({ section, onRegenerate, isRegenerating }: WodSectionCar
   const { t } = useLanguage();
 
   return (
-    <div className="bg-white dark:bg-[#1c1c1e] p-8 rounded-lg shadow-md">
+    <div className="bg-white dark:bg-[#1c1c1e] p-8 rounded-2xl shadow-md">
       <div className="flex justify-between items-center mb-4 border-b-2 border-gray-200 dark:border-gray-700 pb-3">
         <div className="flex-1">
             <h3 className="text-4xl font-bold text-accent uppercase tracking-wider">{section.title}</h3>

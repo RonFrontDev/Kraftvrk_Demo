@@ -60,7 +60,7 @@ const Slideshow = ({ images }: SlideshowProps): React.ReactNode => {
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative w-full h-[75vh] max-h-[800px] max-w-7xl mx-auto flex items-center justify-center overflow-hidden rounded-lg shadow-2xl bg-black/80"
+      className="relative w-full h-[75vh] max-h-[800px] max-w-7xl mx-auto flex items-center justify-center overflow-hidden rounded-2xl shadow-2xl bg-black/80"
     >
       <AnimatePresence initial={false} custom={direction}>
         <motion.img

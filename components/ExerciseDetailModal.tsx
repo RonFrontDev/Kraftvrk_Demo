@@ -57,7 +57,7 @@ const ExerciseDetailModal = ({ exercise, onClose }: ExerciseDetailModalProps): R
             </style>
             <div 
                 ref={modalRef} 
-                className="bg-white dark:bg-[#1A1A1C] rounded-lg shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative"
+                className="bg-white dark:bg-[#1A1A1C] rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative"
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby="exercise-title"

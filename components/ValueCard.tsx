@@ -1,9 +1,10 @@
 
+
 import React from 'react';
 import type { ReactNode } from 'react';
 
 const ValueCard = ({ icon, title, children }: { icon: ReactNode, title: string, children: ReactNode }): ReactNode => (
-  <div className="text-center p-6 bg-white dark:bg-[#1A1A1C] rounded-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+  <div className="text-center p-6 bg-white dark:bg-[#1A1A1C] rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
     <div className="flex items-center justify-center h-24 w-24 rounded-full bg-gray-100 dark:bg-[#101012] text-accent mb-6 mx-auto shadow-lg">
       {icon}
     </div>

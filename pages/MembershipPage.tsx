@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 // FIX: Changed to namespace import to fix module resolution issues.
 import * as ReactRouterDOM from 'react-router-dom';
@@ -16,7 +17,7 @@ const PricingCard = ({ plan, popular = false }: { plan: any, popular?: boolean }
     const buttonText = isCustomPlan ? t('pricing.contactUsButton') : t('pricing.joinButton');
 
     return (
-        <div className={`border-2 ${popular ? 'border-accent' : 'border-gray-300 dark:border-gray-700'} bg-white dark:bg-[#1A1A1C] p-6 sm:p-8 flex flex-col relative rounded-lg shadow-xl transform hover:-translate-y-2 transition-transform duration-300 h-full`}>
+        <div className={`border-2 ${popular ? 'border-accent' : 'border-gray-300 dark:border-gray-700'} bg-white dark:bg-[#1A1A1C] p-6 sm:p-8 flex flex-col relative rounded-2xl shadow-xl transform hover:-translate-y-2 transition-transform duration-300 h-full`}>
             {popular && (
                 <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
                     <span className="bg-accent text-black text-sm font-bold tracking-wider rounded-full px-4 py-1 uppercase">{t('pricing.popular')}</span>
@@ -38,7 +39,7 @@ const PricingCard = ({ plan, popular = false }: { plan: any, popular?: boolean }
             </ul>
             <ReactRouterDOM.NavLink
                 to="/contact"
-                className={`mt-10 block w-full text-center font-bold py-3 px-6 text-base sm:text-lg uppercase tracking-wider rounded-md transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg ${popular ? 'bg-accent text-black hover:bg-accent-dark' : 'bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-400 dark:hover:bg-gray-600'}`}
+                className={`mt-10 block w-full text-center font-bold py-3 px-6 text-base sm:text-lg uppercase tracking-wider rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg ${popular ? 'bg-accent text-black hover:bg-accent-dark' : 'bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-400 dark:hover:bg-gray-600'}`}
             >
                 {buttonText}
             </ReactRouterDOM.NavLink>
@@ -92,12 +93,12 @@ const MembershipPage = (): React.ReactNode => {
                     <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">{t('pricing.subtitle')}</p>
                 </div>
 
-                <div className="max-w-4xl mx-auto mb-16 bg-white dark:bg-[#1A1A1C] border-2 border-accent p-8 text-center shadow-lg rounded-lg">
+                <div className="max-w-4xl mx-auto mb-16 bg-white dark:bg-[#1A1A1C] border-2 border-accent p-8 text-center shadow-lg rounded-2xl">
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white uppercase">{t('pricing.trialTitle')}</h2>
                     <p className="mt-4 text-base sm:text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">{t('pricing.trialSubtitle')}</p>
                     <ReactRouterDOM.NavLink 
                         to="/contact" 
-                        className="mt-8 inline-flex items-center gap-3 bg-accent text-black font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md hover:bg-accent-dark transition-colors duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+                        className="mt-8 inline-flex items-center gap-3 bg-accent text-black font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-full hover:bg-accent-dark transition-colors duration-300 transform hover:-translate-y-1 hover:shadow-lg"
                     >
                         <span>{t('pricing.trialButton')}</span>
                         <ArrowRightIcon className="h-6 w-6" />

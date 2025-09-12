@@ -66,7 +66,7 @@ const MembersPage = (): React.ReactNode => {
             {galleryImages.map((src, index) => (
               <motion.div
                 key={index}
-                className="relative aspect-square overflow-hidden rounded-lg group shadow-lg"
+                className="relative aspect-square overflow-hidden rounded-2xl group shadow-lg"
                 variants={itemVariants}
                 transition={{ type: 'spring', stiffness: 100 }}
               >
