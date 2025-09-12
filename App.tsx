@@ -19,6 +19,8 @@ import ScrollToTop from './components/ScrollToTop';
 import ExerciseLibraryPage from './pages/ExerciseLibraryPage';
 import ClassesPage from './pages/ClassesPage';
 import MembersPage from './pages/MembersPage';
+import ReferralPage from './pages/ReferralPage';
+import WhatIsCrossfitPage from './pages/WhatIsCrossfitPage';
 
 function App(): React.ReactNode {
   return (
@@ -34,6 +36,7 @@ function App(): React.ReactNode {
                 <ReactRouterDOM.Route path="/wod" element={<WodPage />} />
                 <ReactRouterDOM.Route path="/schedule" element={<SchedulePage />} />
                 <ReactRouterDOM.Route path="/about" element={<AboutPage />} />
+                <ReactRouterDOM.Route path="/what-is-crossfit" element={<WhatIsCrossfitPage />} />
                 <ReactRouterDOM.Route path="/coaches" element={<CoachesPage />} />
                 <ReactRouterDOM.Route path="/library" element={<ExerciseLibraryPage />} />
                 <ReactRouterDOM.Route path="/classes" element={<ClassesPage />} />
@@ -41,6 +44,7 @@ function App(): React.ReactNode {
                 <ReactRouterDOM.Route path="/shop" element={<ShopPage />} />
                 <ReactRouterDOM.Route path="/contact" element={<ContactPage />} />
                 <ReactRouterDOM.Route path="/members" element={<MembersPage />} />
+                <ReactRouterDOM.Route path="/referral" element={<ReferralPage />} />
               </ReactRouterDOM.Routes>
             </main>
             <Footer />

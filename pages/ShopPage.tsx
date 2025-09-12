@@ -18,6 +18,7 @@ const products: Product[] = [
     { nameKey: 'shop.product4Name', priceKey: 'shop.product4Price', imageId: '18', category: 'accessories' },
     { nameKey: 'shop.product5Name', priceKey: 'shop.product5Price', imageId: '19', category: 'equipment' },
     { nameKey: 'shop.product6Name', priceKey: 'shop.product6Price', imageId: '20', category: 'accessories' },
+    { nameKey: 'shop.productGiftCardName', priceKey: 'shop.productGiftCardPrice', imageId: '21', category: 'accessories' },
 ];
 
 const categories = ['all', 'apparel', 'accessories', 'equipment'];

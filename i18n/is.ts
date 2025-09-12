@@ -4,6 +4,7 @@ export const is = {
     wod: 'Æfing Dagsins',
     schedule: 'Stundaskrá',
     about: 'Um Okkur',
+    whatIsCrossfit: 'Hvað er CrossFit?',
     coaches: 'Þjálfarar',
     library: 'Safn',
     pricing: 'Verðskrá',
@@ -12,6 +13,7 @@ export const is = {
     freeTrial: 'Ókeypis Prufutími',
     classes: 'Tímar',
     members: 'Meðlimir',
+    referrals: 'Tilvísanir',
   },
   footer: {
     rightsReserved: 'Allur réttur áskilinn.',
@@ -189,6 +191,61 @@ export const is = {
     coach10Specialty: 'Næringar- & Afkastaþjálfari',
     coach10Bio: 'Isabelle trúir því að líkamsrækt nái inn í eldhúsið. Hún hjálpar meðlimum að fínstilla næringu sína til að auka afköst og ná markmiðum sínum.',
   },
+  whatIsCrossfit: {
+    title: 'Hvað er CrossFit?',
+    subtitle: 'Íþrótt Líkamsræktarinnar. Lífstíll sem einkennist af öruggri, áhrifaríkri hreyfingu og heilbrigðri næringu.',
+    definition: {
+      title: 'Meira En Bara Æfing',
+      text1: 'CrossFit er þjálfunaraðferðafræði sem þjálfar fólk af öllum stærðum og gerðum til að bæta líkamlega vellíðan sína og hjarta- og æðaþol í hörðu en umburðarlyndu og hvetjandi umhverfi.',
+      text2: 'Það er blanda af fimleikum, ólympískum lyftingum, hlaupum, róðri og fleiru. Æfingar eru mismunandi á hverjum degi, hannaðar til að vera almennt skalanlegar, sem gerir það að fullkominni lausn fyrir hvern sem er, óháð reynslu.',
+    },
+    methodology: {
+      title: 'Aðferðafræðin',
+      varied: {
+        title: 'Stöðugt Breytilegt',
+        text: 'Hver dagur býður upp á nýja áskorun. Þér mun aldrei leiðast og líkaminn þinn mun stöðugt aðlagast, sem gerir þig að alhliða íþróttamanni.'
+      },
+      intensity: {
+        title: 'Há Ákefð',
+        text: 'Við þjálfum með hárri ákefð miðað við þína persónulegu getu. Það er þar sem árangurinn næst. Það er hvati breytinga.'
+      },
+      functional: {
+        title: 'Hagnýtar Hreyfingar',
+        text: 'Við þjálfum hreyfingar sem líkja eftir daglegu lífi, eins og að beygja sig, lyfta og ýta. Þetta gerir þig sterkari fyrir allt sem lífið býður upp á.'
+      }
+    },
+    benefits: {
+      title: 'Ávinningurinn Er Endalaus',
+      strength: {
+        title: 'Aukinn Styrkur',
+        text: 'Lyftu þungu, vertu sterk/ur. Prógrammið okkar byggir upp traustan grunn af hagnýtum styrk sem nýtist í raunveruleikanum.'
+      },
+      endurance: {
+        title: 'Bætt Þol',
+        text: 'Frá löngum hlaupum til æfinga með mörgum endurtekningum, þú munt byggja upp vél sem gefst aldrei upp. Hjarta- og vöðvaþol þitt mun stóraukast.'
+      },
+      community: {
+        title: 'Óbrjótanlegt Samfélag',
+        text: 'Þú ert ekki bara að ganga í rækt, þú ert að ganga í fjölskyldu. Við svitnum, stríðumst og sigrum saman. Stuðningurinn er óviðjafnanlegur.'
+      },
+      confidence: {
+        title: 'Aukið Sjálfstraust',
+        text: 'Að sigrast stöðugt á líkamlegum og andlegum áskorunum í ræktinni byggir upp sjálfstraust sem smitast yfir á alla þætti lífs þíns.'
+      },
+      mental: {
+        title: 'Andlegur Styrkur',
+        text: 'CrossFit skorar á þig að ýta þér út fyrir þægindarammann. Þú munt þróa með þér seiglu, þrautseigju og hugarfar sem fagnar áskorunum.'
+      },
+      fun: {
+        title: 'Það Er Reyndar Skemmtilegt!',
+        text: 'Blandan af fjölbreyttum æfingum, styðjandi samfélagi og mælanlegum árangri gerir þjálfunina ánægjulega. Þú munt hlakka til að koma í ræktina.'
+      }
+    },
+    forMe: {
+        title: 'Er CrossFit Fyrir Mig?',
+        text1: 'Algjörlega. Hver æfing er skalanleg að þinni getu. Amma þín getur stundað CrossFit. Ólympíufarar stunda CrossFit. Þær eru skalaðar á mismunandi hátt, en báðir fá frábæra æfingu. Við hittum þig þar sem þú ert og hjálpum þér að komast þangað sem þú vilt fara.'
+    }
+  },
   coaches: {
     title: 'Hittu Teymið Okkar',
     subtitle: 'Ástríðufullir sérfræðingar sem eru helgaðir árangri þínum.',
@@ -281,9 +338,12 @@ export const is = {
     planPunch3Desc: 'Þrír tímar, tilvalið til að prófa mismunandi tíma eða sem gjöf.',
     planPunch3Price: '9.000 kr',
     contactUsButton: 'Hafðu Samband',
-    accordionCoreTitle: 'Kjarnaáskriftir',
-    accordionFlexibleTitle: 'Sveigjanlegir Valkostir',
-    accordionCustomTitle: 'Sérsniðnir Pakkar',
+    coreTitle: 'Kjarnaáskriftir',
+    coreSubtitle: 'Vinsælustu áskriftirnar okkar fyrir staðfasta meðlimi sem æfa reglulega.',
+    flexibleTitle: 'Sveigjanlegir Valkostir',
+    flexibleSubtitle: 'Fyrir þá með breytilega stundaskrá eða gesti sem vilja koma í stakan tíma.',
+    customTitle: 'Sérsniðið & Fyrirtæki',
+    customSubtitle: 'Sérsniðnar lausnir fyrir einkaþjálfun, hópa og fyrirtæki.',
     feature: {
       '12classes': 'Allt að 12 tímar/mán',
       unlimited: 'Ótakmarkaðir tímar',
@@ -312,6 +372,48 @@ export const is = {
     title: 'Okkar Fjölskylda',
     subtitle: 'Hjartað og sálin í Kraftvrk. Við svitnum saman, við vöxum saman.',
     galleryTitle: 'Samfélagið Okkar í Aðgerð',
+  },
+  referral: {
+    title: 'Dreifðu Styrknum',
+    subtitle: 'Vísaðu á vin eða fyrirtæki og fáðu verðlaun fyrir að stækka samfélagið okkar.',
+    benefit: 'Vísaðu á vin og þið fáið bæði 25% afslátt af næsta mánuði þegar hann skráir sig!',
+    tabFriend: 'Vísa á Vin',
+    tabCompany: 'Vísa á Fyrirtæki',
+    form: {
+        yourName: 'Þitt nafn',
+        yourEmail: 'Þitt netfang',
+        friendName: 'Nafn vinar',
+        friendEmail: 'Netfang vinar',
+        companyName: 'Nafn fyrirtækis',
+        contactName: 'Nafn tengiliðar',
+        contactEmail: 'Netfang tengiliðar',
+        sendButton: 'Senda Tilvísun',
+    },
+    successTitle: 'Tilvísun Send!',
+    successMessage: 'Takk fyrir að hjálpa samfélaginu okkar að vaxa. Við munum hafa samband innan skamms.',
+  },
+  shop: {
+    title: 'Kraftvrk Verslun',
+    subtitle: 'Sýndu þína vinnu með okkar opinbera fatnaði og fylgihlutum.',
+    addToCart: 'Setja í Körfu',
+    category_all: 'Allt',
+    category_apparel: 'Fatnaður',
+    category_accessories: 'Fylgihlutir',
+    category_equipment: 'Búnaður',
+    product1Name: 'Opinber Stuttermabolur',
+    product1Price: '4.000 kr',
+    product2Name: 'Kraftvrk Hettupeysa',
+    product2Price: '9.000 kr',
+    product3Name: 'Performance Stuttbuxur',
+    product3Price: '6.000 kr',
+    product4Name: 'Merktur Vatnsbrúsi',
+    product4Price: '2.500 kr',
+    product5Name: 'Speed Rope',
+    product5Price: '3.500 kr',
+    product6Name: 'Úlnliðsólar',
+    product6Price: '2.500 kr',
+    productGiftCardName: 'Gjafakort',
+    productGiftCardPrice: '7.000 kr',
   },
   geminiLang: 'Icelandic',
   langCode: 'is-IS'

@@ -5,6 +5,7 @@ export const en = {
     wod: 'WOD',
     schedule: 'Schedule',
     about: 'About',
+    whatIsCrossfit: 'What is CrossFit?',
     coaches: 'Coaches',
     library: 'Library',
     pricing: 'Pricing',
@@ -13,6 +14,7 @@ export const en = {
     freeTrial: 'Free Trial',
     classes: 'Classes',
     members: 'Members',
+    referrals: 'Referrals',
   },
   // Footer
   footer: {
@@ -194,6 +196,61 @@ export const en = {
     coach9Bio: 'Marcus designs the most deviously effective metcons. His workouts will challenge your engine and push your limits.',
     coach10Specialty: 'Nutrition & Performance Coach',
     coach10Bio: 'Isabelle believes fitness extends to the kitchen. She helps members dial in their nutrition to fuel performance and achieve their goals.',
+  },
+  whatIsCrossfit: {
+    title: 'What is CrossFit?',
+    subtitle: 'The Sport of Fitness. A lifestyle characterized by safe, effective exercise and sound nutrition.',
+    definition: {
+      title: 'More Than a Workout',
+      text1: 'CrossFit is a training methodology that coaches people of all shapes and sizes to improve their physical well-being and cardiovascular fitness in a hardcore yet accepting and encouraging environment.',
+      text2: 'It\'s a blend of gymnastics, weightlifting, running, rowing, and more. Workouts are different every day, designed to be universally scalable, making it the perfect application for any committed individual regardless of experience.',
+    },
+    methodology: {
+      title: 'The Methodology',
+      varied: {
+        title: 'Constantly Varied',
+        text: 'Every day brings a new challenge. You will never get bored, and your body will constantly adapt, making you a well-rounded athlete.'
+      },
+      intensity: {
+        title: 'High Intensity',
+        text: 'We train at high intensity relative to your personal capacity. This is where the results are. It is the catalyst for change.'
+      },
+      functional: {
+        title: 'Functional Movements',
+        text: 'We train movements that mimic everyday life, like squatting, lifting, and pushing. This makes you stronger for whatever life throws at you.'
+      }
+    },
+    benefits: {
+      title: 'The Benefits Are Endless',
+      strength: {
+        title: 'Increased Strength',
+        text: 'Lift heavy, get strong. Our programming builds a solid foundation of functional strength that translates to real-world power.'
+      },
+      endurance: {
+        title: 'Improved Endurance',
+        text: 'From long runs to high-rep workouts, you\'ll build an engine that just doesn\'t quit. Your cardiovascular and muscular endurance will skyrocket.'
+      },
+      community: {
+        title: 'Unbreakable Community',
+        text: 'You\'re not just joining a gym, you\'re joining a family. We sweat, struggle, and succeed together. The support is unmatched.'
+      },
+      confidence: {
+        title: 'Boosted Confidence',
+        text: 'Consistently overcoming physical and mental challenges in the gym builds a level of self-confidence that permeates every aspect of your life.'
+      },
+      mental: {
+        title: 'Mental Toughness',
+        text: 'CrossFit challenges you to push past your perceived limits. You\'ll develop grit, resilience, and a mindset that embraces challenges.'
+      },
+      fun: {
+        title: 'It\'s Actually Fun!',
+        text: 'The combination of varied workouts, a supportive community, and measurable progress makes training enjoyable. You\'ll look forward to coming to the gym.'
+      }
+    },
+    forMe: {
+        title: 'Is CrossFit For Me?',
+        text1: 'Absolutely. Every workout is scalable to your ability. Your grandmother can do CrossFit. Olympic athletes do CrossFit. They are scaled differently, but they both get a great workout. We meet you where you are and help you get where you want to go.'
+    }
   },
   // Coaches Page
   coaches: {
@@ -694,9 +751,12 @@ export const en = {
     planPunch3Desc: 'Three classes, ideal for trying out different times or as a gift.',
     planPunch3Price: '$75',
     contactUsButton: 'Contact Us',
-    accordionCoreTitle: 'Core Memberships',
-    accordionFlexibleTitle: 'Flexible Options',
-    accordionCustomTitle: 'Custom Packages',
+    coreTitle: 'Core Memberships',
+    coreSubtitle: 'Our most popular plans for dedicated members who train consistently.',
+    flexibleTitle: 'Flexible Options',
+    flexibleSubtitle: 'For those with a dynamic schedule or visitors looking to drop in.',
+    customTitle: 'Custom & Corporate',
+    customSubtitle: 'Tailored solutions for 1-on-1 training, groups, and companies.',
     feature: {
       '12classes': 'Up to 12 classes/month',
       unlimited: 'Unlimited classes',
@@ -742,6 +802,8 @@ export const en = {
     product5Price: '$25',
     product6Name: 'Wrist Wraps',
     product6Price: '$15',
+    productGiftCardName: 'Gift Card',
+    productGiftCardPrice: '$50',
   },
   // Contact Page
   contact: {
@@ -764,6 +826,26 @@ export const en = {
     title: 'Our Family',
     subtitle: 'The heart and soul of Kraftvrk. We sweat together, we grow together.',
     galleryTitle: 'Our Community in Action',
+  },
+  // Referral Page
+  referral: {
+    title: 'Spread the Strength',
+    subtitle: 'Refer a friend or a company and get rewarded for growing our community.',
+    benefit: 'Refer a friend and you both get a 25% discount on your next month when they sign up!',
+    tabFriend: 'Refer a Friend',
+    tabCompany: 'Refer a Company',
+    form: {
+        yourName: 'Your Name',
+        yourEmail: 'Your Email',
+        friendName: "Friend's Name",
+        friendEmail: "Friend's Email",
+        companyName: 'Company Name',
+        contactName: 'Contact Person Name',
+        contactEmail: 'Contact Person Email',
+        sendButton: 'Send Referral',
+    },
+    successTitle: 'Referral Sent!',
+    successMessage: 'Thank you for helping our community grow. We will reach out shortly.',
   },
   // Gemini Prompt Language
   geminiLang: 'English',

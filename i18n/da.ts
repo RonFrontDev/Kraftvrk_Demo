@@ -4,6 +4,7 @@ export const da = {
     wod: 'Dagens Træning',
     schedule: 'Tidsplan',
     about: 'Om Os',
+    whatIsCrossfit: 'Hvad er CrossFit?',
     coaches: 'Trænere',
     library: 'Bibliotek',
     pricing: 'Priser',
@@ -12,6 +13,7 @@ export const da = {
     freeTrial: 'Gratis Prøvetime',
     classes: 'Hold',
     members: 'Medlemmer',
+    referrals: 'Henvisninger',
   },
   footer: {
     rightsReserved: 'Alle rettigheder forbeholdes.',
@@ -188,6 +190,61 @@ export const da = {
     coach9Bio: 'Marcus designer de mest djævelsk effektive metcons. Hans træning vil udfordre din motor og presse dine grænser.',
     coach10Specialty: 'Ernærings- & Præstationscoach',
     coach10Bio: 'Isabelle mener, at fitness strækker sig til køkkenet. Hun hjælper medlemmer med at finjustere deres ernæring for at forbedre præstationen og nå deres mål.',
+  },
+  whatIsCrossfit: {
+    title: 'Hvad er CrossFit?',
+    subtitle: 'Fitness-sporten. En livsstil kendetegnet ved sikker, effektiv træning og sund ernæring.',
+    definition: {
+      title: 'Mere End en Træning',
+      text1: 'CrossFit er en træningsmetode, der coacher folk i alle former og størrelser til at forbedre deres fysiske velvære og kardiovaskulære kondition i et hardcore, men alligevel accepterende og opmuntrende miljø.',
+      text2: 'Det er en blanding af gymnastik, vægtløftning, løb, roning og meget mere. Træningerne er forskellige hver dag og designet til at være universelt skalerbare, hvilket gør det til den perfekte anvendelse for enhver engageret person uanset erfaring.',
+    },
+    methodology: {
+      title: 'Metoden',
+      varied: {
+        title: 'Konstant Varieret',
+        text: 'Hver dag bringer en ny udfordring. Du kommer aldrig til at kede dig, og din krop vil konstant tilpasse sig, hvilket gør dig til en alsidig atlet.'
+      },
+      intensity: {
+        title: 'Høj Intensitet',
+        text: 'Vi træner ved høj intensitet i forhold til din personlige kapacitet. Det er her, resultaterne findes. Det er katalysatoren for forandring.'
+      },
+      functional: {
+        title: 'Funktionelle Bevægelser',
+        text: 'Vi træner bevægelser, der efterligner hverdagen, som at squatte, løfte og skubbe. Dette gør dig stærkere til alt, hvad livet byder på.'
+      }
+    },
+    benefits: {
+      title: 'Fordelene er Uendelige',
+      strength: {
+        title: 'Øget Styrke',
+        text: 'Løft tungt, bliv stærk. Vores programmering opbygger et solidt fundament af funktionel styrke, der omsættes til reel kraft.'
+      },
+      endurance: {
+        title: 'Forbedret Udholdenhed',
+        text: 'Fra lange løbeture til træning med mange gentagelser, vil du opbygge en motor, der bare ikke giver op. Din kardiovaskulære og muskulære udholdenhed vil stige til vejrs.'
+      },
+      community: {
+        title: 'Ubrydeligt Fællesskab',
+        text: 'Du melder dig ikke bare ind i et fitnesscenter, du bliver en del af en familie. Vi sveder, kæmper og lykkes sammen. Støtten er uovertruffen.'
+      },
+      confidence: {
+        title: 'Styrket Selvtillid',
+        text: 'At konsekvent overvinde fysiske og mentale udfordringer i træningscenteret opbygger et niveau af selvtillid, der gennemsyrer alle aspekter af dit liv.'
+      },
+      mental: {
+        title: 'Mental Sejhed',
+        text: 'CrossFit udfordrer dig til at skubbe forbi dine opfattede grænser. Du vil udvikle viljestyrke, modstandsdygtighed og en tankegang, der omfavner udfordringer.'
+      },
+      fun: {
+        title: 'Det er Faktisk Sjovt!',
+        text: 'Kombinationen af varierede træninger, et støttende fællesskab og målbare fremskridt gør træningen fornøjelig. Du vil glæde dig til at komme i centeret.'
+      }
+    },
+    forMe: {
+        title: 'Er CrossFit For Mig?',
+        text1: 'Absolut. Hver træning kan skaleres til dit niveau. Din bedstemor kan lave CrossFit. Olympiske atleter laver CrossFit. De skaleres forskelligt, men begge får en fantastisk træning. Vi møder dig, hvor du er, og hjælper dig med at komme derhen, hvor du vil.'
+    }
   },
   coaches: {
     title: 'Mød Vores Team',
@@ -684,9 +741,12 @@ export const da = {
     planPunch3Desc: 'Tre hold, ideel til at prøve forskellige tider eller som en gave.',
     planPunch3Price: '500 kr',
     contactUsButton: 'Kontakt Os',
-    accordionCoreTitle: 'Kerne-medlemskaber',
-    accordionFlexibleTitle: 'Fleksible Muligheder',
-    accordionCustomTitle: 'Brugerdefinerede Pakker',
+    coreTitle: 'Kerne-medlemskaber',
+    coreSubtitle: 'Vores mest populære planer for dedikerede medlemmer, der træner konsekvent.',
+    flexibleTitle: 'Fleksible Muligheder',
+    flexibleSubtitle: 'For dem med en dynamisk tidsplan eller besøgende, der ønsker en drop-in time.',
+    customTitle: 'Brugerdefineret & Erhverv',
+    customSubtitle: 'Skræddersyede løsninger til 1-til-1 træning, grupper og virksomheder.',
     feature: {
       '12classes': 'Op til 12 timer/md',
       unlimited: 'Ubegrænsede timer',
@@ -731,6 +791,8 @@ export const da = {
     product5Price: '175 kr',
     product6Name: 'Håndledsbind',
     product6Price: '100 kr',
+    productGiftCardName: 'Gavekort',
+    productGiftCardPrice: '350 kr',
   },
   contact: {
     title: 'Kontakt Os',
@@ -751,6 +813,25 @@ export const da = {
     title: 'Vores Familie',
     subtitle: 'Hjertet og sjælen i Kraftvrk. Vi sveder sammen, vi vokser sammen.',
     galleryTitle: 'Vores Fællesskab i Aktion',
+  },
+  referral: {
+    title: 'Spred Styrken',
+    subtitle: 'Henvend en ven eller en virksomhed og bliv belønnet for at udvide vores fællesskab.',
+    benefit: 'Henvend en ven, og I får begge 25 % rabat på jeres næste måned, når de tilmelder sig!',
+    tabFriend: 'Henvend en Ven',
+    tabCompany: 'Henvend en Virksomhed',
+    form: {
+        yourName: 'Dit Navn',
+        yourEmail: 'Din E-mail',
+        friendName: 'Vens Navn',
+        friendEmail: 'Vens E-mail',
+        companyName: 'Virksomhedsnavn',
+        contactName: 'Kontaktpersons Navn',
+        contactEmail: 'Kontaktpersons E-mail',
+        sendButton: 'Send Henvisning',
+    },
+    successTitle: 'Henvisning Sendt!',
+    successMessage: 'Tak fordi du hjælper vores fællesskab med at vokse. Vi vender snart tilbage.',
   },
   geminiLang: 'Danish',
   langCode: 'da-DK',

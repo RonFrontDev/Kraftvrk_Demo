@@ -4,6 +4,7 @@ export const es = {
     wod: 'WOD',
     schedule: 'Horario',
     about: 'Sobre Nosotros',
+    whatIsCrossfit: '¿Qué es CrossFit?',
     coaches: 'Entrenadores',
     library: 'Biblioteca',
     pricing: 'Precios',
@@ -12,6 +13,7 @@ export const es = {
     freeTrial: 'Prueba Gratis',
     classes: 'Clases',
     members: 'Miembros',
+    referrals: 'Referidos',
   },
   footer: {
     rightsReserved: 'Todos los derechos reservados.',
@@ -188,6 +190,61 @@ export const es = {
     coach9Bio: 'Marcus diseña los metcons más diabólicamente efectivos. Sus entrenamientos desafiarán tu motor y superarán tus límites.',
     coach10Specialty: 'Entrenadora de Nutrición y Rendimiento',
     coach10Bio: 'Isabelle cree que el fitness se extiende a la cocina. Ayuda a los miembros a ajustar su nutrición para impulsar el rendimiento y alcanzar sus objetivos.',
+  },
+  whatIsCrossfit: {
+    title: '¿Qué es CrossFit?',
+    subtitle: 'El Deporte del Fitness. Un estilo de vida caracterizado por ejercicio seguro y efectivo y una nutrición adecuada.',
+    definition: {
+      title: 'Más Que un Entrenamiento',
+      text1: 'CrossFit es una metodología de entrenamiento que enseña a personas de todas las formas y tamaños a mejorar su bienestar físico y su condición cardiovascular en un ambiente intenso pero acogedor y alentador.',
+      text2: 'Es una mezcla de gimnasia, halterofilia, carrera, remo y más. Los entrenamientos son diferentes cada día, diseñados para ser universalmente escalables, lo que lo convierte en la aplicación perfecta para cualquier individuo comprometido, independientemente de su experiencia.',
+    },
+    methodology: {
+      title: 'La Metodología',
+      varied: {
+        title: 'Constantemente Variado',
+        text: 'Cada día trae un nuevo desafío. Nunca te aburrirás, y tu cuerpo se adaptará constantemente, convirtiéndote en un atleta completo.'
+      },
+      intensity: {
+        title: 'Alta Intensidad',
+        text: 'Entrenamos a alta intensidad en relación con tu capacidad personal. Aquí es donde están los resultados. Es el catalizador del cambio.'
+      },
+      functional: {
+        title: 'Movimientos Funcionales',
+        text: 'Entrenamos movimientos que imitan la vida cotidiana, como agacharse, levantar y empujar. Esto te hace más fuerte para lo que sea que la vida te depare.'
+      }
+    },
+    benefits: {
+      title: 'Los Beneficios Son Infinitos',
+      strength: {
+        title: 'Mayor Fuerza',
+        text: 'Levanta pesado, ponte fuerte. Nuestra programación construye una base sólida de fuerza funcional que se traduce en poder en el mundo real.'
+      },
+      endurance: {
+        title: 'Resistencia Mejorada',
+        text: 'Desde carreras largas hasta entrenamientos de altas repeticiones, construirás un motor que simplemente no se rinde. Tu resistencia cardiovascular y muscular se disparará.'
+      },
+      community: {
+        title: 'Comunidad Inquebrantable',
+        text: 'No solo te unes a un gimnasio, te unes a una familia. Sudamos, luchamos y triunfamos juntos. El apoyo es inigualable.'
+      },
+      confidence: {
+        title: 'Confianza Aumentada',
+        text: 'Superar constantemente los desafíos físicos y mentales en el gimnasio construye un nivel de autoconfianza que impregna todos los aspectos de tu vida.'
+      },
+      mental: {
+        title: 'Fortaleza Mental',
+        text: 'CrossFit te desafía a superar tus límites percibidos. Desarrollarás agallas, resiliencia y una mentalidad que acepta los desafíos.'
+      },
+      fun: {
+        title: '¡Es Realmente Divertido!',
+        text: 'La combinación de entrenamientos variados, una comunidad de apoyo y un progreso medible hace que el entrenamiento sea agradable. Desearás venir al gimnasio.'
+      }
+    },
+    forMe: {
+        title: '¿Es CrossFit Para Mí?',
+        text1: 'Absolutamente. Cada entrenamiento es escalable a tu habilidad. Tu abuela puede hacer CrossFit. Los atletas olímpicos hacen CrossFit. Se escalan de manera diferente, pero ambos obtienen un gran entrenamiento. Te encontramos donde estás y te ayudamos a llegar a donde quieres ir.'
+    }
   },
   coaches: {
     title: 'Conoce a Nuestro Equipo',
@@ -684,9 +741,12 @@ export const es = {
     planPunch3Desc: 'Tres clases, ideal para probar diferentes horarios o como regalo.',
     planPunch3Price: '€75',
     contactUsButton: 'Contáctanos',
-    accordionCoreTitle: 'Membresías Principales',
-    accordionFlexibleTitle: 'Opciones Flexibles',
-    accordionCustomTitle: 'Paquetes Personalizados',
+    coreTitle: 'Membresías Principales',
+    coreSubtitle: 'Nuestros planes más populares para miembros dedicados que entrenan de forma consistente.',
+    flexibleTitle: 'Opciones Flexibles',
+    flexibleSubtitle: 'Para aquellos con un horario dinámico o visitantes que buscan una clase suelta.',
+    customTitle: 'Personalizado y Corporativo',
+    customSubtitle: 'Soluciones a medida para entrenamiento 1 a 1, grupos y empresas.',
     feature: {
       '12classes': 'Hasta 12 clases/mes',
       unlimited: 'Clases ilimitadas',
@@ -731,6 +791,8 @@ export const es = {
     product5Price: '€25',
     product6Name: 'Muñequeras',
     product6Price: '€15',
+    productGiftCardName: 'Tarjeta Regalo',
+    productGiftCardPrice: '€50',
   },
   contact: {
     title: 'Ponte en Contacto',
@@ -751,6 +813,25 @@ export const es = {
     title: 'Nuestra Familia',
     subtitle: 'El corazón y el alma de Kraftvrk. Sudamos juntos, crecemos juntos.',
     galleryTitle: 'Nuestra Comunidad en Acción',
+  },
+  referral: {
+    title: 'Comparte la Fuerza',
+    subtitle: 'Recomienda a un amigo o una empresa y obtén recompensas por hacer crecer nuestra comunidad.',
+    benefit: '¡Recomienda a un amigo y ambos obtendrán un 25% de descuento en su próximo mes cuando se inscriba!',
+    tabFriend: 'Recomendar a un Amigo',
+    tabCompany: 'Recomendar una Empresa',
+    form: {
+        yourName: 'Tu Nombre',
+        yourEmail: 'Tu Correo Electrónico',
+        friendName: 'Nombre del Amigo',
+        friendEmail: 'Correo Electrónico del Amigo',
+        companyName: 'Nombre de la Empresa',
+        contactName: 'Nombre de la Persona de Contacto',
+        contactEmail: 'Correo Electrónico de Contacto',
+        sendButton: 'Enviar Recomendación',
+    },
+    successTitle: '¡Recomendación Enviada!',
+    successMessage: 'Gracias por ayudarnos a hacer crecer nuestra comunidad. Nos pondremos en contacto en breve.',
   },
   geminiLang: 'Spanish',
   langCode: 'es-ES',

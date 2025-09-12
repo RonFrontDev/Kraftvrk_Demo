@@ -6,6 +6,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { CheckCircleIcon, ArrowRightIcon } from '../components/IconComponents';
 import { Accordion, AccordionItem } from '../components/ui/accordion';
 
+// PricingCard component with responsive text adjustments
 const PricingCard = ({ plan, popular = false }: { plan: any, popular?: boolean }) => {
     const { t } = useLanguage();
 
@@ -15,35 +16,43 @@ const PricingCard = ({ plan, popular = false }: { plan: any, popular?: boolean }
     const buttonText = isCustomPlan ? t('pricing.contactUsButton') : t('pricing.joinButton');
 
     return (
-        <div className={`border-2 ${popular ? 'border-accent' : 'border-gray-300 dark:border-gray-700'} bg-white dark:bg-[#1A1A1C] p-8 flex flex-col relative rounded-lg shadow-xl transform hover:-translate-y-2 transition-transform duration-300 h-full`}>
+        <div className={`border-2 ${popular ? 'border-accent' : 'border-gray-300 dark:border-gray-700'} bg-white dark:bg-[#1A1A1C] p-6 sm:p-8 flex flex-col relative rounded-lg shadow-xl transform hover:-translate-y-2 transition-transform duration-300 h-full`}>
             {popular && (
                 <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
                     <span className="bg-accent text-black text-sm font-bold tracking-wider rounded-full px-4 py-1 uppercase">{t('pricing.popular')}</span>
                 </div>
             )}
-            <h3 className="text-4xl font-bold text-gray-900 dark:text-white uppercase tracking-wider">{t(plan.title)}</h3>
-            <p className="mt-4 text-gray-600 dark:text-gray-400 flex-grow">{t(plan.description)}</p>
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white uppercase tracking-wider">{t(plan.title)}</h3>
+            <p className="mt-4 text-gray-600 dark:text-gray-400 flex-grow text-sm sm:text-base">{t(plan.description)}</p>
             <div className="mt-6">
-                <span className="text-5xl lg:text-6xl font-black text-gray-900 dark:text-white">{t(plan.price)}</span>
-                {plan.billingCycle && <span className="text-lg text-gray-600 dark:text-gray-400">/{t(plan.billingCycle)}</span>}
+                <span className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-white">{t(plan.price)}</span>
+                {plan.billingCycle && <span className="text-base sm:text-lg text-gray-600 dark:text-gray-400">/{t(plan.billingCycle)}</span>}
             </div>
-            <ul className="mt-8 space-y-4 text-gray-700 dark:text-gray-300 flex-grow">
+            <ul className="mt-8 space-y-4 text-gray-700 dark:text-gray-300 flex-grow text-sm sm:text-base">
                 {plan.features.map((feature: string, index: number) => (
-                    <li key={index} className="flex items-center">
-                        <CheckCircleIcon className="h-6 w-6 text-accent mr-3 flex-shrink-0" />
+                    <li key={index} className="flex items-start">
+                        <CheckCircleIcon className="h-5 w-5 sm:h-6 sm:w-6 text-accent mr-3 flex-shrink-0 mt-1" />
                         <span>{t(feature)}</span>
                     </li>
                 ))}
             </ul>
             <ReactRouterDOM.NavLink
                 to="/contact"
-                className={`mt-10 block w-full text-center font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg ${popular ? 'bg-accent text-black hover:bg-accent-dark' : 'bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-400 dark:hover:bg-gray-600'}`}
+                className={`mt-10 block w-full text-center font-bold py-3 px-6 text-base sm:text-lg uppercase tracking-wider rounded-md transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg ${popular ? 'bg-accent text-black hover:bg-accent-dark' : 'bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-400 dark:hover:bg-gray-600'}`}
             >
                 {buttonText}
             </ReactRouterDOM.NavLink>
         </div>
     );
 };
+
+// Accordion Trigger Component
+const AccordionTriggerContent = ({ title, subtitle }: { title: string, subtitle: string }) => (
+    <div className="text-left">
+        <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900 dark:text-white uppercase tracking-wider">{title}</h2>
+        <p className="mt-1 text-sm text-gray-600 dark:text-gray-400 normal-case tracking-normal">{subtitle}</p>
+    </div>
+);
 
 
 const MembershipPage = (): React.ReactNode => {
@@ -79,13 +88,13 @@ const MembershipPage = (): React.ReactNode => {
 
             <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-32">
                 <div className="text-center mb-16">
-                    <h1 className="text-7xl font-extrabold uppercase tracking-widest text-white">{t('pricing.title')}</h1>
-                    <p className="text-xl text-gray-300 max-w-3xl mx-auto">{t('pricing.subtitle')}</p>
+                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold uppercase tracking-widest text-white">{t('pricing.title')}</h1>
+                    <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">{t('pricing.subtitle')}</p>
                 </div>
 
                 <div className="max-w-4xl mx-auto mb-16 bg-white dark:bg-[#1A1A1C] border-2 border-accent p-8 text-center shadow-lg rounded-lg">
-                    <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white uppercase">{t('pricing.trialTitle')}</h2>
-                    <p className="mt-4 text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">{t('pricing.trialSubtitle')}</p>
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white uppercase">{t('pricing.trialTitle')}</h2>
+                    <p className="mt-4 text-base sm:text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">{t('pricing.trialSubtitle')}</p>
                     <ReactRouterDOM.NavLink 
                         to="/contact" 
                         className="mt-8 inline-flex items-center gap-3 bg-accent text-black font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-md hover:bg-accent-dark transition-colors duration-300 transform hover:-translate-y-1 hover:shadow-lg"
@@ -96,22 +105,48 @@ const MembershipPage = (): React.ReactNode => {
                 </div>
                 
                 <Accordion defaultValue="core">
-                    <AccordionItem value="core" trigger={t('pricing.accordionCoreTitle')}>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <AccordionItem 
+                        value="core" 
+                        trigger={
+                            <AccordionTriggerContent 
+                                title={t('pricing.coreTitle')} 
+                                subtitle={t('pricing.coreSubtitle')}
+                            />
+                        }
+                    >
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
                             {corePlans.map((plan, index) => (
                                 <PricingCard key={index} plan={plan} popular={plan.popular} />
                             ))}
                         </div>
                     </AccordionItem>
-                    <AccordionItem value="flexible" trigger={t('pricing.accordionFlexibleTitle')}>
-                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <AccordionItem 
+                        value="flexible"
+                        trigger={
+                            <AccordionTriggerContent 
+                                title={t('pricing.flexibleTitle')}
+                                subtitle={t('pricing.flexibleSubtitle')}
+                            />
+                        }
+                    >
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-4">
                             {flexiblePlans.map((plan, index) => (
                                 <PricingCard key={index} plan={plan} popular={plan.popular} />
                             ))}
                         </div>
                     </AccordionItem>
-                    <AccordionItem value="custom" trigger={t('pricing.accordionCustomTitle')}>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <AccordionItem
+                        value="custom"
+                        trigger={
+                             <AccordionTriggerContent 
+                                title={t('pricing.customTitle')}
+                                subtitle={t('pricing.customSubtitle')}
+                            />
+                        }
+                    >
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
                             {customPlans.map((plan, index) => (
                                 <PricingCard key={index} plan={plan} popular={plan.popular} />
                             ))}
