@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion, type Variants } from 'framer-motion';
+import Image from './Image';
 
 // FIX: Explicitly type 'itemVariants' with Variants from framer-motion.
 // This ensures TypeScript correctly interprets the 'transition' property
@@ -18,7 +19,8 @@ const itemVariants: Variants = {
 };
 
 // FIX: Changed return type to JSX.Element to fix type issues with framer-motion props.
-const ProductCard = ({ name, price, image }: { name: string, price: string, image: string }): JSX.Element => {
+// FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
+const ProductCard = ({ name, price, image }: { name: string, price: string, image: string }) => {
     const { t } = useLanguage();
     return (
         <motion.div 
@@ -27,7 +29,7 @@ const ProductCard = ({ name, price, image }: { name: string, price: string, imag
             whileHover={{ y: -5, transition: { duration: 0.2 } }}
         >
             <div className="relative aspect-square w-full overflow-hidden">
-                <img src={image} alt={name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <Image src={image} alt={name} className="absolute inset-0 w-full h-full" imageClassName="transition-transform duration-500 group-hover:scale-110" />
             </div>
             <div className="p-4 flex flex-col flex-grow">
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white uppercase tracking-wide flex-grow">{name}</h3>

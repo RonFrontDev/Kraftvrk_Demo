@@ -15,6 +15,8 @@ export const en = {
     classes: 'Classes',
     members: 'Members',
     referrals: 'Referrals',
+    faq: 'FAQ',
+    rentClub: 'Rent The Club',
   },
   // Footer
   footer: {
@@ -251,6 +253,26 @@ export const en = {
         title: 'Is CrossFit For Me?',
         text1: 'Absolutely. Every workout is scalable to your ability. Your grandmother can do CrossFit. Olympic athletes do CrossFit. They are scaled differently, but they both get a great workout. We meet you where you are and help you get where you want to go.'
     }
+  },
+  // FAQ Page
+  faq: {
+    title: 'Frequently Asked Questions',
+    subtitle: 'Your questions, answered. Find everything you need to know to get started with us.',
+    q1_title: 'What exactly is CrossFit?',
+    q1_answer: 'CrossFit is a strength and conditioning methodology based on constantly varied, high-intensity functional movements. In simple terms, we combine elements of weightlifting, gymnastics, and cardio to create challenging and effective workouts that improve your overall fitness and prepare you for any physical challenge life throws your way.',
+    q2_title: 'Do I need to be in shape to start?',
+    q2_answer: 'Absolutely not! This is one of the biggest misconceptions. CrossFit is for everyone, regardless of age, experience, or current fitness level. Every workout and movement is universally scalable, meaning we adjust the difficulty to match your individual ability. Our coaches are experts at finding the right starting point for you.',
+    q3_title: 'What should I bring to my first class?',
+    q3_answer: 'Just bring a water bottle, wear comfortable athletic clothing and shoes you can move in, and most importantly, bring a positive attitude and a willingness to learn. We\'ll take care of the rest!',
+    q4_title: 'What is a typical class like?',
+    q4_answer: 'A standard one-hour class usually follows this structure: \n1. **Warm-up:** A coach-led session to get your body moving and prepared for the workout. \n2. **Strength/Skill:** We focus on a specific lift (like squats or deadlifts) or a gymnastic skill (like pull-ups or handstands). \n3. **WOD (Workout of the Day):** The main conditioning piece, which changes daily to keep things interesting and challenging. \n4. **Cooldown:** Stretching and mobility work to help with recovery.',
+    q5_title: 'Is CrossFit dangerous? I\'ve heard about injuries.',
+    q5_answer: 'Any form of physical activity carries some risk of injury. However, at Kraftvrk, safety is our top priority. We mitigate risk through expert coaching, a strong emphasis on proper form and technique, and scaling workouts appropriately for each individual. Listening to your body and our coaches is key to a safe and effective fitness journey.',
+    q6_title: 'What if I can\'t do a movement like a pull-up or lift a heavy barbell?',
+    q6_answer: 'No problem at all! Every single movement in CrossFit has multiple scaling options. For example, if you can\'t do a pull-up, you might start with ring rows or use resistance bands for assistance. If a weight is too heavy, we reduce it. Our coaches will provide modifications to ensure you get a great workout at a level that is safe and challenging for you.',
+    ctaTitle: 'Still Have Questions?',
+    ctaText: 'Our team is here to help. Don\'t hesitate to reach out with any other questions you might have.',
+    ctaButton: 'Contact Us',
   },
   // Coaches Page
   coaches: {
@@ -852,4 +874,26 @@ export const en = {
   geminiLang: 'English',
   // Language code for date formatting
   langCode: 'en-US',
+  rentClub: {
+    title: 'Rent The Club',
+    text: 'You can rent the club for your company, team, training camp, bachelor party, or another event.',
+    cta: 'Inquire Now',
+    gymDescriptionTitle: 'Our Space',
+    gymDescriptionText: 'Our 500 square meter facility boasts high ceilings and an open-plan layout, providing a spacious and motivating environment. The gym is equipped with a dedicated lifting area, a large rig for gymnastics, and ample floor space for conditioning workouts. We also offer changing rooms, showers, and a lounge area for relaxation before or after your session.',
+    equipmentTitle: 'Equipment',
+    equipmentList: [
+      'Rogue Rigs & Racks',
+      'Eleiko Barbells & Plates',
+      'Concept2 Rowers',
+      'Concept2 SkiErgs',
+      'Assault Bikes',
+      'Dumbbells (5-100kg)',
+      'Kettlebells (8-48kg)',
+      'Climbing Ropes',
+      'Gymnastic Rings',
+      'Plyo Boxes',
+      'Medicine Balls',
+      'GHD Machines'
+    ]
+  },
 };

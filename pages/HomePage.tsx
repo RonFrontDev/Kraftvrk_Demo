@@ -1,4 +1,5 @@
 
+
 import React, { useState, useEffect } from 'react';
 // FIX: Changed to namespace import to fix module resolution issues.
 import * as ReactRouterDOM from 'react-router-dom';
@@ -6,6 +7,8 @@ import { UsersIcon, BoltIcon, ArrowRightIcon, ClipboardIcon, DumbbellIcon, Calen
 import { useLanguage } from '../contexts/LanguageContext';
 import ClassCard from '../components/ClassCard';
 import TestimonialCard from '../components/TestimonialCard';
+import Image from '../components/Image';
+import { imageAssets } from '../data/images';
 
 const heroTexts = [
   { line1: 'home.heroTitle1', line2: 'home.heroTitle2', subtitle: 'home.heroSubtitle' },
@@ -28,9 +31,12 @@ const StepCard = ({ num, icon, title, text }: { num: string, icon: React.ReactNo
 const DifferenceItem = ({ num, icon, title, text, image, reverse = false }: { num: string, icon: React.ReactNode, title: string, text: string, image: string, reverse?: boolean }) => (
     <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 lg:gap-16`}>
         <div className="lg:w-1/2 w-full">
-            <div className="overflow-hidden rounded-2xl shadow-2xl">
-                <img src={image} alt={title} className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500" />
-            </div>
+            <Image 
+                src={image} 
+                alt={title} 
+                className="w-full h-full rounded-2xl shadow-2xl" 
+                imageClassName="transform hover:scale-110 transition-transform duration-500"
+            />
         </div>
         <div className="lg:w-1/2 w-full">
             <div className="flex items-center gap-4">
@@ -119,14 +125,14 @@ const HomePage = (): React.ReactNode => {
                     icon={<UsersIcon className="h-12 w-12 text-accent"/>}
                     title={t('home.wmusd.item1.title')}
                     text={t('home.wmusd.item1.text')}
-                    image="https://images.pexels.com/photos/3775131/pexels-photo-3775131.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    image={imageAssets.homeDifferenceCommunity}
                 />
                 <DifferenceItem 
                     num="02"
                     icon={<ClipboardIcon className="h-12 w-12 text-accent"/>}
                     title={t('home.wmusd.item2.title')}
                     text={t('home.wmusd.item2.text')}
-                    image="https://images.pexels.com/photos/791763/pexels-photo-791763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    image={imageAssets.homeDifferenceCoaching}
                     reverse
                 />
                 <DifferenceItem 
@@ -134,7 +140,7 @@ const HomePage = (): React.ReactNode => {
                     icon={<BoltIcon className="h-12 w-12 text-accent"/>}
                     title={t('home.wmusd.item3.title')}
                     text={t('home.wmusd.item3.text')}
-                    image="https://images.pexels.com/photos/2261477/pexels-photo-2261477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    image={imageAssets.homeDifferenceEnergy}
                 />
             </div>
         </div>
@@ -186,9 +192,9 @@ const HomePage = (): React.ReactNode => {
                 <h2 className="text-5xl font-extrabold text-center uppercase tracking-wider text-gray-900 dark:text-white">{t('home.classesTitle')}</h2>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-2">
-                <ClassCard title={t('home.class1Title')} text={t('home.class1Text')} image="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
-                <ClassCard title={t('home.class2Title')} text={t('home.class2Text')} image="https://images.pexels.com/photos/3253501/pexels-photo-3253501.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
-                <ClassCard title={t('home.class3Title')} text={t('home.class3Text')} image="https://images.pexels.com/photos/4164085/pexels-photo-4164085.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+                <ClassCard title={t('home.class1Title')} text={t('home.class1Text')} image={imageAssets.homeClassWod} />
+                <ClassCard title={t('home.class2Title')} text={t('home.class2Text')} image={imageAssets.homeClassOpenGym} />
+                <ClassCard title={t('home.class3Title')} text={t('home.class3Text')} image={imageAssets.homeClassCommunity} />
             </div>
         </div>
       </section>
@@ -203,17 +209,17 @@ const HomePage = (): React.ReactNode => {
                 <TestimonialCard 
                     name="Jessica M." 
                     quote={t('home.testimonial1')} 
-                    image="https://randomuser.me/api/portraits/women/21.jpg" 
+                    image={imageAssets.testimonialJessica} 
                 />
                 <TestimonialCard 
                     name="David L." 
                     quote={t('home.testimonial2')} 
-                    image="https://randomuser.me/api/portraits/men/32.jpg" 
+                    image={imageAssets.testimonialDavid} 
                 />
                 <TestimonialCard 
                     name="Sarah K." 
                     quote={t('home.testimonial3')}
-                    image="https://randomuser.me/api/portraits/women/45.jpg" 
+                    image={imageAssets.testimonialSarah} 
                 />
             </div>
          </div>

@@ -8,6 +8,7 @@ import { Label } from '../components/ui/label';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Users as UsersIcon, Building as BuildingIcon, CheckCircle as CheckCircleIcon } from 'lucide-react';
 import { cn } from '../lib/utils';
+import { imageAssets } from '../data/images';
 
 type Tab = 'friend' | 'company';
 
@@ -103,7 +104,7 @@ const ReferralPage = (): React.ReactNode => {
         <div className="relative min-h-screen">
              <div 
                 className="absolute inset-0 bg-cover bg-center bg-fixed"
-                style={{ backgroundImage: "url('https://images.pexels.com/photos/3775131/pexels-photo-3775131.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')" }}
+                style={{ backgroundImage: `url('${imageAssets.referralBg}')` }}
             />
             <div className="absolute inset-0 bg-black/70 dark:bg-black/80" />
             

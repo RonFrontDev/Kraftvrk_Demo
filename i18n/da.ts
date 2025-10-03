@@ -14,6 +14,8 @@ export const da = {
     classes: 'Hold',
     members: 'Medlemmer',
     referrals: 'Henvisninger',
+    faq: 'FAQ',
+    rentClub: 'Lej Klubben',
   },
   footer: {
     rightsReserved: 'Alle rettigheder forbeholdes.',
@@ -246,6 +248,25 @@ export const da = {
         text1: 'Absolut. Hver træning kan skaleres til dit niveau. Din bedstemor kan lave CrossFit. Olympiske atleter laver CrossFit. De skaleres forskelligt, men begge får en fantastisk træning. Vi møder dig, hvor du er, og hjælper dig med at komme derhen, hvor du vil.'
     }
   },
+  faq: {
+    title: 'Ofte Stillede Spørgsmål',
+    subtitle: 'Dine spørgsmål, besvaret. Find alt hvad du behøver at vide for at komme i gang hos os.',
+    q1_title: 'Hvad er CrossFit helt præcist?',
+    q1_answer: 'CrossFit er en styrke- og konditionsmetode baseret på konstant varierede, højintensive funktionelle bevægelser. Kort sagt kombinerer vi elementer fra vægtløftning, gymnastik og cardio for at skabe udfordrende og effektive træningspas, der forbedrer din generelle fitness og forbereder dig på enhver fysisk udfordring, livet byder på.',
+    q2_title: 'Skal jeg være i form for at starte?',
+    q2_answer: 'Absolut ikke! Dette er en af de største misforståelser. CrossFit er for alle, uanset alder, erfaring eller nuværende fitnessniveau. Hver træning og bevægelse er universelt skalerbar, hvilket betyder, at vi justerer sværhedsgraden, så den passer til din individuelle formåen. Vores trænere er eksperter i at finde det rette udgangspunkt for dig.',
+    q3_title: 'Hvad skal jeg medbringe til min første time?',
+    q3_answer: 'Medbring bare en vandflaske, tag behageligt sportstøj og sko på, som du kan bevæge dig i, og vigtigst af alt, medbring en positiv attitude og en vilje til at lære. Vi klarer resten!',
+    q4_title: 'Hvordan ser en typisk time ud?',
+    q4_answer: 'En standard time på en time følger normalt denne struktur: \n1. **Opvarmning:** En trænerstyret session for at få din krop i gang og forberedt til træningen. \n2. **Styrke/Færdighed:** Vi fokuserer på et specifikt løft (som squats eller dødløft) eller en gymnastisk færdighed (som pull-ups eller handstands). \n3. **WOD (Workout of the Day):** Hovedkonditionsdelen, som ændrer sig dagligt for at holde det interessant og udfordrende. \n4. **Nedkøling:** Udstrækning og mobilitetsarbejde for at hjælpe med restitution.',
+    q5_title: 'Er CrossFit farligt? Jeg har hørt om skader.',
+    q5_answer: 'Enhver form for fysisk aktivitet indebærer en vis risiko for skader. Men hos Kraftvrk er sikkerhed vores højeste prioritet. Vi minimerer risikoen gennem ekspertcoaching, et stærkt fokus på korrekt form og teknik, og ved at skalere træningerne passende for hver enkelt person. At lytte til din krop og vores trænere er nøglen til en sikker og effektiv fitnessrejse.',
+    q6_title: 'Hvad nu hvis jeg ikke kan udføre en bevægelse som en pull-up eller løfte en tung vægtstang?',
+    q6_answer: 'Slet intet problem! Hver eneste bevægelse i CrossFit har flere skaleringsmuligheder. For eksempel, hvis du ikke kan lave en pull-up, kan du starte med ring rows eller bruge elastikker til hjælp. Hvis en vægt er for tung, reducerer vi den. Vores trænere vil give modifikationer for at sikre, at du får en god træning på et niveau, der er sikkert og udfordrende for dig.',
+    ctaTitle: 'Har du stadig spørgsmål?',
+    ctaText: 'Vores team er her for at hjælpe. Tøv ikke med at kontakte os med eventuelle andre spørgsmål, du måtte have.',
+    ctaButton: 'Kontakt Os',
+  },
   coaches: {
     title: 'Mød Vores Team',
     subtitle: 'De passionerede eksperter dedikeret til din succes.',
@@ -368,7 +389,7 @@ export const da = {
         description: 'Et strict overhead pres udført stående, der opbygger skulderstyrke og stabilitet.',
         instructions: [
           'Stå med stangen i en front rack-position, hænderne lige uden for dine skuldre.',
-          'Spænd i maven og ballerne for at undgå at svaje i ryggen. Brug ikke dine ben til at hjælpe.',
+          'Spænd i maven og ballerne for at undgå at svaje i ryggen. Brug ikke dine ben til at hjælp.',
           'Pres stangen direkte over hovedet, indtil dine albuer er helt låst.',
           'Sænk stangen kontrolleret tilbage til front rack-positionen.'
         ],
@@ -833,6 +854,28 @@ export const da = {
     },
     successTitle: 'Henvisning Sendt!',
     successMessage: 'Tak fordi du hjælper vores fællesskab med at vokse. Vi vender snart tilbage.',
+  },
+  rentClub: {
+    title: 'Lej Klubben',
+    text: 'Du kan leje klubben til dit firma, team, træningscamp, polterabend eller et andet event.',
+    cta: 'Forespørg Nu',
+    gymDescriptionTitle: 'Vores Rum',
+    gymDescriptionText: 'Vores 500 kvadratmeter store anlæg har højt til loftet og en åben planløsning, der giver et rummeligt og motiverende miljø. Fitnesscentret er udstyret med et dedikeret løfteområde, et stort rig til gymnastik og rigelig gulvplads til konditionstræning. Vi tilbyder også omklædningsrum, brusere og et loungeområde til afslapning før eller efter din session.',
+    equipmentTitle: 'Udstyr',
+    equipmentList: [
+      'Rogue Rigs & Racks',
+      'Eleiko Vægtstænger & Skiver',
+      'Concept2 Romaskiner',
+      'Concept2 SkiErgs',
+      'Assault Bikes',
+      'Håndvægte (5-100 kg)',
+      'Kettlebells (8-48 kg)',
+      'Klatrereb',
+      'Gymnastikringe',
+      'Plyo Boxes',
+      'Medicinbolde',
+      'GHD Maskiner'
+    ]
   },
   geminiLang: 'Danish',
   langCode: 'da-DK',

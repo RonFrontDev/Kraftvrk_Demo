@@ -14,6 +14,8 @@ export const is = {
     classes: 'Tímar',
     members: 'Meðlimir',
     referrals: 'Tilvísanir',
+    faq: 'Algengar Spurningar',
+    rentClub: 'Leigðu Stöðina',
   },
   footer: {
     rightsReserved: 'Allur réttur áskilinn.',
@@ -246,6 +248,25 @@ export const is = {
         text1: 'Algjörlega. Hver æfing er skalanleg að þinni getu. Amma þín getur stundað CrossFit. Ólympíufarar stunda CrossFit. Þær eru skalaðar á mismunandi hátt, en báðir fá frábæra æfingu. Við hittum þig þar sem þú ert og hjálpum þér að komast þangað sem þú vilt fara.'
     }
   },
+  faq: {
+    title: 'Algengar Spurningar',
+    subtitle: 'Þínum spurningum svarað. Finndu allt sem þú þarft að vita til að byrja hjá okkur.',
+    q1_title: 'Hvað er CrossFit nákvæmlega?',
+    q1_answer: 'CrossFit er styrktar- og þolþjálfunaraðferð byggð á stöðugt breytilegum, hár-intensitets hagnýtum hreyfingum. Einfaldlega sagt, við blandum saman þáttum úr ólympískum lyftingum, fimleikum og þolþjálfun til að búa til krefjandi og árangursríkar æfingar sem bæta almenna líkamsrækt þína og undirbúa þig fyrir hvaða líkamlegu áskorun sem lífið býður upp á.',
+    q2_title: 'Þarf ég að vera í góðu formi til að byrja?',
+    q2_answer: 'Alls ekki! Þetta er ein stærsta ranghugmyndin. CrossFit er fyrir alla, óháð aldri, reynslu eða núverandi líkamsformi. Hver æfing og hreyfing er almennt skalanleg, sem þýðir að við aðlögum erfiðleikastigið að þinni einstaklingsbundnu getu. Þjálfarar okkar eru sérfræðingar í að finna rétta upphafsstaðinn fyrir þig.',
+    q3_title: 'Hvað á ég að taka með í fyrsta tímann?',
+    q3_answer: 'Komdu bara með vatnsflösku, klæddu þig í þægileg íþróttaföt og skó sem þú getur hreyft þig í, og síðast en ekki síst, komdu með jákvætt hugarfar og vilja til að læra. Við sjáum um restina!',
+    q4_title: 'Hvernig er dæmigerður tími?',
+    q4_answer: 'Venjulegur klukkutíma tími fylgir yfirleitt þessari uppbyggingu: \n1. **Upphitun:** Þjálfari leiðir þig í gegnum upphitun til að koma líkamanum í gang og undirbúa hann fyrir æfinguna. \n2. **Styrkur/Færni:** Við einbeitum okkur að ákveðinni lyftu (eins og hnébeygju eða réttstöðulyftu) eða fimleikafærni (eins og upphífingum eða handstöðu). \n3. **WOD (Æfing Dagsins):** Aðal þolþátturinn, sem breytist daglega til að halda hlutunum áhugaverðum og krefjandi. \n4. **Kæling:** Teygjur og hreyfanleikavinna til að hjálpa við endurheimt.',
+    q5_title: 'Er CrossFit hættulegt? Ég hef heyrt um meiðsli.',
+    q5_answer: 'Öll líkamleg hreyfing felur í sér einhverja hættu á meiðslum. Hins vegar er öryggi forgangsatriði hjá Kraftvrk. Við drögum úr áhættu með sérfræðiþjálfun, sterkri áherslu á rétta tækni og form, og með því að skala æfingar á viðeigandi hátt fyrir hvern einstakling. Að hlusta á líkamann og þjálfarana er lykillinn að öruggu og árangursríku líkamsræktarferðalagi.',
+    q6_title: 'Hvað ef ég get ekki gert ákveðna hreyfingu eins og upphífingu eða lyft þungri stöng?',
+    q6_answer: 'Ekkert mál! Hver einasta hreyfing í CrossFit hefur marga skölunarmöguleika. Til dæmis, ef þú getur ekki gert upphífingu gætirðu byrjað á hringjaróðri eða notað teygjur til aðstoðar. Ef þyngd er of þung, minnkum við hana. Þjálfarar okkar munu veita breytingar til að tryggja að þú fáir frábæra æfingu á stigi sem er öruggt og krefjandi fyrir þig.',
+    ctaTitle: 'Ertu Enn Með Spurningar?',
+    ctaText: 'Teymið okkar er hér til að hjálpa. Ekki hika við að hafa samband með aðrar spurningar sem þú gætir haft.',
+    ctaButton: 'Hafa Samband',
+  },
   coaches: {
     title: 'Hittu Teymið Okkar',
     subtitle: 'Ástríðufullir sérfræðingar sem eru helgaðir árangri þínum.',
@@ -415,6 +436,28 @@ export const is = {
     product6Price: '2.500 kr',
     productGiftCardName: 'Gjafakort',
     productGiftCardPrice: '7.000 kr',
+  },
+  rentClub: {
+    title: 'Leigðu Stöðina',
+    text: 'Þú getur leigt stöðina fyrir fyrirtækið þitt, lið, æfingabúðir, steggjapartí eða annan viðburð.',
+    cta: 'Senda Fyrirspurn',
+    gymDescriptionTitle: 'Okkar Aðstaða',
+    gymDescriptionText: 'Okkar 500 fermetra stöð státar af hárri lofthæð og opnu skipulagi sem skapar rúmgott og hvetjandi umhverfi. Stöðin er búin sérstöku lyftingasvæði, stórum ramma fyrir fimleika og nægu gólfplássi fyrir þolæfingar. Við bjóðum einnig upp á búningsklefa, sturtur og setustofu til að slaka á fyrir eða eftir æfingu.',
+    equipmentTitle: 'Búnaður',
+    equipmentList: [
+      'Rogue rammar & rekkir',
+      'Eleiko stangir & lóð',
+      'Concept2 róðrarvélar',
+      'Concept2 SkiErgs',
+      'Assault hjól',
+      'Handlóð (5-100 kg)',
+      'Ketilbjöllur (8-48 kg)',
+      'Klifurreipi',
+      'Fimleikahringir',
+      'Plyo kassar',
+      'Medisinboltar',
+      'GHD vélar'
+    ]
   },
   geminiLang: 'Icelandic',
   langCode: 'is-IS'

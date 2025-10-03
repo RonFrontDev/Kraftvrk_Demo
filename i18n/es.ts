@@ -14,6 +14,8 @@ export const es = {
     classes: 'Clases',
     members: 'Miembros',
     referrals: 'Referidos',
+    faq: 'Preguntas Frecuentes',
+    rentClub: 'Alquila el Club',
   },
   footer: {
     rightsReserved: 'Todos los derechos reservados.',
@@ -245,6 +247,25 @@ export const es = {
         title: '¿Es CrossFit Para Mí?',
         text1: 'Absolutamente. Cada entrenamiento es escalable a tu habilidad. Tu abuela puede hacer CrossFit. Los atletas olímpicos hacen CrossFit. Se escalan de manera diferente, pero ambos obtienen un gran entrenamiento. Te encontramos donde estás y te ayudamos a llegar a donde quieres ir.'
     }
+  },
+  faq: {
+    title: 'Preguntas Frecuentes',
+    subtitle: 'Tus preguntas, respondidas. Encuentra todo lo que necesitas saber para empezar con nosotros.',
+    q1_title: '¿Qué es exactamente CrossFit?',
+    q1_answer: 'CrossFit es una metodología de fuerza y acondicionamiento basada en movimientos funcionales constantemente variados y de alta intensidad. En términos sencillos, combinamos elementos de halterofilia, gimnasia y cardio para crear entrenamientos desafiantes y efectivos que mejoran tu condición física general y te preparan para cualquier desafío físico que la vida te presente.',
+    q2_title: '¿Necesito estar en forma para empezar?',
+    q2_answer: '¡Absolutamente no! Este es uno de los mayores mitos. CrossFit es para todos, sin importar la edad, experiencia o nivel de condición física actual. Cada entrenamiento y movimiento es universalmente escalable, lo que significa que ajustamos la dificultad para que coincida con tu capacidad individual. Nuestros entrenadores son expertos en encontrar el punto de partida adecuado para ti.',
+    q3_title: '¿Qué debo llevar a mi primera clase?',
+    q3_answer: 'Solo trae una botella de agua, usa ropa deportiva cómoda y zapatillas con las que puedas moverte y, lo más importante, trae una actitud positiva y ganas de aprender. ¡Nosotros nos encargamos del resto!',
+    q4_title: '¿Cómo es una clase típica?',
+    q4_answer: 'Una clase estándar de una hora suele seguir esta estructura: \n1. **Calentamiento:** Una sesión dirigida por el entrenador para poner tu cuerpo en movimiento y prepararlo para el entrenamiento. \n2. **Fuerza/Habilidad:** Nos enfocamos en un levantamiento específico (como sentadillas o peso muerto) o una habilidad gimnástica (como dominadas o paradas de manos). \n3. **WOD (Workout of the Day):** La parte principal de acondicionamiento, que cambia a diario para mantener las cosas interesantes y desafiantes. \n4. **Enfriamiento:** Estiramientos y trabajo de movilidad para ayudar en la recuperación.',
+    q5_title: '¿Es peligroso el CrossFit? He oído hablar de lesiones.',
+    q5_answer: 'Cualquier forma de actividad física conlleva algún riesgo de lesión. Sin embargo, en Kraftvrk, la seguridad es nuestra máxima prioridad. Mitigamos el riesgo a través de un entrenamiento experto, un fuerte énfasis en la forma y técnica adecuadas, y escalando los entrenamientos apropiadamente para cada individuo. Escuchar a tu cuerpo y a nuestros entrenadores es clave para un viaje de fitness seguro y efectivo.',
+    q6_title: '¿Y si no puedo hacer un movimiento como una dominada o levantar una barra pesada?',
+    q6_answer: '¡No hay ningún problema! Cada movimiento en CrossFit tiene múltiples opciones de escalado. Por ejemplo, si no puedes hacer una dominada, puedes empezar con remos en anillas o usar bandas de resistencia como ayuda. Si un peso es demasiado pesado, lo reducimos. Nuestros entrenadores te proporcionarán modificaciones para asegurarse de que obtengas un gran entrenamiento a un nivel que sea seguro y desafiante para ti.',
+    ctaTitle: '¿Todavía Tienes Preguntas?',
+    ctaText: 'Nuestro equipo está aquí para ayudar. No dudes en contactarnos con cualquier otra pregunta que puedas tener.',
+    ctaButton: 'Contáctanos',
   },
   coaches: {
     title: 'Conoce a Nuestro Equipo',
@@ -833,6 +854,28 @@ export const es = {
     },
     successTitle: '¡Recomendación Enviada!',
     successMessage: 'Gracias por ayudarnos a hacer crecer nuestra comunidad. Nos pondremos en contacto en breve.',
+  },
+  rentClub: {
+    title: 'Alquila el Club',
+    text: 'Puedes alquilar el club para tu empresa, equipo, campamento de entrenamiento, despedida de soltero u otro evento.',
+    cta: 'Consultar Ahora',
+    gymDescriptionTitle: 'Nuestro Espacio',
+    gymDescriptionText: 'Nuestras instalaciones de 500 metros cuadrados cuentan con techos altos y un diseño diáfano, proporcionando un ambiente espacioso y motivador. El gimnasio está equipado con un área de levantamiento dedicada, una gran estructura para gimnasia y un amplio espacio en el suelo para entrenamientos de acondicionamiento. También ofrecemos vestuarios, duchas y una zona de descanso para relajarse antes o después de la sesión.',
+    equipmentTitle: 'Equipamiento',
+    equipmentList: [
+      'Rigs y Racks Rogue',
+      'Barras y Discos Eleiko',
+      'Remos Concept2',
+      'SkiErgs Concept2',
+      'Assault Bikes',
+      'Mancuernas (5-100 kg)',
+      'Kettlebells (8-48 kg)',
+      'Cuerdas de Escalada',
+      'Anillas de Gimnasia',
+      'Cajones Pliométricos',
+      'Balones Medicinales',
+      'Máquinas GHD'
+    ]
   },
   geminiLang: 'Spanish',
   langCode: 'es-ES',

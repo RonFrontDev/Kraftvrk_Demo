@@ -1,4 +1,6 @@
 
+
+
 import React, { useState, useMemo } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { staticExercises } from '../data/exercises';
@@ -9,7 +11,8 @@ import { Input } from '../components/ui/input';
 
 const categories: (ExerciseCategory | 'all')[] = ['all', 'bootcamp', 'crossfit', 'weightlifting'];
 
-const ExerciseLibraryPage = (): React.ReactNode => {
+// FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
+const ExerciseLibraryPage = () => {
     const { t } = useLanguage();
     const [activeCategory, setActiveCategory] = useState<ExerciseCategory | 'all'>('all');
     const [selectedExercise, setSelectedExercise] = useState<Exercise | null>(null);

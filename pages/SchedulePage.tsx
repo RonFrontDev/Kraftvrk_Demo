@@ -1,5 +1,7 @@
 
 
+
+
 import React, { useState, useEffect } from 'react';
 // FIX: Changed to namespace import to fix module resolution issues.
 import * as ReactRouterDOM from 'react-router-dom';
@@ -9,12 +11,14 @@ import WodPreviewModal from '../components/WodPreviewModal';
 import { scheduleData, getCoachById, classDetailsMap } from '../data/roster';
 import type { ScheduleClassInfo, ScheduleClassType } from '../data/roster';
 import type { Wod, WodSection } from '../types';
+import Image from '../components/Image';
+import { imageAssets } from '../data/images';
 
 const classImageMap: Record<ScheduleClassType, string> = {
-  wod: 'https://images.pexels.com/photos/4753928/pexels-photo-4753928.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  opengym: 'https://images.pexels.com/photos/7031705/pexels-photo-7031705.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  community: 'https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  closed: 'https://images.pexels.com/photos/1337386/pexels-photo-1337386.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  wod: imageAssets.scheduleWod,
+  opengym: imageAssets.scheduleOpenGym,
+  community: imageAssets.scheduleCommunity,
+  closed: imageAssets.scheduleClosed,
 };
 
 const toYYYYMMDD = (date: Date): string => date.toISOString().split('T')[0];
@@ -45,6 +49,7 @@ const migrateWodsFromStorage = (storedWods: string | null): { [date: string]: Wo
   }
 };
 
+// FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
 const ClassEntry = ({ classInfo, onClassClick }: { classInfo: ScheduleClassInfo, onClassClick: () => void }) => {
     const { t } = useLanguage();
     
@@ -70,7 +75,7 @@ const ClassEntry = ({ classInfo, onClassClick }: { classInfo: ScheduleClassInfo,
             onClick={isClickable ? onClassClick : undefined}
             className={`bg-gray-200 dark:bg-gray-900/50 p-4 rounded-xl flex items-center gap-4 ${isClickable ? 'transition-all duration-300 hover:bg-gray-300 dark:hover:bg-gray-800 hover:shadow-lg transform hover:-translate-y-1 cursor-pointer' : ''}`}
         >
-            <img src={imageUrl} alt={t(details.nameKey)} className="w-16 h-16 rounded-full object-cover border-2 border-accent/50 flex-shrink-0" />
+            <Image src={imageUrl} alt={t(details.nameKey)} className="w-16 h-16 rounded-full border-2 border-accent/50 flex-shrink-0" />
             <div>
                 <p className="font-bold text-lg text-gray-900 dark:text-white">{classInfo.time}</p>
                 <p className="text-accent font-semibold">{t(details.nameKey)}</p>
@@ -86,7 +91,8 @@ const ClassEntry = ({ classInfo, onClassClick }: { classInfo: ScheduleClassInfo,
     );
 };
 
-const SchedulePage = (): React.ReactNode => {
+// FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
+const SchedulePage = () => {
     const { t } = useLanguage();
     const today = new Date().getDay();
     const initialDayIndex = today === 0 ? 6 : today - 1;
@@ -152,7 +158,7 @@ const SchedulePage = (): React.ReactNode => {
                                 ))
                             ) : (
                                 <div className="md:col-span-2 lg:col-span-3 bg-gray-200 dark:bg-gray-900/50 p-8 rounded-xl text-center flex flex-col items-center justify-center gap-4">
-                                     <img src={classImageMap.closed} alt={t('schedule.closed')} className="w-24 h-24 rounded-full object-cover border-4 border-gray-400 dark:border-gray-700 filter grayscale" />
+                                     <Image src={classImageMap.closed} alt={t('schedule.closed')} className="w-24 h-24 rounded-full border-4 border-gray-400 dark:border-gray-700" imageClassName="filter grayscale" />
                                     <p className="font-bold text-2xl text-gray-700 dark:text-gray-300">{t('schedule.closed')}</p>
                                 </div>
                             )}

@@ -5,6 +5,8 @@ import React from 'react';
 import * as ReactRouterDOM from 'react-router-dom';
 import { FacebookIcon, InstagramIcon, TwitterIcon } from './IconComponents';
 import { useLanguage } from '../contexts/LanguageContext';
+import Image from './Image';
+import { imageAssets } from '../data/images';
 
 const Footer = (): React.ReactNode => {
   const { t } = useLanguage();
@@ -46,12 +48,12 @@ const Footer = (): React.ReactNode => {
            <div>
             <h4 className="text-xl font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-4">{t('footer.gallery')}</h4>
             <div className="grid grid-cols-3 gap-2">
-                <img src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2" alt="gallery image 1" className="object-cover w-full h-full rounded-md" />
-                <img src="https://images.pexels.com/photos/1229356/pexels-photo-1229356.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2" alt="gallery image 2" className="object-cover w-full h-full rounded-md" />
-                <img src="https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2" alt="gallery image 3" className="object-cover w-full h-full rounded-md" />
-                <img src="https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2" alt="gallery image 4" className="object-cover w-full h-full rounded-md" />
-                <img src="https://images.pexels.com/photos/3490348/pexels-photo-3490348.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2" alt="gallery image 5" className="object-cover w-full h-full rounded-md" />
-                <img src="https://images.pexels.com/photos/4752861/pexels-photo-4752861.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2" alt="gallery image 6" className="object-cover w-full h-full rounded-md" />
+                <Image src={imageAssets.footerGallery1} alt="gallery image 1" className="w-full h-full rounded-md" />
+                <Image src={imageAssets.footerGallery2} alt="gallery image 2" className="w-full h-full rounded-md" />
+                <Image src={imageAssets.footerGallery3} alt="gallery image 3" className="w-full h-full rounded-md" />
+                <Image src={imageAssets.footerGallery4} alt="gallery image 4" className="w-full h-full rounded-md" />
+                <Image src={imageAssets.footerGallery5} alt="gallery image 5" className="w-full h-full rounded-md" />
+                <Image src={imageAssets.footerGallery6} alt="gallery image 6" className="w-full h-full rounded-md" />
             </div>
           </div>
           

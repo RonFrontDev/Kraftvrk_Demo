@@ -1,6 +1,7 @@
 
 
 
+
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion, Variants } from 'framer-motion';
@@ -8,6 +9,7 @@ import { motion, Variants } from 'framer-motion';
 import * as ReactRouterDOM from 'react-router-dom';
 import { Dumbbell as DumbbellIcon, HeartPulse as HeartPulseIcon, Repeat as RepeatIcon, Users as UsersIcon, Award as AwardIcon, BrainCircuit as BrainCircuitIcon, ArrowRight as ArrowRightIcon, PartyPopper as FunIcon } from 'lucide-react';
 import ValueCard from '../components/ValueCard';
+import { imageAssets } from '../data/images';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -35,7 +37,8 @@ const itemVariants: Variants = {
 
 
 // FIX: Corrected component definition from a malformed 'const' to a full React component, and added a default export.
-const WhatIsCrossfitPage = (): React.ReactNode => {
+// FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
+const WhatIsCrossfitPage = () => {
   const { t } = useLanguage();
 
   const benefits = [
@@ -80,7 +83,7 @@ const WhatIsCrossfitPage = (): React.ReactNode => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.7 }}
           >
-            <img src="https://images.pexels.com/photos/4761786/pexels-photo-4761786.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="CrossFit workout" className="rounded-2xl shadow-2xl"/>
+            <img src={imageAssets.whatIsCrossfitDefinition} alt="CrossFit workout" className="rounded-2xl shadow-2xl"/>
           </motion.div>
           <div>
             <h2 className="text-5xl font-extrabold text-accent uppercase tracking-wider">{t('whatIsCrossfit.definition.title')}</h2>

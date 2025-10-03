@@ -1,5 +1,6 @@
 
 
+
 import React, { useState, useMemo } from 'react';
 // FIX: Changed to namespace import to fix module resolution issues.
 import * as ReactRouterDOM from 'react-router-dom';
@@ -7,16 +8,18 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { coachesData, getClassById, ClassType, classesData, ClassKey } from '../data/roster';
 import type { Coach } from '../data/roster';
+import Image from '../components/Image';
 
 // A simple, non-animated presentational component for a coach's profile.
-const CoachProfile = ({ coach, classes }: { coach: Coach, classes: ClassType[] }): JSX.Element => {
+// FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
+const CoachProfile = ({ coach, classes }: { coach: Coach, classes: ClassType[] }) => {
     const { t } = useLanguage();
     return (
         <div
             id={`coach-${coach.id}`}
             className="bg-white dark:bg-[#1c1c1e] overflow-hidden flex flex-col md:flex-row items-center shadow-lg rounded-2xl scroll-mt-32"
         >
-            <img src={`https://i.pravatar.cc/400?u=${coach.imageId}`} alt={coach.name} className="w-full aspect-square object-cover md:w-80 flex-shrink-0" />
+            <Image src={coach.image} alt={coach.name} className="w-full aspect-square md:w-80 flex-shrink-0" />
             <div className="p-8 w-full">
                 <h3 className="text-4xl font-bold text-accent">{coach.name}</h3>
                 <p className="text-lg font-bold text-gray-900 dark:text-white mb-2">{t(coach.specialtyKey)}</p>
@@ -39,7 +42,8 @@ const CoachProfile = ({ coach, classes }: { coach: Coach, classes: ClassType[] }
     );
 };
 
-const CoachesPage = (): JSX.Element => {
+// FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
+const CoachesPage = () => {
     const { t } = useLanguage();
     const [activeFilter, setActiveFilter] = useState<ClassKey | 'all'>('all');
 

@@ -12,7 +12,7 @@ const activeNavLinkClasses = "text-accent";
 const Header = (): React.ReactNode => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileDropdowns, setMobileDropdowns] = useState({ wod: false, about: false, pricing: false });
+  const [mobileDropdowns, setMobileDropdowns] = useState({ wod: false, about: false, pricing: false, contact: false });
   const { t } = useLanguage();
   const location = ReactRouterDOM.useLocation();
   const isHomePage = location.pathname === '/';
@@ -30,7 +30,7 @@ const Header = (): React.ReactNode => {
   
   const closeMenu = () => {
     setIsMenuOpen(false);
-    setMobileDropdowns({ wod: false, about: false, pricing: false });
+    setMobileDropdowns({ wod: false, about: false, pricing: false, contact: false });
   };
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const Header = (): React.ReactNode => {
     };
   }, [isMenuOpen]);
 
-  const toggleMobileDropdown = (menu: 'wod' | 'about' | 'pricing') => {
+  const toggleMobileDropdown = (menu: 'wod' | 'about' | 'pricing' | 'contact') => {
     setMobileDropdowns(prev => ({ ...prev, [menu]: !prev[menu] }));
   };
   
@@ -66,8 +66,9 @@ const Header = (): React.ReactNode => {
   const navTextColorClass = isTransparent ? 'text-white' : 'text-gray-900 dark:text-white';
 
   const isWodActive = location.pathname.startsWith('/wod') || location.pathname.startsWith('/schedule') || location.pathname.startsWith('/library');
-  const isAboutActive = location.pathname.startsWith('/about') || location.pathname.startsWith('/coaches') || location.pathname.startsWith('/classes') || location.pathname.startsWith('/members') || location.pathname.startsWith('/what-is-crossfit');
+  const isAboutActive = location.pathname.startsWith('/about') || location.pathname.startsWith('/coaches') || location.pathname.startsWith('/classes') || location.pathname.startsWith('/members') || location.pathname.startsWith('/what-is-crossfit') || location.pathname.startsWith('/faq');
   const isPricingActive = location.pathname.startsWith('/membership') || location.pathname.startsWith('/referral');
+  const isContactActive = location.pathname.startsWith('/contact') || location.pathname.startsWith('/rent-club');
   
   const mobileMenuClasses = `
     lg:hidden absolute top-24 left-0 w-full transition-all duration-300
@@ -109,6 +110,7 @@ const Header = (): React.ReactNode => {
                     <ReactRouterDOM.NavLink to="/coaches" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.coaches')}</ReactRouterDOM.NavLink>
                     <ReactRouterDOM.NavLink to="/classes" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.classes')}</ReactRouterDOM.NavLink>
                     <ReactRouterDOM.NavLink to="/members" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.members')}</ReactRouterDOM.NavLink>
+                    <ReactRouterDOM.NavLink to="/faq" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.faq')}</ReactRouterDOM.NavLink>
                 </div>
             </div>
 
@@ -126,7 +128,17 @@ const Header = (): React.ReactNode => {
                 </div>
             </div>
 
-            <ReactRouterDOM.NavLink to="/contact" className={({ isActive }) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.contact')}</ReactRouterDOM.NavLink>
+            {/* Contact Dropdown */}
+            <div className="relative group py-6 -my-6">
+                <button aria-haspopup="true" className={`${navLinkClasses} ${isContactActive ? activeNavLinkClasses : ''} flex items-center`}>
+                    <ReactRouterDOM.NavLink to="/contact">{t('nav.contact')}</ReactRouterDOM.NavLink>
+                    <ChevronDownIcon className="h-4 w-4 ml-1" />
+                </button>
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-white dark:bg-[#181818] shadow-lg rounded-xl p-2 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 ring-1 ring-black ring-opacity-5">
+                    <ReactRouterDOM.NavLink to="/contact" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.contact')}</ReactRouterDOM.NavLink>
+                    <ReactRouterDOM.NavLink to="/rent-club" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.rentClub')}</ReactRouterDOM.NavLink>
+                </div>
+            </div>
           </nav>
           
           <div className="flex items-center">
@@ -185,6 +197,7 @@ const Header = (): React.ReactNode => {
                         <ReactRouterDOM.NavLink to="/coaches" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.coaches')}</ReactRouterDOM.NavLink>
                         <ReactRouterDOM.NavLink to="/classes" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.classes')}</ReactRouterDOM.NavLink>
                         <ReactRouterDOM.NavLink to="/members" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.members')}</ReactRouterDOM.NavLink>
+                        <ReactRouterDOM.NavLink to="/faq" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.faq')}</ReactRouterDOM.NavLink>
                     </div>
                 )}
             </div>
@@ -205,7 +218,19 @@ const Header = (): React.ReactNode => {
                 )}
             </div>
 
-            <ReactRouterDOM.NavLink to="/contact" className={({ isActive }) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-3 text-lg w-full text-center`} onClick={closeMenu}>{t('nav.contact')}</ReactRouterDOM.NavLink>
+            {/* Contact Dropdown Mobile */}
+            <div className="w-full">
+                <button onClick={() => toggleMobileDropdown('contact')} aria-expanded={mobileDropdowns.contact} className={`${navLinkClasses} ${isContactActive ? activeNavLinkClasses : ''} py-3 text-lg w-full flex items-center justify-center`}>
+                    {t('nav.contact')}
+                    <ChevronDownIcon className={`h-5 w-5 ml-2 transition-transform ${mobileDropdowns.contact ? 'rotate-180' : ''}`} />
+                </button>
+                {mobileDropdowns.contact && (
+                    <div className="flex flex-col items-center bg-gray-100 dark:bg-black/20 pt-1 pb-2 w-full">
+                        <ReactRouterDOM.NavLink to="/contact" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.contact')}</ReactRouterDOM.NavLink>
+                        <ReactRouterDOM.NavLink to="/rent-club" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.rentClub')}</ReactRouterDOM.NavLink>
+                    </div>
+                )}
+            </div>
             
             <ReactRouterDOM.NavLink to="/membership" onClick={closeMenu} className="mt-4 w-full text-center bg-accent text-black font-bold py-3 px-6 text-sm uppercase tracking-wider rounded-full hover:bg-accent-dark transition-colors duration-300">
               {t('pricing.joinButtonShort')}

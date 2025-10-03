@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { imageAssets } from '../data/images';
 
 const AboutPage = (): React.ReactNode => {
   const { t } = useLanguage();
@@ -8,7 +9,7 @@ const AboutPage = (): React.ReactNode => {
         {/* Background Image and Overlay */}
         <div 
             className="absolute inset-0 bg-cover bg-center bg-fixed"
-            style={{ backgroundImage: "url('https://images.pexels.com/photos/2247179/pexels-photo-2247179.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')" }}
+            style={{ backgroundImage: `url('${imageAssets.aboutBg}')` }}
         />
         <div className="absolute inset-0 bg-black/70 dark:bg-black/80" />
         

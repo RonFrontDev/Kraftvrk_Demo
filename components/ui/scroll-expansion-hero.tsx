@@ -22,6 +22,7 @@ interface ScrollExpandMediaProps {
 }
 
 // FIX: Explicitly set the return type to JSX.Element to fix framer-motion prop type errors.
+// FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
 const ScrollExpandMedia = ({
   mediaType = 'video',
   mediaSrc,
@@ -32,7 +33,7 @@ const ScrollExpandMedia = ({
   scrollToExpand,
   textBlend,
   children,
-}: ScrollExpandMediaProps): JSX.Element => {
+}: ScrollExpandMediaProps) => {
   const [scrollProgress, setScrollProgress] = useState<number>(0);
   const [showContent, setShowContent] = useState<boolean>(false);
   const [mediaFullyExpanded, setMediaFullyExpanded] = useState<boolean>(false);

@@ -2,23 +2,24 @@ import React, { useState, useMemo } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import ProductCard from '../components/ProductCard';
 import { motion } from 'framer-motion';
+import { imageAssets } from '../data/images';
 
 type Category = 'apparel' | 'accessories' | 'equipment';
 interface Product {
     nameKey: string;
     priceKey: string;
-    imageId: string;
+    image: string;
     category: Category;
 }
 
 const products: Product[] = [
-    { nameKey: 'shop.product1Name', priceKey: 'shop.product1Price', imageId: '15', category: 'apparel' },
-    { nameKey: 'shop.product2Name', priceKey: 'shop.product2Price', imageId: '16', category: 'apparel' },
-    { nameKey: 'shop.product3Name', priceKey: 'shop.product3Price', imageId: '17', category: 'apparel' },
-    { nameKey: 'shop.product4Name', priceKey: 'shop.product4Price', imageId: '18', category: 'accessories' },
-    { nameKey: 'shop.product5Name', priceKey: 'shop.product5Price', imageId: '19', category: 'equipment' },
-    { nameKey: 'shop.product6Name', priceKey: 'shop.product6Price', imageId: '20', category: 'accessories' },
-    { nameKey: 'shop.productGiftCardName', priceKey: 'shop.productGiftCardPrice', imageId: '21', category: 'accessories' },
+    { nameKey: 'shop.product1Name', priceKey: 'shop.product1Price', image: imageAssets.shopTee, category: 'apparel' },
+    { nameKey: 'shop.product2Name', priceKey: 'shop.product2Price', image: imageAssets.shopHoodie, category: 'apparel' },
+    { nameKey: 'shop.product3Name', priceKey: 'shop.product3Price', image: imageAssets.shopShorts, category: 'apparel' },
+    { nameKey: 'shop.product4Name', priceKey: 'shop.product4Price', image: imageAssets.shopBottle, category: 'accessories' },
+    { nameKey: 'shop.product5Name', priceKey: 'shop.product5Price', image: imageAssets.shopRope, category: 'equipment' },
+    { nameKey: 'shop.product6Name', priceKey: 'shop.product6Price', image: imageAssets.shopWraps, category: 'accessories' },
+    { nameKey: 'shop.productGiftCardName', priceKey: 'shop.productGiftCardPrice', image: imageAssets.shopGiftCard, category: 'accessories' },
 ];
 
 const categories = ['all', 'apparel', 'accessories', 'equipment'];
@@ -34,7 +35,8 @@ const containerVariants = {
 };
 
 // FIX: Changed return type from React.ReactNode to JSX.Element to fix type inference issues with framer-motion props.
-const ShopPage = (): JSX.Element => {
+// FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
+const ShopPage = () => {
     const { t } = useLanguage();
     const [activeCategory, setActiveCategory] = useState('all');
 
@@ -82,7 +84,7 @@ const ShopPage = (): JSX.Element => {
                         key={product.nameKey}
                         name={t(product.nameKey)}
                         price={t(product.priceKey)}
-                        image={`https://picsum.photos/400/400?random=${product.imageId}`}
+                        image={product.image}
                     />
                 ))}
             </motion.div>

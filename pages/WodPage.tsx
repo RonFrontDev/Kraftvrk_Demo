@@ -56,7 +56,8 @@ const migrateWodsFromStorage = (storedWods: string | null): { [date: string]: Wo
   }
 };
 
-const WodPage = (): React.ReactNode => {
+// FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
+const WodPage = () => {
   const [pinnedWods, setPinnedWods] = useState<{ [date: string]: Wod }>({});
   const [transientWod, setTransientWod] = useState<Wod | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);

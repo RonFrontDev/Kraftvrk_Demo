@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import type { Exercise } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
 import { XIcon } from './IconComponents';
+import Image from './Image';
+import { imageAssets } from '../data/images';
 
 interface ExerciseDetailModalProps {
     exercise: Exercise;
@@ -72,10 +74,10 @@ const ExerciseDetailModal = ({ exercise, onClose }: ExerciseDetailModalProps): R
                 
                 <div className="grid grid-cols-1 lg:grid-cols-2">
                     <div className="relative aspect-video lg:aspect-square">
-                         <img 
+                         <Image 
                             src={`https://picsum.photos/800/800?random=${imageId}`} 
                             alt={exercise.name} 
-                            className="w-full h-full object-cover" 
+                            className="w-full h-full" 
                         />
                     </div>
                     <div className="p-8">

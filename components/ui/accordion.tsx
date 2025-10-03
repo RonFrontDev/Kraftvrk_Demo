@@ -18,7 +18,8 @@ const useAccordion = () => {
   return context;
 };
 
-export const Accordion = ({ children, defaultValue }: { children: ReactNode, defaultValue?: string | null }): JSX.Element => {
+// FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
+export const Accordion = ({ children, defaultValue }: { children: ReactNode, defaultValue?: string | null }) => {
   const [openItem, setOpenItem] = useState<string | null>(defaultValue || null);
 
   return (
@@ -34,7 +35,8 @@ interface AccordionItemProps {
   children: ReactNode;
 }
 
-export const AccordionItem = ({ value, trigger, children }: AccordionItemProps): JSX.Element => {
+// FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
+export const AccordionItem = ({ value, trigger, children }: AccordionItemProps) => {
   const { openItem, setOpenItem } = useAccordion();
   const isOpen = openItem === value;
 

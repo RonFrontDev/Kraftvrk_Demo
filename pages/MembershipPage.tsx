@@ -1,13 +1,17 @@
 
 
+
+
 import React from 'react';
 // FIX: Changed to namespace import to fix module resolution issues.
 import * as ReactRouterDOM from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { CheckCircleIcon, ArrowRightIcon } from '../components/IconComponents';
 import { Accordion, AccordionItem } from '../components/ui/accordion';
+import { imageAssets } from '../data/images';
 
 // PricingCard component with responsive text adjustments
+// FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
 const PricingCard = ({ plan, popular = false }: { plan: any, popular?: boolean }) => {
     const { t } = useLanguage();
 
@@ -48,6 +52,7 @@ const PricingCard = ({ plan, popular = false }: { plan: any, popular?: boolean }
 };
 
 // Accordion Trigger Component
+// FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
 const AccordionTriggerContent = ({ title, subtitle }: { title: string, subtitle: string }) => (
     <div className="text-left">
         <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900 dark:text-white uppercase tracking-wider">{title}</h2>
@@ -56,7 +61,8 @@ const AccordionTriggerContent = ({ title, subtitle }: { title: string, subtitle:
 );
 
 
-const MembershipPage = (): React.ReactNode => {
+// FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
+const MembershipPage = () => {
     const { t } = useLanguage();
 
     const plans = [
@@ -83,7 +89,7 @@ const MembershipPage = (): React.ReactNode => {
         <div className="relative">
              <div 
                 className="absolute inset-0 bg-cover bg-center bg-fixed"
-                style={{ backgroundImage: "url('https://images.pexels.com/photos/3838329/pexels-photo-3838329.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')" }}
+                style={{ backgroundImage: `url('${imageAssets.membershipBg}')` }}
             />
             <div className="absolute inset-0 bg-black/70 dark:bg-black/80" />
 

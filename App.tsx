@@ -1,4 +1,7 @@
 
+
+
+
 import React from 'react';
 // FIX: Changed to namespace import to fix module resolution issues.
 import * as ReactRouterDOM from 'react-router-dom';
@@ -20,8 +23,12 @@ import ClassesPage from './pages/ClassesPage';
 import MembersPage from './pages/MembersPage';
 import ReferralPage from './pages/ReferralPage';
 import WhatIsCrossfitPage from './pages/WhatIsCrossfitPage';
+import FaqPage from './pages/FaqPage';
+// FIX: Corrected import for RentClubPage, which now has a default export.
+import RentClubPage from './pages/RentClubPage';
 
-function App(): React.ReactNode {
+// FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
+function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
@@ -44,6 +51,8 @@ function App(): React.ReactNode {
                 <ReactRouterDOM.Route path="/contact" element={<ContactPage />} />
                 <ReactRouterDOM.Route path="/members" element={<MembersPage />} />
                 <ReactRouterDOM.Route path="/referral" element={<ReferralPage />} />
+                <ReactRouterDOM.Route path="/faq" element={<FaqPage />} />
+                <ReactRouterDOM.Route path="/rent-club" element={<RentClubPage />} />
               </ReactRouterDOM.Routes>
             </main>
             <Footer />

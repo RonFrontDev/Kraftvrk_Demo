@@ -1,4 +1,6 @@
 
+
+
 import React from 'react';
 import type { Wod } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -16,6 +18,7 @@ interface WodDisplayPanelProps {
     loadingSection: number | null;
 }
 
+// FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
 const WodDisplayPanel = ({
     wod,
     onPin,
@@ -25,7 +28,7 @@ const WodDisplayPanel = ({
     isTransient,
     isLoading,
     loadingSection
-}: WodDisplayPanelProps): React.ReactNode => {
+}: WodDisplayPanelProps) => {
     const { t } = useLanguage();
 
     return (

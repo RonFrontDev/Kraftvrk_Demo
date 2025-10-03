@@ -5,6 +5,7 @@ import { Input } from '../components/ui/input';
 import { Button } from '../components/ui/button';
 import { Label } from '../components/ui/label';
 import { Textarea } from '../components/ui/textarea';
+import { imageAssets } from '../data/images';
 
 const ContactInfoItem = ({ icon: Icon, label, value }: { icon: React.ElementType, label: string, value: string }) => {
     return (
@@ -30,7 +31,7 @@ const ContactPage = (): React.ReactNode => {
         <div className="relative min-h-screen">
              <div 
                 className="absolute inset-0 bg-cover bg-center bg-fixed"
-                style={{ backgroundImage: "url('https://images.pexels.com/photos/4761793/pexels-photo-4761793.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')" }}
+                style={{ backgroundImage: `url('${imageAssets.contactBg}')` }}
             />
             <div className="absolute inset-0 bg-black/70 dark:bg-black/80" />
             

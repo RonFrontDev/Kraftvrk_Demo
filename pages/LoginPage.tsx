@@ -9,6 +9,7 @@ import { Input } from '../components/ui/input';
 import { Button } from '../components/ui/button';
 import { Label } from '../components/ui/label';
 import Spinner from '../components/Spinner';
+import { imageAssets } from '../data/images';
 
 const LoginPage = (): React.ReactNode => {
   const [email, setEmail] = useState('');
@@ -40,7 +41,7 @@ const LoginPage = (): React.ReactNode => {
     <div className="relative min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 pt-24">
       <div 
         className="absolute inset-0 bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: "url('https://images.pexels.com/photos/866027/pexels-photo-866027.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')" }}
+        style={{ backgroundImage: `url('${imageAssets.loginBg}')` }}
       />
       <div className="absolute inset-0 bg-black/70" />
       

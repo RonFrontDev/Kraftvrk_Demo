@@ -7,6 +7,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { ArrowRightIcon } from '../components/IconComponents';
 import { classesData, getCoachById } from '../data/roster';
 import type { Coach } from '../data/roster';
+import Image from '../components/Image';
 
 
 interface ClassInfoCardProps {
@@ -19,10 +20,11 @@ interface ClassInfoCardProps {
 const ClassInfoCard: React.FC<ClassInfoCardProps> = ({ title, description, image, coaches }) => {
     return (
         <div className="relative bg-gray-900 overflow-hidden group rounded-2xl shadow-xl min-h-[450px] flex flex-col justify-end">
-            <img 
+            <Image 
                 src={image} 
                 alt={title} 
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" 
+                className="absolute inset-0 w-full h-full" 
+                imageClassName="transition-transform duration-500 ease-in-out group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent transition-opacity duration-500"></div>
             <div className="relative p-8 z-10 flex flex-col flex-grow justify-end">
@@ -35,10 +37,10 @@ const ClassInfoCard: React.FC<ClassInfoCardProps> = ({ title, description, image
                         <div className="flex -space-x-3">
                             {coaches.map(coach => (
                                 <ReactRouterDOM.NavLink key={coach.id} to={`/coaches#coach-${coach.id}`} title={coach.name}>
-                                    <img 
-                                        src={`https://i.pravatar.cc/150?u=${coach.imageId}`} 
+                                    <Image 
+                                        src={coach.avatarImage} 
                                         alt={coach.name}
-                                        className="w-12 h-12 rounded-full border-2 border-gray-900 object-cover transition-transform hover:scale-110 hover:z-10"
+                                        className="w-12 h-12 rounded-full border-2 border-gray-900 transition-transform hover:scale-110 hover:z-10"
                                     />
                                 </ReactRouterDOM.NavLink>
                             ))}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft as ChevronLeftIcon, ChevronRight as ChevronRightIcon } from 'lucide-react';
+import Image from './Image';
 
 interface SlideshowProps {
   images: string[];
@@ -53,7 +54,7 @@ const Slideshow = ({ images }: SlideshowProps): React.ReactNode => {
     }, 5000);
 
     return () => clearTimeout(timer);
-  }, [page, isHovered, paginate]);
+  }, [page, isHovered]);
 
 
   return (
@@ -63,10 +64,8 @@ const Slideshow = ({ images }: SlideshowProps): React.ReactNode => {
       className="relative w-full h-[75vh] max-h-[800px] max-w-7xl mx-auto flex items-center justify-center overflow-hidden rounded-2xl shadow-2xl bg-black/80"
     >
       <AnimatePresence initial={false} custom={direction}>
-        <motion.img
+        <motion.div
           key={page}
-          src={images[imageIndex]}
-          alt={`Member photo ${imageIndex + 1}`}
           custom={direction}
           variants={variants}
           initial="enter"
@@ -89,8 +88,14 @@ const Slideshow = ({ images }: SlideshowProps): React.ReactNode => {
               paginate(-1);
             }
           }}
-          className="absolute w-full h-full object-cover"
-        />
+          className="absolute w-full h-full"
+        >
+          <Image
+            src={images[imageIndex]}
+            alt={`Member photo ${imageIndex + 1}`}
+            className="w-full h-full"
+          />
+        </motion.div>
       </AnimatePresence>
       <motion.button
         aria-label="Previous image"

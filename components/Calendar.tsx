@@ -10,7 +10,8 @@ interface CalendarProps {
   t: (key: string) => string;
 }
 
-const Calendar = ({ currentMonth, onMonthChange, selectedDate, onDateSelect, pinnedDates, t }: CalendarProps): React.ReactNode => {
+// FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
+const Calendar = ({ currentMonth, onMonthChange, selectedDate, onDateSelect, pinnedDates, t }: CalendarProps) => {
 
   const toYYYYMMDD = (date: Date) => date.toISOString().split('T')[0];
 
@@ -60,8 +61,10 @@ const Calendar = ({ currentMonth, onMonthChange, selectedDate, onDateSelect, pin
         endDate.setDate(endDate.getDate() + (6 - monthEnd.getDay()));
     }
 
-    const rows: JSX.Element[] = [];
-    let days: JSX.Element[] = [];
+    // FIX: Removed explicit JSX.Element[] type to fix JSX namespace error.
+    const rows = [];
+    // FIX: Removed explicit JSX.Element[] type to fix JSX namespace error.
+    let days = [];
     let day = new Date(startDate);
     
     while (day <= endDate) {

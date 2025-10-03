@@ -4,7 +4,8 @@ import React from 'react';
 import * as ReactRouterDOM from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
-const ProtectedRoute = ({ children }: { children: JSX.Element }): JSX.Element => {
+// FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
+const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
   const { isAuthenticated } = useAuth();
   const location = ReactRouterDOM.useLocation();
 
