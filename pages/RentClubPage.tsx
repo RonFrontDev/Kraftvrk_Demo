@@ -2,7 +2,7 @@ import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { imageAssets } from '../data/images';
 // FIX: Changed to namespace import to fix module resolution issues.
-import * as ReactRouterDOM from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { ArrowRight as ArrowRightIcon } from 'lucide-react';
 
 // FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
@@ -49,13 +49,13 @@ const RentClubPage = () => {
                 </div>
 
                 <div className="text-center mt-12">
-                     <ReactRouterDOM.NavLink 
+                     <NavLink 
                         to="/contact" 
                         className="mt-8 inline-flex items-center gap-3 bg-gradient-accent bg-gradient-accent-hover text-black font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                     >
                         <span>{t('rentClub.cta')}</span>
                         <ArrowRightIcon className="h-6 w-6" />
-                    </ReactRouterDOM.NavLink>
+                    </NavLink>
                 </div>
             </div>
         </div>

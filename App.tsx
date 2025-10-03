@@ -1,10 +1,7 @@
 
-
-
-
 import React from 'react';
 // FIX: Changed to namespace import to fix module resolution issues.
-import * as ReactRouterDOM from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import WodPage from './pages/WodPage';
 import SchedulePage from './pages/SchedulePage';
@@ -32,32 +29,32 @@ function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <ReactRouterDOM.HashRouter>
+        <HashRouter>
           <ScrollToTop />
           <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-grow">
-              <ReactRouterDOM.Routes>
-                <ReactRouterDOM.Route path="/" element={<HomePage />} />
-                <ReactRouterDOM.Route path="/wod" element={<WodPage />} />
-                <ReactRouterDOM.Route path="/schedule" element={<SchedulePage />} />
-                <ReactRouterDOM.Route path="/about" element={<AboutPage />} />
-                <ReactRouterDOM.Route path="/what-is-crossfit" element={<WhatIsCrossfitPage />} />
-                <ReactRouterDOM.Route path="/coaches" element={<CoachesPage />} />
-                <ReactRouterDOM.Route path="/library" element={<ExerciseLibraryPage />} />
-                <ReactRouterDOM.Route path="/classes" element={<ClassesPage />} />
-                <ReactRouterDOM.Route path="/membership" element={<MembershipPage />} />
-                <ReactRouterDOM.Route path="/shop" element={<ShopPage />} />
-                <ReactRouterDOM.Route path="/contact" element={<ContactPage />} />
-                <ReactRouterDOM.Route path="/members" element={<MembersPage />} />
-                <ReactRouterDOM.Route path="/referral" element={<ReferralPage />} />
-                <ReactRouterDOM.Route path="/faq" element={<FaqPage />} />
-                <ReactRouterDOM.Route path="/rent-club" element={<RentClubPage />} />
-              </ReactRouterDOM.Routes>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/wod" element={<WodPage />} />
+                <Route path="/schedule" element={<SchedulePage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/what-is-crossfit" element={<WhatIsCrossfitPage />} />
+                <Route path="/coaches" element={<CoachesPage />} />
+                <Route path="/library" element={<ExerciseLibraryPage />} />
+                <Route path="/classes" element={<ClassesPage />} />
+                <Route path="/membership" element={<MembershipPage />} />
+                <Route path="/shop" element={<ShopPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/members" element={<MembersPage />} />
+                <Route path="/referral" element={<ReferralPage />} />
+                <Route path="/faq" element={<FaqPage />} />
+                <Route path="/rent-club" element={<RentClubPage />} />
+              </Routes>
             </main>
             <Footer />
           </div>
-        </ReactRouterDOM.HashRouter>
+        </HashRouter>
       </LanguageProvider>
     </ThemeProvider>
   );

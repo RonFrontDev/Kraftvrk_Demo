@@ -1,12 +1,9 @@
 
-
-
-
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion, Variants } from 'framer-motion';
 // FIX: Changed to namespace import to fix module resolution issues.
-import * as ReactRouterDOM from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Dumbbell as DumbbellIcon, HeartPulse as HeartPulseIcon, Repeat as RepeatIcon, Users as UsersIcon, Award as AwardIcon, BrainCircuit as BrainCircuitIcon, ArrowRight as ArrowRightIcon, PartyPopper as FunIcon } from 'lucide-react';
 import ValueCard from '../components/ValueCard';
 import { imageAssets } from '../data/images';
@@ -142,13 +139,13 @@ const WhatIsCrossfitPage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
           <h2 className="text-5xl font-extrabold uppercase tracking-wider">{t('whatIsCrossfit.forMe.title')}</h2>
           <p className="mt-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">{t('whatIsCrossfit.forMe.text1')}</p>
-          <ReactRouterDOM.NavLink 
+          <NavLink 
             to="/contact" 
             className="mt-10 inline-flex items-center gap-3 bg-gradient-accent bg-gradient-accent-hover text-black font-bold py-4 px-10 text-lg uppercase tracking-wider rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
           >
             <span>{t('pricing.trialButton')}</span>
             <ArrowRightIcon className="h-6 w-6" />
-          </ReactRouterDOM.NavLink>
+          </NavLink>
         </div>
       </div>
     </div>

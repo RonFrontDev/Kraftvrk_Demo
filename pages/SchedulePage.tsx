@@ -1,10 +1,7 @@
 
-
-
-
 import React, { useState, useEffect } from 'react';
 // FIX: Changed to namespace import to fix module resolution issues.
-import * as ReactRouterDOM from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import ClassDetailModal from '../components/ClassDetailModal';
 import WodPreviewModal from '../components/WodPreviewModal';
@@ -80,9 +77,9 @@ const ClassEntry = ({ classInfo, onClassClick }: { classInfo: ScheduleClassInfo,
                 <p className="font-bold text-lg text-gray-900 dark:text-white">{classInfo.time}</p>
                 <p className="text-accent font-semibold">{t(details.nameKey)}</p>
                 {coach ? (
-                     <ReactRouterDOM.NavLink to={`/coaches#coach-${coach.id}`} onClick={handleCoachClick} className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent hover:underline transition-colors">
+                     <NavLink to={`/coaches#coach-${coach.id}`} onClick={handleCoachClick} className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent hover:underline transition-colors">
                         {getCoachName()}
-                     </ReactRouterDOM.NavLink>
+                     </NavLink>
                 ) : (
                     <p className="text-sm text-gray-600 dark:text-gray-400">{getCoachName()}</p>
                 )}

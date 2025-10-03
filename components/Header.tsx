@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 // FIX: Changed to namespace import to fix module resolution issues.
-import * as ReactRouterDOM from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { Menu as MenuIcon, X as XIcon, ChevronDown as ChevronDownIcon } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -14,7 +14,7 @@ const Header = (): React.ReactNode => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileDropdowns, setMobileDropdowns] = useState({ wod: false, about: false, pricing: false, contact: false });
   const { t } = useLanguage();
-  const location = ReactRouterDOM.useLocation();
+  const location = useLocation();
   const isHomePage = location.pathname === '/';
   const headerRef = useRef<HTMLElement>(null);
 
@@ -80,63 +80,63 @@ const Header = (): React.ReactNode => {
     <header className={headerClasses} ref={headerRef}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
-          <ReactRouterDOM.NavLink to="/" className={`text-3xl font-extrabold tracking-widest transition-colors duration-300 ${navTextColorClass}`}>
+          <NavLink to="/" className={`text-3xl font-extrabold tracking-widest transition-colors duration-300 ${navTextColorClass}`}>
             KRAFTVRK
-          </ReactRouterDOM.NavLink>
+          </NavLink>
 
           <nav className={`hidden lg:flex items-center space-x-8 ${navTextColorClass}`}>
-            <ReactRouterDOM.NavLink to="/" className={({ isActive }) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.home')}</ReactRouterDOM.NavLink>
+            <NavLink to="/" className={({ isActive }) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.home')}</NavLink>
 
             {/* WOD Dropdown */}
             <div className="relative group py-6 -my-6">
                 <button aria-haspopup="true" className={`${navLinkClasses} ${isWodActive ? activeNavLinkClasses : ''} flex items-center`}>
-                    <ReactRouterDOM.NavLink to="/wod">{t('nav.wod')}</ReactRouterDOM.NavLink>
+                    <NavLink to="/wod">{t('nav.wod')}</NavLink>
                     <ChevronDownIcon className="h-4 w-4 ml-1" />
                 </button>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-white dark:bg-[#181818] shadow-lg rounded-xl p-2 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 ring-1 ring-black ring-opacity-5">
-                    <ReactRouterDOM.NavLink to="/schedule" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.schedule')}</ReactRouterDOM.NavLink>
-                    <ReactRouterDOM.NavLink to="/library" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.library')}</ReactRouterDOM.NavLink>
+                    <NavLink to="/schedule" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.schedule')}</NavLink>
+                    <NavLink to="/library" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.library')}</NavLink>
                 </div>
             </div>
 
             {/* About Dropdown */}
             <div className="relative group py-6 -my-6">
                 <button aria-haspopup="true" className={`${navLinkClasses} ${isAboutActive ? activeNavLinkClasses : ''} flex items-center`}>
-                    <ReactRouterDOM.NavLink to="/about">{t('nav.about')}</ReactRouterDOM.NavLink>
+                    <NavLink to="/about">{t('nav.about')}</NavLink>
                     <ChevronDownIcon className="h-4 w-4 ml-1" />
                 </button>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-56 bg-white dark:bg-[#181818] shadow-lg rounded-xl p-2 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 ring-1 ring-black ring-opacity-5">
-                    <ReactRouterDOM.NavLink to="/what-is-crossfit" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.whatIsCrossfit')}</ReactRouterDOM.NavLink>
-                    <ReactRouterDOM.NavLink to="/coaches" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.coaches')}</ReactRouterDOM.NavLink>
-                    <ReactRouterDOM.NavLink to="/classes" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.classes')}</ReactRouterDOM.NavLink>
-                    <ReactRouterDOM.NavLink to="/members" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.members')}</ReactRouterDOM.NavLink>
-                    <ReactRouterDOM.NavLink to="/faq" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.faq')}</ReactRouterDOM.NavLink>
+                    <NavLink to="/what-is-crossfit" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.whatIsCrossfit')}</NavLink>
+                    <NavLink to="/coaches" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.coaches')}</NavLink>
+                    <NavLink to="/classes" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.classes')}</NavLink>
+                    <NavLink to="/members" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.members')}</NavLink>
+                    <NavLink to="/faq" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.faq')}</NavLink>
                 </div>
             </div>
 
-            <ReactRouterDOM.NavLink to="/shop" className={({ isActive }) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.shop')}</ReactRouterDOM.NavLink>
+            <NavLink to="/shop" className={({ isActive }) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.shop')}</NavLink>
             
             {/* Pricing Dropdown */}
             <div className="relative group py-6 -my-6">
                 <button aria-haspopup="true" className={`${navLinkClasses} ${isPricingActive ? activeNavLinkClasses : ''} flex items-center`}>
-                    <ReactRouterDOM.NavLink to="/membership">{t('nav.pricing')}</ReactRouterDOM.NavLink>
+                    <NavLink to="/membership">{t('nav.pricing')}</NavLink>
                     <ChevronDownIcon className="h-4 w-4 ml-1" />
                 </button>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-white dark:bg-[#181818] shadow-lg rounded-xl p-2 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 ring-1 ring-black ring-opacity-5">
-                    <ReactRouterDOM.NavLink to="/membership" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.pricing')}</ReactRouterDOM.NavLink>
-                    <ReactRouterDOM.NavLink to="/referral" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.referrals')}</ReactRouterDOM.NavLink>
+                    <NavLink to="/membership" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.pricing')}</NavLink>
+                    <NavLink to="/referral" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.referrals')}</NavLink>
                 </div>
             </div>
 
             {/* Contact Dropdown */}
             <div className="relative group py-6 -my-6">
                 <button aria-haspopup="true" className={`${navLinkClasses} ${isContactActive ? activeNavLinkClasses : ''} flex items-center`}>
-                    <ReactRouterDOM.NavLink to="/contact">{t('nav.contact')}</ReactRouterDOM.NavLink>
+                    <NavLink to="/contact">{t('nav.contact')}</NavLink>
                     <ChevronDownIcon className="h-4 w-4 ml-1" />
                 </button>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-white dark:bg-[#181818] shadow-lg rounded-xl p-2 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 ring-1 ring-black ring-opacity-5">
-                    <ReactRouterDOM.NavLink to="/contact" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.contact')}</ReactRouterDOM.NavLink>
-                    <ReactRouterDOM.NavLink to="/rent-club" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.rentClub')}</ReactRouterDOM.NavLink>
+                    <NavLink to="/contact" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.contact')}</NavLink>
+                    <NavLink to="/rent-club" className={({ isActive }) => `block w-full text-left px-4 py-2 rounded-md text-gray-900 dark:text-white ${navLinkClasses} ${isActive ? activeNavLinkClasses : ''}`}>{t('nav.rentClub')}</NavLink>
                 </div>
             </div>
           </nav>
@@ -145,9 +145,9 @@ const Header = (): React.ReactNode => {
             <div className="hidden lg:flex items-center space-x-2">
               <LanguageSwitcher />
               <ThemeSwitcher />
-              <ReactRouterDOM.NavLink to="/membership" className="ml-2 bg-accent text-black font-bold py-3 px-6 text-sm uppercase tracking-wider rounded-full hover:bg-accent-dark transition-colors duration-300">
+              <NavLink to="/membership" className="ml-2 bg-accent text-black font-bold py-3 px-6 text-sm uppercase tracking-wider rounded-full hover:bg-accent-dark transition-colors duration-300">
                 {t('pricing.joinButtonShort')}
-              </ReactRouterDOM.NavLink>
+              </NavLink>
             </div>
             <div className="lg:hidden ml-4">
               <button
@@ -167,7 +167,7 @@ const Header = (): React.ReactNode => {
       {isMenuOpen && (
         <div className={mobileMenuClasses} id="mobile-menu">
           <nav className="px-4 pt-2 pb-8 space-y-1 flex flex-col items-center text-gray-900 dark:text-white">
-            <ReactRouterDOM.NavLink to="/" className={({ isActive }) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-3 text-lg w-full text-center`} onClick={closeMenu}>{t('nav.home')}</ReactRouterDOM.NavLink>
+            <NavLink to="/" className={({ isActive }) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-3 text-lg w-full text-center`} onClick={closeMenu}>{t('nav.home')}</NavLink>
             
             {/* WOD Dropdown Mobile */}
             <div className="w-full">
@@ -177,9 +177,9 @@ const Header = (): React.ReactNode => {
                 </button>
                 {mobileDropdowns.wod && (
                     <div className="flex flex-col items-center bg-gray-100 dark:bg-black/20 pt-1 pb-2 w-full">
-                        <ReactRouterDOM.NavLink to="/wod" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.wod')}</ReactRouterDOM.NavLink>
-                        <ReactRouterDOM.NavLink to="/schedule" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.schedule')}</ReactRouterDOM.NavLink>
-                        <ReactRouterDOM.NavLink to="/library" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.library')}</ReactRouterDOM.NavLink>
+                        <NavLink to="/wod" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.wod')}</NavLink>
+                        <NavLink to="/schedule" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.schedule')}</NavLink>
+                        <NavLink to="/library" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.library')}</NavLink>
                     </div>
                 )}
             </div>
@@ -192,17 +192,17 @@ const Header = (): React.ReactNode => {
                 </button>
                 {mobileDropdowns.about && (
                     <div className="flex flex-col items-center bg-gray-100 dark:bg-black/20 pt-1 pb-2 w-full">
-                        <ReactRouterDOM.NavLink to="/about" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.about')}</ReactRouterDOM.NavLink>
-                        <ReactRouterDOM.NavLink to="/what-is-crossfit" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.whatIsCrossfit')}</ReactRouterDOM.NavLink>
-                        <ReactRouterDOM.NavLink to="/coaches" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.coaches')}</ReactRouterDOM.NavLink>
-                        <ReactRouterDOM.NavLink to="/classes" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.classes')}</ReactRouterDOM.NavLink>
-                        <ReactRouterDOM.NavLink to="/members" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.members')}</ReactRouterDOM.NavLink>
-                        <ReactRouterDOM.NavLink to="/faq" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.faq')}</ReactRouterDOM.NavLink>
+                        <NavLink to="/about" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.about')}</NavLink>
+                        <NavLink to="/what-is-crossfit" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.whatIsCrossfit')}</NavLink>
+                        <NavLink to="/coaches" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.coaches')}</NavLink>
+                        <NavLink to="/classes" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.classes')}</NavLink>
+                        <NavLink to="/members" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.members')}</NavLink>
+                        <NavLink to="/faq" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.faq')}</NavLink>
                     </div>
                 )}
             </div>
 
-            <ReactRouterDOM.NavLink to="/shop" className={({ isActive }) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-3 text-lg w-full text-center`} onClick={closeMenu}>{t('nav.shop')}</ReactRouterDOM.NavLink>
+            <NavLink to="/shop" className={({ isActive }) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-3 text-lg w-full text-center`} onClick={closeMenu}>{t('nav.shop')}</NavLink>
 
             {/* Pricing Dropdown Mobile */}
             <div className="w-full">
@@ -212,8 +212,8 @@ const Header = (): React.ReactNode => {
                 </button>
                 {mobileDropdowns.pricing && (
                     <div className="flex flex-col items-center bg-gray-100 dark:bg-black/20 pt-1 pb-2 w-full">
-                        <ReactRouterDOM.NavLink to="/membership" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.pricing')}</ReactRouterDOM.NavLink>
-                        <ReactRouterDOM.NavLink to="/referral" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.referrals')}</ReactRouterDOM.NavLink>
+                        <NavLink to="/membership" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.pricing')}</NavLink>
+                        <NavLink to="/referral" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.referrals')}</NavLink>
                     </div>
                 )}
             </div>
@@ -226,15 +226,15 @@ const Header = (): React.ReactNode => {
                 </button>
                 {mobileDropdowns.contact && (
                     <div className="flex flex-col items-center bg-gray-100 dark:bg-black/20 pt-1 pb-2 w-full">
-                        <ReactRouterDOM.NavLink to="/contact" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.contact')}</ReactRouterDOM.NavLink>
-                        <ReactRouterDOM.NavLink to="/rent-club" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.rentClub')}</ReactRouterDOM.NavLink>
+                        <NavLink to="/contact" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.contact')}</NavLink>
+                        <NavLink to="/rent-club" className={({isActive}) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : ''} py-2 text-base w-full text-center`} onClick={closeMenu}>{t('nav.rentClub')}</NavLink>
                     </div>
                 )}
             </div>
             
-            <ReactRouterDOM.NavLink to="/membership" onClick={closeMenu} className="mt-4 w-full text-center bg-accent text-black font-bold py-3 px-6 text-sm uppercase tracking-wider rounded-full hover:bg-accent-dark transition-colors duration-300">
+            <NavLink to="/membership" onClick={closeMenu} className="mt-4 w-full text-center bg-accent text-black font-bold py-3 px-6 text-sm uppercase tracking-wider rounded-full hover:bg-accent-dark transition-colors duration-300">
               {t('pricing.joinButtonShort')}
-            </ReactRouterDOM.NavLink>
+            </NavLink>
             
             <div className="mt-4 flex justify-center items-center gap-4">
               <LanguageSwitcher />

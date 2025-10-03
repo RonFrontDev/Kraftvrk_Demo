@@ -1,14 +1,11 @@
 
-
-
-
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Accordion, AccordionItem } from '../components/ui/accordion';
 import { imageAssets } from '../data/images';
 import { motion } from 'framer-motion';
 // FIX: Changed to namespace import to fix module resolution issues.
-import * as ReactRouterDOM from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { ArrowRight as ArrowRightIcon } from 'lucide-react';
 
 // FIX: Removed explicit JSX.Element return type to fix JSX namespace error.
@@ -85,13 +82,13 @@ const FaqPage = () => {
                     <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
                         {t('faq.ctaText')}
                     </p>
-                    <ReactRouterDOM.NavLink 
+                    <NavLink 
                         to="/contact" 
                         className="inline-flex items-center gap-3 bg-gradient-accent bg-gradient-accent-hover text-black font-bold py-4 px-10 text-lg uppercase tracking-wider rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                     >
                         <span>{t('faq.ctaButton')}</span>
                         <ArrowRightIcon className="h-6 w-6" />
-                    </ReactRouterDOM.NavLink>
+                    </NavLink>
                 </div>
             </section>
         </div>

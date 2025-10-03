@@ -1,10 +1,7 @@
 
-
-
-
 import React from 'react';
 // FIX: Changed to namespace import to fix module resolution issues.
-import * as ReactRouterDOM from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { CheckCircleIcon, ArrowRightIcon } from '../components/IconComponents';
 import { Accordion, AccordionItem } from '../components/ui/accordion';
@@ -41,12 +38,12 @@ const PricingCard = ({ plan, popular = false }: { plan: any, popular?: boolean }
                     </li>
                 ))}
             </ul>
-            <ReactRouterDOM.NavLink
+            <NavLink
                 to="/contact"
                 className={`mt-10 block w-full text-center font-bold py-3 px-6 text-base sm:text-lg uppercase tracking-wider rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg ${popular ? 'bg-accent text-black hover:bg-accent-dark' : 'bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-400 dark:hover:bg-gray-600'}`}
             >
                 {buttonText}
-            </ReactRouterDOM.NavLink>
+            </NavLink>
         </div>
     );
 };
@@ -102,13 +99,13 @@ const MembershipPage = () => {
                 <div className="max-w-4xl mx-auto mb-16 bg-white dark:bg-[#1A1A1C] border-2 border-accent p-8 text-center shadow-lg rounded-2xl">
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white uppercase">{t('pricing.trialTitle')}</h2>
                     <p className="mt-4 text-base sm:text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">{t('pricing.trialSubtitle')}</p>
-                    <ReactRouterDOM.NavLink 
+                    <NavLink 
                         to="/contact" 
                         className="mt-8 inline-flex items-center gap-3 bg-accent text-black font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-full hover:bg-accent-dark transition-colors duration-300 transform hover:-translate-y-1 hover:shadow-lg"
                     >
                         <span>{t('pricing.trialButton')}</span>
                         <ArrowRightIcon className="h-6 w-6" />
-                    </ReactRouterDOM.NavLink>
+                    </NavLink>
                 </div>
                 
                 <Accordion defaultValue="core">

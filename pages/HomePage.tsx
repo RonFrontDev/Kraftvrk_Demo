@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 // FIX: Changed to namespace import to fix module resolution issues.
-import * as ReactRouterDOM from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { UsersIcon, BoltIcon, ArrowRightIcon, ClipboardIcon, DumbbellIcon, CalendarCheckIcon } from '../components/IconComponents';
 import { useLanguage } from '../contexts/LanguageContext';
 import ClassCard from '../components/ClassCard';
@@ -97,14 +97,14 @@ const HomePage = (): React.ReactNode => {
           <p className={`${animationClasses('delay-200')} mt-6 text-lg md:text-2xl max-w-3xl mx-auto text-gray-300`} style={{ transitionDelay: '200ms' }}>
             {t(currentText.subtitle)}
           </p>
-          <ReactRouterDOM.NavLink 
+          <NavLink 
             to="/membership" 
             className={`${animationClasses('delay-300')} mt-10 inline-flex items-center gap-3 bg-gradient-accent bg-gradient-accent-hover text-black font-bold py-4 px-10 text-lg uppercase tracking-wider rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300`}
             style={{ transitionDelay: '300ms' }}
           >
             <span>{t('home.joinButton')}</span>
             <ArrowRightIcon className="h-6 w-6" />
-          </ReactRouterDOM.NavLink>
+          </NavLink>
         </div>
       </section>
 
@@ -174,13 +174,13 @@ const HomePage = (): React.ReactNode => {
                   />
               </div>
               <div className="text-center mt-12">
-                   <ReactRouterDOM.NavLink 
+                   <NavLink 
                       to="/contact" 
                       className="inline-flex items-center gap-3 bg-accent text-black font-bold py-3 px-8 text-lg uppercase tracking-wider rounded-full hover:bg-accent-dark transition-colors duration-300 transform hover:-translate-y-1 hover:shadow-lg"
                   >
                       <span>{t('home.steps.ctaButton')}</span>
                       <ArrowRightIcon className="h-6 w-6" />
-                  </ReactRouterDOM.NavLink>
+                  </NavLink>
               </div>
           </div>
       </section>
@@ -232,13 +232,13 @@ const HomePage = (): React.ReactNode => {
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
                 {t('home.ctaText')}
             </p>
-            <ReactRouterDOM.NavLink 
+            <NavLink 
                 to="/contact" 
                 className="inline-flex items-center gap-3 bg-gradient-accent bg-gradient-accent-hover text-black font-bold py-4 px-10 text-lg uppercase tracking-wider rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
             >
                 <span>{t('membership.trialButton')}</span>
                  <ArrowRightIcon className="h-6 w-6" />
-            </ReactRouterDOM.NavLink>
+            </NavLink>
         </div>
       </section>
 

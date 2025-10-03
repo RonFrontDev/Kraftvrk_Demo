@@ -2,7 +2,7 @@
 
 import React from 'react';
 // FIX: Changed to namespace import to fix module resolution issues.
-import * as ReactRouterDOM from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FacebookIcon, InstagramIcon, TwitterIcon } from './IconComponents';
 import { useLanguage } from '../contexts/LanguageContext';
 import Image from './Image';
@@ -16,9 +16,9 @@ const Footer = (): React.ReactNode => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* About Section */}
           <div className="md:col-span-2 lg:col-span-1">
-            <ReactRouterDOM.NavLink to="/" className="text-3xl font-extrabold tracking-widest text-gray-900 dark:text-white mb-4 inline-block">
+            <NavLink to="/" className="text-3xl font-extrabold tracking-widest text-gray-900 dark:text-white mb-4 inline-block">
               KRAFTVRK
-            </ReactRouterDOM.NavLink>
+            </NavLink>
             <p className="text-sm leading-relaxed pr-8">{t('footer.aboutText')}</p>
              <div className="flex space-x-4 mt-6">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-accent transition-colors duration-300"><InstagramIcon className="h-6 w-6" /></a>
